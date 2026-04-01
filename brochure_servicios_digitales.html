@@ -1,0 +1,295 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --gold:#B8860B;--gold-light:#D4A017;--dark:#0F0F0F;--mid:#1C1C1E;
+    --surface:#242424;--text:#F5F0E8;--muted:#9A9490;--accent:#E8D5A3;
+  }
+  body{background:transparent;font-family:'DM Sans',sans-serif;color:var(--text)}
+  .page{background:var(--dark);border-radius:16px;overflow:hidden;border:0.5px solid #333}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0F0F0F 0%,#1A1A1A 50%,#0F0F0F 100%);padding:56px 40px 48px;text-align:center;position:relative;border-bottom:1px solid #2A2A2A}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(184,134,11,0.12) 0%,transparent 70%)}
+  .badge{display:inline-block;border:0.5px solid var(--gold);color:var(--gold-light);font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:6px 18px;border-radius:100px;margin-bottom:24px}
+  .hero-title{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:900;line-height:1.1;margin-bottom:16px;color:#F5F0E8}
+  .hero-title span{color:var(--gold-light)}
+  .hero-sub{font-size:16px;color:var(--muted);max-width:540px;margin:0 auto 32px;line-height:1.7;font-weight:300}
+  .hero-cta{display:inline-block;background:var(--gold);color:#0F0F0F;font-weight:500;font-size:14px;padding:14px 32px;border-radius:8px;cursor:pointer;letter-spacing:0.5px}
+  .hero-cta:hover{background:var(--gold-light)}
+
+  /* BENEFITS */
+  .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:1px solid #2A2A2A}
+  .benefit-item{padding:28px 28px;border-right:1px solid #2A2A2A}
+  .benefit-item:last-child{border-right:none}
+  .b-icon{font-size:22px;margin-bottom:10px}
+  .b-title{font-size:14px;font-weight:500;color:var(--accent);margin-bottom:6px}
+  .b-text{font-size:13px;color:var(--muted);line-height:1.6}
+
+  /* WHY SECTION */
+  .why-section{padding:40px 40px;border-bottom:1px solid #2A2A2A;background:#161616}
+  .section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  .section-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;margin-bottom:8px;color:#F5F0E8}
+  .section-sub{font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.7;max-width:560px}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .why-card{background:var(--surface);border-radius:10px;padding:20px;border:0.5px solid #333}
+  .why-card .wc-title{font-size:13px;font-weight:500;color:var(--accent);margin-bottom:6px}
+  .why-card .wc-text{font-size:12px;color:var(--muted);line-height:1.6}
+
+  /* PACKAGES */
+  .packages-section{padding:40px 40px;border-bottom:1px solid #2A2A2A}
+  .pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+  .pkg-card{background:var(--surface);border-radius:12px;border:0.5px solid #333;overflow:hidden;display:flex;flex-direction:column}
+  .pkg-card.featured{border:1.5px solid var(--gold)}
+  .pkg-head{padding:20px 18px 16px;border-bottom:0.5px solid #333}
+  .pkg-badge-pop{background:var(--gold);color:#0F0F0F;font-size:10px;font-weight:500;letter-spacing:1px;padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:10px;text-transform:uppercase}
+  .pkg-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#F5F0E8;margin-bottom:4px}
+  .pkg-ideal{font-size:11px;color:var(--muted);line-height:1.5}
+  .pkg-price-block{padding:16px 18px;border-bottom:0.5px solid #333;background:#1A1A1A}
+  .pkg-price{font-size:28px;font-weight:500;color:var(--gold-light)}
+  .pkg-price span{font-size:13px;font-weight:400;color:var(--muted)}
+  .pkg-body{padding:16px 18px;flex:1}
+  .pkg-item{font-size:12px;color:#CCC;padding:5px 0;border-bottom:0.5px solid #2A2A2A;display:flex;align-items:flex-start;gap:7px;line-height:1.5}
+  .pkg-item:last-child{border-bottom:none}
+  .pkg-item::before{content:'✓';color:var(--gold);font-size:11px;flex-shrink:0;margin-top:1px}
+  .pkg-footer{padding:14px 18px}
+  .pkg-btn{display:block;text-align:center;background:transparent;border:0.5px solid var(--gold);color:var(--gold-light);font-size:13px;font-weight:500;padding:10px;border-radius:8px;cursor:pointer;width:100%}
+  .pkg-btn:hover{background:var(--gold);color:#0F0F0F}
+  .pkg-card.featured .pkg-btn{background:var(--gold);color:#0F0F0F}
+
+  /* SERVICES LIST */
+  .services-section{padding:36px 40px;border-bottom:1px solid #2A2A2A;background:#161616}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+  .svc-item{display:flex;align-items:center;gap:10px;font-size:13px;color:#CCC;padding:10px 14px;background:var(--surface);border-radius:8px;border:0.5px solid #2F2F2F}
+  .svc-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+  /* GUARANTEE */
+  .guarantee{padding:32px 40px;border-bottom:1px solid #2A2A2A;display:flex;gap:24px;align-items:flex-start}
+  .g-icon{font-size:32px;flex-shrink:0}
+  .g-title{font-size:15px;font-weight:500;color:var(--accent);margin-bottom:6px}
+  .g-text{font-size:13px;color:var(--muted);line-height:1.7}
+
+  /* CTA FINAL */
+  .cta-final{padding:48px 40px;text-align:center;position:relative}
+  .cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(184,134,11,0.1) 0%,transparent 70%)}
+  .cta-final h2{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;margin-bottom:10px;color:#F5F0E8}
+  .cta-final p{font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.7}
+  .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn-primary{background:var(--gold);color:#0F0F0F;font-weight:500;font-size:14px;padding:14px 32px;border-radius:8px;cursor:pointer;border:none}
+  .btn-secondary{background:transparent;color:var(--accent);font-size:14px;padding:14px 32px;border-radius:8px;cursor:pointer;border:0.5px solid var(--gold)}
+
+  /* AD VERSION */
+  .ad-section{padding:32px 40px;background:#0A0A0A;border-top:1px solid #2A2A2A;border-radius:0 0 16px 16px}
+  .ad-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .ad-box{background:var(--surface);border-radius:10px;border:0.5px solid #333;padding:22px 24px}
+  .ad-text{font-size:13px;color:#CCC;line-height:1.8}
+  .ad-text strong{color:var(--accent);font-weight:500}
+
+  @media(max-width:700px){
+    .benefits,.why-grid,.services-grid{grid-template-columns:1fr}
+    .benefit-item{border-right:none;border-bottom:1px solid #2A2A2A}
+    .pkg-grid{grid-template-columns:1fr 1fr}
+    .hero{padding:40px 20px 36px}
+    .packages-section,.services-section,.why-section,.guarantee,.cta-final,.ad-section{padding-left:20px;padding-right:20px}
+  }
+  @media(max-width:480px){.pkg-grid{grid-template-columns:1fr}}
+</style>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="badge">Presencia Digital Profesional</div>
+    <h1 class="hero-title">Tu Negocio Merece<br><span>Ser Encontrado.</span></h1>
+    <p class="hero-sub">Sitios web rápidos, imagen de marca sólida y herramientas de contacto que convierten visitantes en clientes — todo en un solo lugar.</p>
+    <div class="hero-cta">Ver Paquetes →</div>
+  </div>
+
+  <!-- 3 BENEFITS -->
+  <div class="benefits">
+    <div class="benefit-item">
+      <div class="b-icon">📍</div>
+      <div class="b-title">Aparece en Google</div>
+      <div class="b-text">Configura tu perfil en Google Business y deja que los clientes te encuentren cuando buscan lo que ofreces.</div>
+    </div>
+    <div class="benefit-item">
+      <div class="b-icon">📱</div>
+      <div class="b-title">Contacto inmediato</div>
+      <div class="b-text">Botón de llamada, formulario y texto/SMS integrados. Que ningún cliente potencial se vaya sin contactarte.</div>
+    </div>
+    <div class="benefit-item">
+      <div class="b-icon">⭐</div>
+      <div class="b-title">Imagen que vende</div>
+      <div class="b-text">Logotipo, colores y sitio web que transmiten profesionalismo. Tu competencia no merece verte pequeño.</div>
+    </div>
+  </div>
+
+  <!-- WHY SECTION -->
+  <div class="why-section">
+    <div class="section-label">¿Por qué importa?</div>
+    <div class="section-title">Los clientes buscan en Google antes de llamar</div>
+    <div class="section-sub">El 97% de los consumidores busca negocios locales en línea. Si no tienes presencia digital, le estás regalando clientes a tu competencia — cada día.</div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="wc-title">Sin sitio web</div>
+        <div class="wc-text">Pierdes credibilidad al instante. Los clientes dudan y eligen al competidor que sí tiene página profesional.</div>
+      </div>
+      <div class="why-card">
+        <div class="wc-title">Sin Google Business</div>
+        <div class="wc-text">No apareces en el mapa. No recibes reseñas. Eres invisible para los que buscan "cerca de mí".</div>
+      </div>
+      <div class="why-card">
+        <div class="wc-title">Sin contacto rápido</div>
+        <div class="wc-text">Si un cliente no puede llamarte, enviarte un texto o escribir en 2 segundos, simplemente se va.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PACKAGES -->
+  <div class="packages-section">
+    <div class="section-label">Soluciones</div>
+    <div class="section-title">Elige el plan que necesitas</div>
+
+    <div class="pkg-grid">
+
+      <!-- STARTER -->
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div class="pkg-name">Starter</div>
+          <div class="pkg-ideal">Para negocios que están comenzando y necesitan verse profesionales desde el primer día.</div>
+        </div>
+        <div class="pkg-price-block">
+          <div class="pkg-price">$299 <span>setup</span></div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-item">Página web de 1 sección (landing)</div>
+          <div class="pkg-item">Diseño mobile-first</div>
+          <div class="pkg-item">Botón de llamada integrado</div>
+          <div class="pkg-item">Formulario de contacto básico</div>
+          <div class="pkg-item">Integración con Google Maps</div>
+          <div class="pkg-item">Dominio + hosting primer mes</div>
+        </div>
+        <div class="pkg-footer"><button class="pkg-btn">Cotizar →</button></div>
+      </div>
+
+      <!-- GROWTH (featured) -->
+      <div class="pkg-card featured">
+        <div class="pkg-head">
+          <div class="pkg-badge-pop">Más popular</div>
+          <div class="pkg-name">Growth</div>
+          <div class="pkg-ideal">El paquete completo para negocios listos para crecer y captar más clientes locales.</div>
+        </div>
+        <div class="pkg-price-block">
+          <div class="pkg-price">$599 <span>setup</span></div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-item">Sitio web 3–5 páginas profesional</div>
+          <div class="pkg-item">Logotipo + paleta de colores</div>
+          <div class="pkg-item">Integración Google Business Profile</div>
+          <div class="pkg-item">Botón de llamada y SMS/texto</div>
+          <div class="pkg-item">Formulario de contacto avanzado</div>
+          <div class="pkg-item">Sección de reseñas y testimonios</div>
+          <div class="pkg-item">SEO básico local</div>
+          <div class="pkg-item">Optimización mobile-first</div>
+        </div>
+        <div class="pkg-footer"><button class="pkg-btn">Cotizar →</button></div>
+      </div>
+
+      <!-- PRO -->
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div class="pkg-name">Pro</div>
+          <div class="pkg-ideal">Para negocios establecidos que quieren captar más clientes y verse sólidos frente a la competencia.</div>
+        </div>
+        <div class="pkg-price-block">
+          <div class="pkg-price">$999 <span>setup</span></div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-item">Todo lo del plan Growth</div>
+          <div class="pkg-item">Hasta 8 páginas personalizadas</div>
+          <div class="pkg-item">Imagen de marca completa</div>
+          <div class="pkg-item">Galería / portafolio de servicios</div>
+          <div class="pkg-item">Configuración WhatsApp Business</div>
+          <div class="pkg-item">Chat widget en sitio web</div>
+          <div class="pkg-item">Sección de preguntas frecuentes</div>
+          <div class="pkg-item">Velocidad y performance avanzada</div>
+        </div>
+        <div class="pkg-footer"><button class="pkg-btn">Cotizar →</button></div>
+      </div>
+
+      <!-- MONTHLY CARE -->
+      <div class="pkg-card">
+        <div class="pkg-head">
+          <div class="pkg-name">Monthly Care</div>
+          <div class="pkg-ideal">Mantenimiento y soporte mensual. Tu sitio siempre actualizado, seguro y funcionando.</div>
+        </div>
+        <div class="pkg-price-block">
+          <div class="pkg-price">$79 <span>/ mes</span></div>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-item">Actualizaciones de contenido</div>
+          <div class="pkg-item">Cambios menores (textos, fotos)</div>
+          <div class="pkg-item">Soporte prioritario</div>
+          <div class="pkg-item">Backups automáticos</div>
+          <div class="pkg-item">Renovación de hosting + dominio</div>
+          <div class="pkg-item">Reporte mensual de visitas</div>
+        </div>
+        <div class="pkg-footer"><button class="pkg-btn">Cotizar →</button></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SERVICES LIST -->
+  <div class="services-section">
+    <div class="section-label">Qué ofrecemos</div>
+    <div class="section-title">Servicios disponibles</div>
+    <div class="services-grid">
+      <div class="svc-item"><span class="svc-dot"></span>Páginas web profesionales</div>
+      <div class="svc-item"><span class="svc-dot"></span>Diseño de logotipos</div>
+      <div class="svc-item"><span class="svc-dot"></span>Imagen de marca completa</div>
+      <div class="svc-item"><span class="svc-dot"></span>Google Business Profile</div>
+      <div class="svc-item"><span class="svc-dot"></span>Botón de llamada y SMS/texto</div>
+      <div class="svc-item"><span class="svc-dot"></span>Formularios de contacto</div>
+      <div class="svc-item"><span class="svc-dot"></span>Optimización mobile-first</div>
+      <div class="svc-item"><span class="svc-dot"></span>WhatsApp Business (opcional)</div>
+      <div class="svc-item"><span class="svc-dot"></span>Mantenimiento mensual</div>
+    </div>
+  </div>
+
+  <!-- GUARANTEE -->
+  <div class="guarantee">
+    <div class="g-icon">🛡️</div>
+    <div>
+      <div class="g-title">Tu inversión, protegida</div>
+      <div class="g-text">Si no quedas satisfecho con el diseño inicial, hacemos revisiones sin costo adicional hasta que sea exactamente lo que necesitas. Trabajamos contigo, no para una plantilla genérica. Entregamos resultados reales, no promesas vacías.</div>
+    </div>
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="cta-final">
+    <h2>¿Listo para que te encuentren?</h2>
+    <p>Agenda una llamada gratuita de 15 minutos. Sin compromiso.<br>Te decimos exactamente qué necesita tu negocio.</p>
+    <div class="cta-row">
+      <button class="btn-primary">📞 Agendar llamada gratis</button>
+      <button class="btn-secondary">Pedir cotización por texto</button>
+    </div>
+  </div>
+
+  <!-- AD VERSION -->
+  <div class="ad-section">
+    <div class="ad-label">Versión para anuncio en redes sociales</div>
+    <div class="ad-box">
+      <div class="ad-text">
+        <strong>¿Tu negocio no aparece en Google? Eso te está costando clientes.</strong><br><br>
+        Creamos sitios web profesionales, logotipos y presencia en Google para pequeños negocios en EE. UU. — desde $299.<br><br>
+        ✅ Sitio web listo en días<br>
+        ✅ Botón de llamada y texto/SMS incluido<br>
+        ✅ Integración con Google Business<br><br>
+        <strong>Agenda tu llamada gratis hoy. 15 minutos. Sin compromiso.</strong>
+      </div>
+    </div>
+  </div>
+
+</div>
