@@ -125,45 +125,53 @@ document.addEventListener('DOMContentLoaded', () => {
   const formSuccess = document.getElementById('formSuccess');
 
   if (form) {
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      const originalText = btn.innerHTML;
 
-      btn.disabled   = true;
-      btn.innerHTML  = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" opacity="0.3"/><path d="M12 2a10 10 0 010 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.8s" repeatCount="indefinite"/></path></svg> Sending...';
+      // ── Collect form values ──────────────────────────────────
+      const name     = document.getElementById('name').value.trim();
+      const email    = document.getElementById('email').value.trim();
+      const business = document.getElementById('business').value.trim();
+      const pkg      = document.getElementById('package').value;
+      const message  = document.getElementById('message').value.trim();
 
-      // Using Formspree — replace YOUR_FORM_ID with your actual ID
-      // Or swap this out for EmailJS, Netlify Forms, etc.
-      try {
-        const formData  = new FormData(form);
-        const data      = Object.fromEntries(formData.entries());
+      // ── Package label map ────────────────────────────────────
+      const pkgLabels = {
+        starter:      'Starter — Landing Page ($190+)',
+        professional: 'Professional — Business Site ($390+)',
+        business:     'Business — With Backend ($690+)',
+        premium:      'Premium — Full-Stack ($1,490+)',
+        unsure:       'Not sure — Let\'s talk',
+        '':           'Not specified',
+      };
 
-        // Simulate send (replace with real endpoint)
-        await simulateSend(data);
+      // ── Build the WhatsApp message ───────────────────────────
+      const waMessage = [
+        '👋 *New project inquiry from your website!*',
+        '',
+        '👤 *Name:* ' + name,
+        '📧 *Email:* ' + email,
+        '🏢 *Business:* ' + (business || 'Not specified'),
+        '📦 *Package:* ' + (pkgLabels[pkg] || 'Not specified'),
+        '',
+        '💬 *Message:*',
+        message,
+      ].join('\n');
 
+      // ── Your WhatsApp number (international format, no + or spaces) ──
+      const WHATSAPP_NUMBER = '524428484517'; // MX +52 442 848 4517
+
+      const waURL = 'https://wa.me/' + WHATSAPP_NUMBER
+                  + '?text=' + encodeURIComponent(waMessage);
+
+      // ── Show success feedback, then open WhatsApp ────────────
+      formSuccess.classList.add('show');
+
+      setTimeout(() => {
+        window.open(waURL, '_blank', 'noopener,noreferrer');
         form.reset();
-        formSuccess.classList.add('show');
-        btn.innerHTML = originalText;
-        btn.disabled  = false;
-
-        setTimeout(() => formSuccess.classList.remove('show'), 6000);
-
-      } catch (err) {
-        btn.innerHTML = '⚠️ Error — try again';
-        btn.disabled  = false;
-        setTimeout(() => { btn.innerHTML = originalText; }, 3000);
-        console.error('Form error:', err);
-      }
-    });
-  }
-
-  // placeholder for real form submission
-  // replace with: fetch('https://formspree.io/f/YOUR_ID', {...})
-  function simulateSend(data) {
-    return new Promise((resolve) => {
-      console.log('Form data:', data);
-      setTimeout(resolve, 1200);
+        setTimeout(() => formSuccess.classList.remove('show'), 5000);
+      }, 600);
     });
   }
 
