@@ -2,6 +2,11 @@
    DAMIAN AGUILERA — portfolio script
    ============================================================ */
 
+/* spin keyframe for loading button */
+const styleEl = document.createElement('style');
+styleEl.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+document.head.appendChild(styleEl);
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── NAV SCROLL ──────────────────────────────────────────────
@@ -73,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const step = (now) => {
       const elapsed  = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      // easeOutExpo
       const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       el.textContent = Math.floor(ease * target);
       if (progress < 1) requestAnimationFrame(step);
@@ -100,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ── ACTIVE NAV LINK ON SCROLL ─────────────────────────────────
-  const sections = document.querySelectorAll('section[id]');
+  const sections   = document.querySelectorAll('section[id]');
   const navAnchors = document.querySelectorAll('.nav__links a[href^="#"]');
 
   const sectionObserver = new IntersectionObserver(
@@ -120,58 +124,66 @@ document.addEventListener('DOMContentLoaded', () => {
   sections.forEach(s => sectionObserver.observe(s));
 
 
-  // ── CONTACT FORM ─────────────────────────────────────────────
+  // ── CONTACT FORM — Formspree (gratis, sin backend) ───────────
+  //
+  //  SETUP — solo 2 minutos:
+  //  1. Ve a https://formspree.io  →  Sign Up gratis (con tu Gmail)
+  //  2. Dashboard  →  "+ New Form"  →  ponle nombre ej: "Website Contact"
+  //  3. Copia el Form ID que aparece  (ej: xkgwrbpz)
+  //  4. Pégalo abajo en FORMSPREE_ID
+  //
+  //  ✅ Resultado: cada formulario te llega directo a tu email
+  //  ✅ El cliente no necesita WhatsApp ni nada extra
+  //  ✅ Gratis hasta 50 envíos/mes (más que suficiente para empezar)
+  //
+  const FORMSPREE_ID = 'xaqllbbo'; // <-- CAMBIA ESTO
+
   const form        = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // ── Collect form values ──────────────────────────────────
-      const name     = document.getElementById('name').value.trim();
-      const email    = document.getElementById('email').value.trim();
-      const business = document.getElementById('business').value.trim();
-      const pkg      = document.getElementById('package').value;
-      const message  = document.getElementById('message').value.trim();
+      const btn          = form.querySelector('button[type="submit"]');
+      const originalHTML = btn.innerHTML;
 
-      // ── Package label map ────────────────────────────────────
-      const pkgLabels = {
-        starter:      'Starter — Landing Page ($190+)',
-        professional: 'Professional — Business Site ($390+)',
-        business:     'Business — With Backend ($690+)',
-        premium:      'Premium — Full-Stack ($1,490+)',
-        unsure:       'Not sure — Let\'s talk',
-        '':           'Not specified',
-      };
+      // ── Loading state ──────────────────────────────────────
+      btn.disabled  = true;
+      btn.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+          style="animation:spin 0.75s linear infinite;flex-shrink:0">
+          <circle cx="12" cy="12" r="9" stroke="rgba(0,0,0,0.25)" stroke-width="2.5"/>
+          <path d="M12 3a9 9 0 019 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        Sending…`;
 
-      // ── Build the WhatsApp message ───────────────────────────
-      const waMessage = [
-        '👋 *New project inquiry from your website!*',
-        '',
-        '👤 *Name:* ' + name,
-        '📧 *Email:* ' + email,
-        '🏢 *Business:* ' + (business || 'Not specified'),
-        '📦 *Package:* ' + (pkgLabels[pkg] || 'Not specified'),
-        '',
-        '💬 *Message:*',
-        message,
-      ].join('\n');
+      try {
+        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+          method:  'POST',
+          headers: { 'Accept': 'application/json' },
+          body:    new FormData(form),
+        });
 
-      // ── Your WhatsApp number (international format, no + or spaces) ──
-      const WHATSAPP_NUMBER = '524428484517'; // MX +52 442 848 4517
+        if (res.ok) {
+          // ── Success ────────────────────────────────────────
+          form.reset();
+          btn.innerHTML = originalHTML;
+          btn.disabled  = false;
+          formSuccess.classList.add('show');
+          setTimeout(() => formSuccess.classList.remove('show'), 7000);
+        } else {
+          const data = await res.json().catch(() => ({}));
+          throw new Error(data.error || 'Server error ' + res.status);
+        }
 
-      const waURL = 'https://wa.me/' + WHATSAPP_NUMBER
-                  + '?text=' + encodeURIComponent(waMessage);
-
-      // ── Show success feedback, then open WhatsApp ────────────
-      formSuccess.classList.add('show');
-
-      setTimeout(() => {
-        window.open(waURL, '_blank', 'noopener,noreferrer');
-        form.reset();
-        setTimeout(() => formSuccess.classList.remove('show'), 5000);
-      }, 600);
+      } catch (err) {
+        // ── Error state ────────────────────────────────────
+        btn.disabled  = false;
+        btn.innerHTML = '⚠️ Something went wrong — try again';
+        console.error('Form error:', err);
+        setTimeout(() => { btn.innerHTML = originalHTML; }, 3500);
+      }
     });
   }
 
@@ -179,9 +191,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── PACKAGE CARD HOVER GLOW ───────────────────────────────────
   document.querySelectorAll('.pkg-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
-      const rect  = card.getBoundingClientRect();
-      const x     = ((e.clientX - rect.left) / rect.width  * 100).toFixed(1);
-      const y     = ((e.clientY - rect.top)  / rect.height * 100).toFixed(1);
+      const rect = card.getBoundingClientRect();
+      const x    = ((e.clientX - rect.left) / rect.width  * 100).toFixed(1);
+      const y    = ((e.clientY - rect.top)  / rect.height * 100).toFixed(1);
       card.style.setProperty('--mx', `${x}%`);
       card.style.setProperty('--my', `${y}%`);
     });
@@ -200,21 +212,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // ── TYPING HEADLINE EFFECT (hero sub-text) ────────────────────
-  // Optional subtle blinking cursor on the last word of hero headline
-  const highlight = document.querySelector('.hero__highlight');
-  if (highlight) {
-    highlight.style.position = 'relative';
-  }
-
-
-  // ── VALUE CARDS STAGGER ON HOVER ─────────────────────────────
+  // ── VALUE CARDS STAGGER ──────────────────────────────────────
   document.querySelectorAll('.value-card').forEach((card, i) => {
     card.style.transitionDelay = `${i * 0.04}s`;
   });
 
 
-  // ── SERVICE CARDS MAGNETIC EFFECT ────────────────────────────
+  // ── SERVICE CARDS ────────────────────────────────────────────
   document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('mouseleave', () => {
       card.style.transform = '';
