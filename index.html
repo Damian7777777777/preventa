@@ -1,200 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Damian Aguilera — Digital Presence Architect</title>
+  <meta name="description" content="I build digital presence that converts. Websites, strategy, and growth for US businesses ready to dominate online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
 
-<link rel="stylesheet" href="index.css" />
-
-<div class="page">
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">DA<span>.</span></div>
+    <button class="nav__menu-btn" id="menuBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact" class="nav__cta">Let's Talk</a></li>
+    </ul>
+  </nav>
 
   <!-- HERO -->
-  <div class="hero">
-    <div class="badge">Presencia Digital Profesional</div>
-    <h1 class="hero-title">Tu Negocio Merece<br><span>Ser Encontrado.</span></h1>
-    <p class="hero-sub">Sitios web rápidos, imagen de marca sólida y herramientas de contacto que convierten visitantes en clientes — todo en un solo lugar.</p>
-    <div class="hero-cta">Ver Paquetes →</div>
-  </div>
+  <section class="hero" id="hero">
+    <div class="hero__bg-grid"></div>
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
 
-  <!-- 3 BENEFITS -->
-  <div class="benefits">
-    <div class="benefit-item">
-      <div class="b-icon">📍</div>
-      <div class="b-title">Aparece en Google</div>
-      <div class="b-text">Configura tu perfil en Google Business y deja que los clientes te encuentren cuando buscan lo que ofreces.</div>
-    </div>
-    <div class="benefit-item">
-      <div class="b-icon">📱</div>
-      <div class="b-title">Contacto inmediato</div>
-      <div class="b-text">Botón de llamada, formulario y texto/SMS integrados. Que ningún cliente potencial se vaya sin contactarte.</div>
-    </div>
-    <div class="benefit-item">
-      <div class="b-icon">⭐</div>
-      <div class="b-title">Imagen que vende</div>
-      <div class="b-text">Logotipo, colores y sitio web que transmiten profesionalismo. Tu competencia no merece verte pequeño.</div>
-    </div>
-  </div>
+    <div class="hero__content">
+      <div class="hero__badge reveal">
+        <span class="badge__dot"></span>
+        Available for new projects
+      </div>
 
-  <!-- WHY SECTION -->
-  <div class="why-section">
-    <div class="section-label">¿Por qué importa?</div>
-    <div class="section-title">Los clientes buscan en Google antes de llamar</div>
-    <div class="section-sub">El 97% de los consumidores busca negocios locales en línea. Si no tienes presencia digital, le estás regalando clientes a tu competencia — cada día.</div>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="wc-title">Sin sitio web</div>
-        <div class="wc-text">Pierdes credibilidad al instante. Los clientes dudan y eligen al competidor que sí tiene página profesional.</div>
+      <h1 class="hero__headline reveal reveal--delay-1">
+        Your Business<br>
+        Deserves a<br>
+        <span class="hero__highlight">Digital Presence<br>That Wins.</span>
+      </h1>
+
+      <p class="hero__sub reveal reveal--delay-2">
+        I'm <strong>Damian Aguilera</strong> — Software Engineer & Digital Strategist.<br>
+        I don't just build websites. I build <em>growth engines</em> for US businesses.
+      </p>
+
+      <div class="hero__actions reveal reveal--delay-3">
+        <a href="#packages" class="btn btn--primary">
+          See Packages
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn btn--ghost">Book a Free Call</a>
       </div>
-      <div class="why-card">
-        <div class="wc-title">Sin Google Business</div>
-        <div class="wc-text">No apareces en el mapa. No recibes reseñas. Eres invisible para los que buscan "cerca de mí".</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-title">Sin contacto rápido</div>
-        <div class="wc-text">Si un cliente no puede llamarte, enviarte un texto o escribir en 2 segundos, simplemente se va.</div>
+
+      <div class="hero__trust reveal reveal--delay-4">
+        <div class="trust__item">
+          <span class="trust__num" data-count="50">0</span><span class="trust__plus">+</span>
+          <span class="trust__label">Projects Delivered</span>
+        </div>
+        <div class="trust__divider"></div>
+        <div class="trust__item">
+          <span class="trust__num" data-count="100">0</span><span class="trust__plus">%</span>
+          <span class="trust__label">Client Satisfaction</span>
+        </div>
+        <div class="trust__divider"></div>
+        <div class="trust__item">
+          <span class="trust__num" data-count="3">0</span><span class="trust__plus">x</span>
+          <span class="trust__label">Avg. Traffic Growth</span>
+        </div>
       </div>
     </div>
-  </div>
+
+    <div class="hero__visual reveal reveal--delay-2">
+      <div class="mockup">
+        <div class="mockup__bar">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="mockup__screen">
+          <div class="mockup__line mockup__line--title"></div>
+          <div class="mockup__line mockup__line--sub"></div>
+          <div class="mockup__btn-row">
+            <div class="mockup__btn-sim"></div>
+            <div class="mockup__btn-sim mockup__btn-sim--ghost"></div>
+          </div>
+          <div class="mockup__card-row">
+            <div class="mockup__card"></div>
+            <div class="mockup__card"></div>
+            <div class="mockup__card"></div>
+          </div>
+          <div class="mockup__line mockup__line--short"></div>
+          <div class="mockup__line mockup__line--short mockup__line--w60"></div>
+        </div>
+        <div class="mockup__tag mockup__tag--1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#00e67a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          SEO Optimized
+        </div>
+        <div class="mockup__tag mockup__tag--2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#f5a623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Lightning Fast
+        </div>
+        <div class="mockup__tag mockup__tag--3">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" stroke="#4fc3f7" stroke-width="2"/><line x1="12" y1="18" x2="12" y2="18" stroke="#4fc3f7" stroke-width="2.5" stroke-linecap="round"/></svg>
+          Mobile-First
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT STRIP -->
+  <section class="about-strip" id="about">
+    <div class="container">
+      <div class="about-strip__inner">
+        <div class="about-strip__text reveal">
+          <p class="overline">Who I Am</p>
+          <h2>Not a freelancer.<br><span>A partner in your growth.</span></h2>
+          <p class="body-text">
+            I'm a Software Engineer with a degree in Software Development & Management. 
+            I've spent years watching businesses lose money because their digital presence 
+            didn't match their real value. That's the problem I fix.
+          </p>
+          <p class="body-text">
+            Based in Mexico, serving the <strong>US market</strong> — which means 
+            you get American-quality work at a fraction of agency cost.
+          </p>
+          <a href="#contact" class="btn btn--primary">Work With Me</a>
+        </div>
+        <div class="about-strip__cards reveal reveal--delay-1">
+          <div class="value-card">
+            <div class="value-card__icon">🎯</div>
+            <h3>Results-First</h3>
+            <p>Every pixel has a purpose. I design for conversions, not just aesthetics.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-card__icon">⚡</div>
+            <h3>Fast Delivery</h3>
+            <p>Landing pages in 3–5 days. Full projects in 2–4 weeks. Deadlines respected.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-card__icon">🔒</div>
+            <h3>You Own It All</h3>
+            <p>Full code ownership. No lock-in. No hidden fees. Your site, your rules.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-card__icon">🌐</div>
+            <h3>US Market Ready</h3>
+            <p>Built for American audiences — copy, UX, speed, and SEO tuned for US traffic.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="overline">What I Do</p>
+        <h2>I sell you <span>digital presence</span>,<br>not just a website.</h2>
+        <p class="section-sub">The difference between a website and a digital presence is the difference between existing and winning.</p>
+      </div>
+
+      <div class="services__grid">
+        <div class="service-card reveal">
+          <div class="service-card__number">01</div>
+          <h3>Landing Pages</h3>
+          <p>High-converting single pages built to turn visitors into customers. Perfect for campaigns, products, and local services.</p>
+          <ul class="service-card__list">
+            <li>Compelling copywriting structure</li>
+            <li>WhatsApp & social integration</li>
+            <li>SEO fundamentals built-in</li>
+          </ul>
+        </div>
+        <div class="service-card reveal reveal--delay-1">
+          <div class="service-card__number">02</div>
+          <h3>Business Websites</h3>
+          <p>Multi-section sites that establish authority, build trust, and generate consistent leads for serious businesses.</p>
+          <ul class="service-card__list">
+            <li>3–6 professional sections</li>
+            <li>Functional contact forms</li>
+            <li>Speed & performance optimized</li>
+          </ul>
+        </div>
+        <div class="service-card reveal reveal--delay-2">
+          <div class="service-card__number">03</div>
+          <h3>Full-Stack Web Apps</h3>
+          <p>Complete solutions with databases, user authentication, APIs and custom dashboards for businesses ready to scale.</p>
+          <ul class="service-card__list">
+            <li>Node.js / PHP backends</li>
+            <li>CRM & lead management</li>
+            <li>Secure authentication systems</li>
+          </ul>
+        </div>
+        <div class="service-card service-card--accent reveal reveal--delay-3">
+          <div class="service-card__number">04</div>
+          <h3>Digital Strategy</h3>
+          <p>Not sure what you need? I audit your current presence and create a roadmap to digital dominance. Then I execute it.</p>
+          <ul class="service-card__list">
+            <li>Competitor analysis</li>
+            <li>SEO & content strategy</li>
+            <li>Hosting & tech stack guidance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- PACKAGES -->
-  <div class="packages-section">
-    <div class="section-label">Soluciones</div>
-    <div class="section-title">Elige el plan que necesitas</div>
-
-    <div class="pkg-grid">
-
-      <!-- STARTER -->
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div class="pkg-name">Starter</div>
-          <div class="pkg-ideal">Para negocios que están comenzando y necesitan verse profesionales desde el primer día.</div>
-        </div>
-        <div class="pkg-price-block">
-          <div class="pkg-price">$299 <span>setup</span></div>
-        </div>
-        <div class="pkg-body">
-          <div class="pkg-item">Página web de 1 sección (landing)</div>
-          <div class="pkg-item">Diseño mobile-first</div>
-          <div class="pkg-item">Botón de llamada integrado</div>
-          <div class="pkg-item">Formulario de contacto básico</div>
-          <div class="pkg-item">Integración con Google Maps</div>
-          <div class="pkg-item">Dominio + hosting primer mes</div>
-        </div>
-        <div class="pkg-footer"><button class="pkg-btn">Cotizar →</button></div>
+  <section class="packages" id="packages">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="overline">Transparent Pricing</p>
+        <h2>Pick your <span>growth level</span>.</h2>
+        <p class="section-sub">Every package is a complete solution. No upsells mid-project. No surprises.</p>
       </div>
 
-      <!-- GROWTH (featured) -->
-      <div class="pkg-card featured">
-        <div class="pkg-head">
-          <div class="pkg-badge-pop">Más popular</div>
-          <div class="pkg-name">Growth</div>
-          <div class="pkg-ideal">El paquete completo para negocios listos para crecer y captar más clientes locales.</div>
+      <div class="packages__grid">
+
+        <div class="pkg-card reveal">
+          <div class="pkg-card__badge">Starter</div>
+          <div class="pkg-card__price">
+            <span class="pkg-card__from">from</span>
+            <span class="pkg-card__amount">$120</span>
+            <span class="pkg-card__period">USD</span>
+          </div>
+          <p class="pkg-card__desc">Perfect for freelancers, local services, and solopreneurs who need a professional first step online.</p>
+          <ul class="pkg-card__features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 1 Landing Page</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Mobile Responsive Design</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> WhatsApp / Instagram CTA</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Contact Form (no backend)</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Basic SEO Setup</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Delivered in 3–5 days</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline pkg-card__btn">Get Started</a>
         </div>
-        <div class="pkg-price-block">
-          <div class="pkg-price">$599 <span>setup</span></div>
+
+        <div class="pkg-card pkg-card--popular reveal reveal--delay-1">
+          <div class="pkg-card__popular-label">Most Popular</div>
+          <div class="pkg-card__badge">Professional</div>
+          <div class="pkg-card__price">
+            <span class="pkg-card__from">from</span>
+            <span class="pkg-card__amount">$300</span>
+            <span class="pkg-card__period">USD</span>
+          </div>
+          <p class="pkg-card__desc">For established businesses that want to look credible, rank on Google, and convert real leads.</p>
+          <ul class="pkg-card__features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 3–6 Page Sections</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Functional Email Forms</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Social Media Integration</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Scroll Animations</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Speed Optimization</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Domain + Hosting Setup</li>
+          </ul>
+          <a href="#contact" class="btn btn--primary pkg-card__btn">Get Started</a>
         </div>
-        <div class="pkg-body">
-          <div class="pkg-item">Sitio web 3–5 páginas profesional</div>
-          <div class="pkg-item">Logotipo + paleta de colores</div>
-          <div class="pkg-item">Integración Google Business Profile</div>
-          <div class="pkg-item">Botón de llamada y SMS/texto</div>
-          <div class="pkg-item">Formulario de contacto avanzado</div>
-          <div class="pkg-item">Sección de reseñas y testimonios</div>
-          <div class="pkg-item">SEO básico local</div>
-          <div class="pkg-item">Optimización mobile-first</div>
+
+        <div class="pkg-card reveal reveal--delay-2">
+          <div class="pkg-card__badge">Business</div>
+          <div class="pkg-card__price">
+            <span class="pkg-card__from">from</span>
+            <span class="pkg-card__amount">$700</span>
+            <span class="pkg-card__period">USD</span>
+          </div>
+          <p class="pkg-card__desc">Full digital infrastructure. Backend, database, lead management — built to scale with your business.</p>
+          <ul class="pkg-card__features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Everything in Professional</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Node.js / PHP Backend</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Lead & Contact Database</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Simple Admin Panel</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> CRM Integration</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Security & VPS Setup</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline pkg-card__btn">Get Started</a>
         </div>
-        <div class="pkg-footer"><button class="pkg-btn">Cotizar →</button></div>
+
+        <div class="pkg-card pkg-card--premium reveal reveal--delay-3">
+          <div class="pkg-card__badge">Premium</div>
+          <div class="pkg-card__price">
+            <span class="pkg-card__from">from</span>
+            <span class="pkg-card__amount">$1,500</span>
+            <span class="pkg-card__period">USD</span>
+          </div>
+          <p class="pkg-card__desc">Agency-level execution. Custom design, full-stack development, and long-term partnership for companies that want to dominate.</p>
+          <ul class="pkg-card__features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Custom UI/UX Design</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Full-Stack Development</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> User Authentication & API</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Professional Deployment</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Monthly Maintenance</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Priority Support</li>
+          </ul>
+          <a href="#contact" class="btn btn--gold pkg-card__btn">Let's Talk</a>
+        </div>
+
       </div>
 
-      <!-- PRO -->
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div class="pkg-name">Pro</div>
-          <div class="pkg-ideal">Para negocios establecidos que quieren captar más clientes y verse sólidos frente a la competencia.</div>
+      <div class="extras reveal">
+        <p class="extras__label">Add-ons available:</p>
+        <div class="extras__pills">
+          <span>🌐 Domain Registration — $15–30/yr</span>
+          <span>🖥️ Hosting Setup — $50–150/yr</span>
+          <span>🔧 Monthly Maintenance — from $20/mo</span>
+          <span>✏️ Extra Changes — $25–50/hr</span>
         </div>
-        <div class="pkg-price-block">
-          <div class="pkg-price">$999 <span>setup</span></div>
-        </div>
-        <div class="pkg-body">
-          <div class="pkg-item">Todo lo del plan Growth</div>
-          <div class="pkg-item">Hasta 8 páginas personalizadas</div>
-          <div class="pkg-item">Imagen de marca completa</div>
-          <div class="pkg-item">Galería / portafolio de servicios</div>
-          <div class="pkg-item">Configuración WhatsApp Business</div>
-          <div class="pkg-item">Chat widget en sitio web</div>
-          <div class="pkg-item">Sección de preguntas frecuentes</div>
-          <div class="pkg-item">Velocidad y performance avanzada</div>
-        </div>
-        <div class="pkg-footer"><button class="pkg-btn">Cotizar →</button></div>
-      </div>
-
-      <!-- MONTHLY CARE -->
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div class="pkg-name">Monthly Care</div>
-          <div class="pkg-ideal">Mantenimiento y soporte mensual. Tu sitio siempre actualizado, seguro y funcionando.</div>
-        </div>
-        <div class="pkg-price-block">
-          <div class="pkg-price">$79 <span>/ mes</span></div>
-        </div>
-        <div class="pkg-body">
-          <div class="pkg-item">Actualizaciones de contenido</div>
-          <div class="pkg-item">Cambios menores (textos, fotos)</div>
-          <div class="pkg-item">Soporte prioritario</div>
-          <div class="pkg-item">Backups automáticos</div>
-          <div class="pkg-item">Renovación de hosting + dominio</div>
-          <div class="pkg-item">Reporte mensual de visitas</div>
-        </div>
-        <div class="pkg-footer"><button class="pkg-btn">Cotizar →</button></div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- SERVICES LIST -->
-  <div class="services-section">
-    <div class="section-label">Qué ofrecemos</div>
-    <div class="section-title">Servicios disponibles</div>
-    <div class="services-grid">
-      <div class="svc-item"><span class="svc-dot"></span>Páginas web profesionales</div>
-      <div class="svc-item"><span class="svc-dot"></span>Diseño de logotipos</div>
-      <div class="svc-item"><span class="svc-dot"></span>Imagen de marca completa</div>
-      <div class="svc-item"><span class="svc-dot"></span>Google Business Profile</div>
-      <div class="svc-item"><span class="svc-dot"></span>Botón de llamada y SMS/texto</div>
-      <div class="svc-item"><span class="svc-dot"></span>Formularios de contacto</div>
-      <div class="svc-item"><span class="svc-dot"></span>Optimización mobile-first</div>
-      <div class="svc-item"><span class="svc-dot"></span>WhatsApp Business (opcional)</div>
-      <div class="svc-item"><span class="svc-dot"></span>Mantenimiento mensual</div>
-    </div>
-  </div>
-
-  <!-- GUARANTEE -->
-  <div class="guarantee">
-    <div class="g-icon">🛡️</div>
-    <div>
-      <div class="g-title">Tu inversión, protegida</div>
-      <div class="g-text">Si no quedas satisfecho con el diseño inicial, hacemos revisiones sin costo adicional hasta que sea exactamente lo que necesitas. Trabajamos contigo, no para una plantilla genérica. Entregamos resultados reales, no promesas vacías.</div>
-    </div>
-  </div>
-
-  <!-- CTA FINAL -->
-  <div class="cta-final">
-    <h2>¿Listo para que te encuentren?</h2>
-    <p>Agenda una llamada gratuita de 15 minutos. Sin compromiso.<br>Te decimos exactamente qué necesita tu negocio.</p>
-    <div class="cta-row">
-      <button class="btn-primary">📞 Agendar llamada gratis</button>
-      <button class="btn-secondary">Pedir cotización por texto</button>
-    </div>
-  </div>
-
-  <!-- AD VERSION -->
-  <div class="ad-section">
-    <div class="ad-label">Versión para anuncio en redes sociales</div>
-    <div class="ad-box">
-      <div class="ad-text">
-        <strong>¿Tu negocio no aparece en Google? Eso te está costando clientes.</strong><br><br>
-        Creamos sitios web profesionales, logotipos y presencia en Google para pequeños negocios en EE. UU. — desde $299.<br><br>
-        ✅ Sitio web listo en días<br>
-        ✅ Botón de llamada y texto/SMS incluido<br>
-        ✅ Integración con Google Business<br><br>
-        <strong>Agenda tu llamada gratis hoy. 15 minutos. Sin compromiso.</strong>
       </div>
     </div>
-  </div>
+  </section>
 
-</div>
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="overline">How It Works</p>
+        <h2>From <span>idea to live</span><br>in days, not months.</h2>
+      </div>
+      <div class="process__steps">
+        <div class="process__step reveal">
+          <div class="process__step-num">01</div>
+          <div class="process__step-content">
+            <h3>Free Discovery Call</h3>
+            <p>We talk about your business, goals, and what success looks like. 30 minutes that save months of wrong direction.</p>
+          </div>
+        </div>
+        <div class="process__connector"></div>
+        <div class="process__step reveal reveal--delay-1">
+          <div class="process__step-num">02</div>
+          <div class="process__step-content">
+            <h3>Proposal & Strategy</h3>
+            <p>I send a clear proposal with timeline, tech stack, and exact deliverables. No vague estimates.</p>
+          </div>
+        </div>
+        <div class="process__connector"></div>
+        <div class="process__step reveal reveal--delay-2">
+          <div class="process__step-num">03</div>
+          <div class="process__step-content">
+            <h3>Build & Review</h3>
+            <p>You see progress, give feedback, and we iterate until it's exactly right. You're always in the loop.</p>
+          </div>
+        </div>
+        <div class="process__connector"></div>
+        <div class="process__step reveal reveal--delay-3">
+          <div class="process__step-num">04</div>
+          <div class="process__step-content">
+            <h3>Launch & Grow</h3>
+            <p>Your site goes live, SEO is set, and I don't disappear. I'm your partner for what comes next.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner reveal">
+    <div class="cta-banner__bg"></div>
+    <div class="container">
+      <div class="cta-banner__inner">
+        <h2>Your competitors are<br><span>already online.</span></h2>
+        <p>Every day without a professional digital presence is revenue left on the table. Let's change that — starting this week.</p>
+        <a href="#contact" class="btn btn--white">
+          Start For Free
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__info reveal">
+          <p class="overline">Let's Build Something</p>
+          <h2>Ready to<br><span>dominate your market?</span></h2>
+          <p class="body-text">Tell me about your business. I'll respond within 24 hours with a plan — not a pitch.</p>
+
+          <div class="contact__channels">
+            <a href="https://wa.me/YOUR_NUMBER" class="channel-link" target="_blank" rel="noopener">
+              <div class="channel-link__icon channel-link__icon--wa">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <span>WhatsApp Me</span>
+            </a>
+            <a href="mailto:your@email.com" class="channel-link">
+              <div class="channel-link__icon channel-link__icon--email">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span>your@email.com</span>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact__form reveal reveal--delay-1" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@business.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="business">Business / Industry</label>
+            <input type="text" id="business" name="business" placeholder="e.g. HVAC company in Texas" />
+          </div>
+          <div class="form-group">
+            <label for="package">I'm interested in...</label>
+            <select id="package" name="package">
+              <option value="">Select a package</option>
+              <option value="starter">Starter — Landing Page ($120+)</option>
+              <option value="professional">Professional — Business Site ($300+)</option>
+              <option value="business">Business — With Backend ($700+)</option>
+              <option value="premium">Premium — Full-Stack ($1,500+)</option>
+              <option value="unsure">Not sure — Let's talk</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell me about your project</label>
+            <textarea id="message" name="message" placeholder="What does your business do? What's your main goal?" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">
+            Send My Project Details
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form__note">I reply within 24 hours. No spam, ever.</p>
+          <div class="form__success" id="formSuccess">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="#00e67a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke="#00e67a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Message sent! I'll be in touch within 24 hours.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__logo">DA<span>.</span></div>
+          <p>Damian Aguilera<br>Software Engineer & Digital Strategist</p>
+        </div>
+        <div class="footer__links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#packages">Packages</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 Damian Aguilera. All rights reserved.</p>
+        <p>Built with ☕ and a relentless drive to deliver results.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
