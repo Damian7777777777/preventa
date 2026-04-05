@@ -21,8 +21,8 @@
     <ul class="nav__links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Work</a></li>
       <li><a href="#packages">Packages</a></li>
-      <li><a href="#process">Process</a></li>
       <li><a href="#contact" class="nav__cta">Let's Talk</a></li>
     </ul>
   </nav>
@@ -51,8 +51,8 @@
       </p>
 
       <div class="hero__actions reveal reveal--delay-3">
-        <a href="#packages" class="btn btn--primary">
-          See Packages
+        <a href="#portfolio" class="btn btn--primary">
+          See My Work
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a href="#contact" class="btn btn--ghost">Book a Free Call</a>
@@ -125,7 +125,7 @@
             didn't match their real value. That's the problem I fix.
           </p>
           <p class="body-text">
-           Serving clients across the United States with agency-level execution <strong></strong> — which means 
+            Serving clients across the United States with agency-level execution — which means 
             you get American-quality work at a fraction of agency cost.
           </p>
           <a href="#contact" class="btn btn--primary">Work With Me</a>
@@ -206,6 +206,200 @@
             <li>Hosting & tech stack guidance</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PORTFOLIO
+  ═══════════════════════════════════════ -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="overline">Real Work, Real Results</p>
+        <h2>Projects I've <span>built & shipped</span>.</h2>
+        <p class="section-sub">Every project below is live and built from scratch — no templates, no shortcuts.</p>
+      </div>
+
+      <!-- FILTER TABS -->
+      <div class="portfolio__filters reveal">
+        <button class="pf-btn pf-btn--active" data-filter="all">All Projects</button>
+        <button class="pf-btn" data-filter="live">🌐 Live Sites</button>
+        <button class="pf-btn" data-filter="github">⚙️ GitHub</button>
+      </div>
+
+      <div class="portfolio__grid" id="portfolioGrid">
+
+        <!-- 1 — Sabor Mexicano -->
+        <div class="pj-card reveal" data-type="live">
+          <div class="pj-card__preview">
+            <iframe
+              src="https://damian7777777777.github.io/Sabor-Mexicano/"
+              title="Sabor Mexicano preview"
+              loading="lazy"
+              tabindex="-1"
+              scrolling="no">
+            </iframe>
+            <div class="pj-card__overlay">
+              <a href="https://damian7777777777.github.io/Sabor-Mexicano/" target="_blank" rel="noopener" class="pj-card__view-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                View Live Site
+              </a>
+            </div>
+          </div>
+          <div class="pj-card__info">
+            <div class="pj-card__meta">
+              <span class="pj-card__tag pj-card__tag--live">Live</span>
+              <span class="pj-card__tag">Restaurant</span>
+              <span class="pj-card__tag">Landing Page</span>
+            </div>
+            <h3>Sabor Mexicano</h3>
+            <p>A vibrant restaurant landing page with menu, atmosphere, and online presence designed to drive foot traffic and reservations.</p>
+            <a href="https://damian7777777777.github.io/Sabor-Mexicano/" target="_blank" rel="noopener" class="pj-card__link">
+              Visit site
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2 — Barber -->
+        <div class="pj-card reveal reveal--delay-1" data-type="live">
+          <div class="pj-card__preview">
+            <iframe
+              src="https://damian7777777777.github.io/Barber/"
+              title="Barber Shop preview"
+              loading="lazy"
+              tabindex="-1"
+              scrolling="no">
+            </iframe>
+            <div class="pj-card__overlay">
+              <a href="https://damian7777777777.github.io/Barber/" target="_blank" rel="noopener" class="pj-card__view-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                View Live Site
+              </a>
+            </div>
+          </div>
+          <div class="pj-card__info">
+            <div class="pj-card__meta">
+              <span class="pj-card__tag pj-card__tag--live">Live</span>
+              <span class="pj-card__tag">Barbershop</span>
+              <span class="pj-card__tag">Local Business</span>
+            </div>
+            <h3>Barber Shop</h3>
+            <p>A bold, modern site for a local barbershop — built to attract walk-ins, showcase services, and establish street-level credibility online.</p>
+            <a href="https://damian7777777777.github.io/Barber/" target="_blank" rel="noopener" class="pj-card__link">
+              Visit site
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3 — Demo Landing Page -->
+        <div class="pj-card reveal reveal--delay-2" data-type="live">
+          <div class="pj-card__preview">
+            <iframe
+              src="https://damian7777777777.github.io/demo-landing-page/"
+              title="Demo Landing Page preview"
+              loading="lazy"
+              tabindex="-1"
+              scrolling="no">
+            </iframe>
+            <div class="pj-card__overlay">
+              <a href="https://damian7777777777.github.io/demo-landing-page/" target="_blank" rel="noopener" class="pj-card__view-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                View Live Site
+              </a>
+            </div>
+          </div>
+          <div class="pj-card__info">
+            <div class="pj-card__meta">
+              <span class="pj-card__tag pj-card__tag--live">Live</span>
+              <span class="pj-card__tag">Demo</span>
+              <span class="pj-card__tag">Conversion Page</span>
+            </div>
+            <h3>Demo Landing Page</h3>
+            <p>A high-conversion landing page template showcasing modern design patterns, persuasive copy structure, and mobile-first performance.</p>
+            <a href="https://damian7777777777.github.io/demo-landing-page/" target="_blank" rel="noopener" class="pj-card__link">
+              Visit site
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4 — Pet Shop -->
+        <div class="pj-card reveal" data-type="github">
+          <div class="pj-card__preview pj-card__preview--gh">
+            <div class="pj-card__gh-screen">
+              <div class="pj-card__gh-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </div>
+              <p class="pj-card__gh-name">petShop</p>
+              <p class="pj-card__gh-sub">View source on GitHub</p>
+            </div>
+            <div class="pj-card__overlay">
+              <a href="https://github.com/Damian7777777777/petShop/" target="_blank" rel="noopener" class="pj-card__view-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                View on GitHub
+              </a>
+            </div>
+          </div>
+          <div class="pj-card__info">
+            <div class="pj-card__meta">
+              <span class="pj-card__tag pj-card__tag--gh">GitHub</span>
+              <span class="pj-card__tag">E-commerce</span>
+              <span class="pj-card__tag">Pet Industry</span>
+            </div>
+            <h3>Pet Shop</h3>
+            <p>A full e-commerce concept for a pet shop — product catalog, shopping experience, and UI designed for pet owners ready to buy.</p>
+            <a href="https://github.com/Damian7777777777/petShop/" target="_blank" rel="noopener" class="pj-card__link">
+              View source
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 5 — Demo Menú Digital -->
+        <div class="pj-card reveal reveal--delay-1" data-type="github">
+          <div class="pj-card__preview pj-card__preview--gh">
+            <div class="pj-card__gh-screen">
+              <div class="pj-card__gh-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </div>
+              <p class="pj-card__gh-name">demo-menuDigital</p>
+              <p class="pj-card__gh-sub">View source on GitHub</p>
+            </div>
+            <div class="pj-card__overlay">
+              <a href="https://github.com/Damian7777777777/demo-menuDigital/" target="_blank" rel="noopener" class="pj-card__view-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                View on GitHub
+              </a>
+            </div>
+          </div>
+          <div class="pj-card__info">
+            <div class="pj-card__meta">
+              <span class="pj-card__tag pj-card__tag--gh">GitHub</span>
+              <span class="pj-card__tag">Restaurant</span>
+              <span class="pj-card__tag">Digital Menu</span>
+            </div>
+            <h3>Digital Menu</h3>
+            <p>A QR-ready digital menu solution for restaurants — no printing costs, instant updates, and a premium dining experience on any device.</p>
+            <a href="https://github.com/Damian7777777777/demo-menuDigital/" target="_blank" rel="noopener" class="pj-card__link">
+              View source
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- CTA card -->
+        <div class="pj-card pj-card--cta reveal reveal--delay-2" data-type="all">
+          <div class="pj-card__cta-inner">
+            <div class="pj-card__cta-icon">🚀</div>
+            <h3>Your project<br>could be next.</h3>
+            <p>Every business here started with one conversation. Let's have yours.</p>
+            <a href="#contact" class="btn btn--primary">Start a Project</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -415,9 +609,9 @@
             <select id="package" name="package">
               <option value="">Select a package</option>
               <option value="starter">Starter — Landing Page ($190+)</option>
-              <option value="professional">Professional — Business Site ($390+)</option>
-              <option value="business">Business — With Backend ($690+)</option>
-              <option value="premium">Premium — Full-Stack ($1,490+)</option>
+              <option value="professional">Professional — Business Site ($290+)</option>
+              <option value="business">Business — With Backend ($590+)</option>
+              <option value="premium">Premium — Full-Stack ($1,199+)</option>
               <option value="unsure">Not sure — Let's talk</option>
             </select>
           </div>
@@ -450,12 +644,17 @@
         <div class="footer__links">
           <a href="#about">About</a>
           <a href="#services">Services</a>
+          <a href="#portfolio">Work</a>
           <a href="#packages">Packages</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
       <div class="footer__bottom">
         <p>© 2025 Damian Aguilera. All rights reserved.</p>
+        <a href="https://github.com/Damian7777777777" target="_blank" rel="noopener" class="footer__gh">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
       </div>
     </div>
   </footer>
