@@ -19,11 +19,11 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav__links" id="navLinks">
-      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#about"    data-i18n="nav.about">About</a></li>
       <li><a href="#services" data-i18n="nav.services">Services</a></li>
       <li><a href="#portfolio" data-i18n="nav.work">Work</a></li>
       <li><a href="#packages" data-i18n="nav.packages">Packages</a></li>
-      <li><a href="#contact" class="nav__cta" data-i18n="nav.cta">Let's Talk</a></li>
+      <li><a href="#contact"  data-i18n="nav.cta" class="nav__cta">Let's Talk</a></li>
     </ul>
     <button class="lang-toggle" id="langToggle" aria-label="Switch language">
       <span class="lang-toggle__option lang-toggle__option--active" data-lang="en">EN</span>
@@ -39,23 +39,27 @@
     <div class="hero__orb hero__orb--2"></div>
 
     <div class="hero__content">
-      <div class="hero__badge reveal">
+      <div class="hero__badge anim">
         <span class="badge__dot"></span>
         <span data-i18n="hero.badge">Available for new projects</span>
       </div>
 
-      <h1 class="hero__headline reveal reveal--delay-1">
+      <h1 class="hero__headline anim anim--d1">
         <span data-i18n="hero.h1a">Your Business</span><br>
         <span data-i18n="hero.h1b">Deserves a</span><br>
-        <span class="hero__highlight"><span data-i18n="hero.h1c">Digital Presence</span><br><span data-i18n="hero.h1d">That Wins.</span></span>
+        <span class="hero__highlight">
+          <span data-i18n="hero.h1c">Digital Presence</span><br>
+          <span data-i18n="hero.h1d">That Wins.</span>
+        </span>
       </h1>
 
-      <p class="hero__sub reveal reveal--delay-2">
-        I'm <strong>Damian Aguilera</strong> — <span data-i18n="hero.role">Software Engineer & Digital Strategist</span>.<br>
+      <p class="hero__sub anim anim--d2">
+        I'm <strong>Damian Aguilera</strong> —
+        <span data-i18n="hero.role">Software Engineer &amp; Digital Strategist</span>.<br>
         <span data-i18n="hero.sub">I don't just build websites. I build <em>growth engines</em> for US businesses.</span>
       </p>
 
-      <div class="hero__actions reveal reveal--delay-3">
+      <div class="hero__actions anim anim--d3">
         <a href="#portfolio" class="btn btn--primary">
           <span data-i18n="hero.cta1">See My Work</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -63,29 +67,27 @@
         <a href="#contact" class="btn btn--ghost" data-i18n="hero.cta2">Book a Free Call</a>
       </div>
 
-      <div class="hero__trust reveal reveal--delay-4">
+      <div class="hero__trust anim anim--d4">
         <div class="trust__item">
           <span class="trust__num" data-count="50">0</span><span class="trust__plus">+</span>
-          <span class="trust__label"><span data-i18n="trust.projects">Projects Delivered</span></span>
+          <span class="trust__label" data-i18n="trust.projects">Projects Delivered</span>
         </div>
         <div class="trust__divider"></div>
         <div class="trust__item">
           <span class="trust__num" data-count="100">0</span><span class="trust__plus">%</span>
-          <span class="trust__label"><span data-i18n="trust.satisfaction">Client Satisfaction</span></span>
+          <span class="trust__label" data-i18n="trust.satisfaction">Client Satisfaction</span>
         </div>
         <div class="trust__divider"></div>
         <div class="trust__item">
           <span class="trust__num" data-count="3">0</span><span class="trust__plus">x</span>
-          <span class="trust__label"><span data-i18n="trust.growth">Avg. Traffic Growth</span></span>
+          <span class="trust__label" data-i18n="trust.growth">Avg. Traffic Growth</span>
         </div>
       </div>
     </div>
 
-    <div class="hero__visual reveal reveal--delay-2">
+    <div class="hero__visual anim anim--d2">
       <div class="mockup">
-        <div class="mockup__bar">
-          <span></span><span></span><span></span>
-        </div>
+        <div class="mockup__bar"><span></span><span></span><span></span></div>
         <div class="mockup__screen">
           <div class="mockup__line mockup__line--title"></div>
           <div class="mockup__line mockup__line--sub"></div>
@@ -110,29 +112,28 @@
           Lightning Fast
         </div>
         <div class="mockup__tag mockup__tag--3">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" stroke="#4fc3f7" stroke-width="2"/><line x1="12" y1="18" x2="12" y2="18" stroke="#4fc3f7" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" stroke="#4fc3f7" stroke-width="2"/></svg>
           Mobile-First
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT STRIP -->
+  <!-- ABOUT -->
   <section class="about-strip" id="about">
     <div class="container">
       <div class="about-strip__inner">
-        <div class="about-strip__text reveal">
+        <div class="about-strip__text scroll-anim">
           <p class="overline" data-i18n="about.overline">Who I Am</p>
-          <h2><span data-i18n="about.h2a">Not a freelancer.</span><br><span data-i18n="about.h2b">A partner in your growth.</span></h2>
-          <p class="body-text">
-            <span data-i18n="about.p1">I'm a Software Engineer with a degree in Software Development & Management. I've spent years watching businesses lose money because their digital presence didn't match their real value. That's the problem I fix.</span>
-          </p>
-          <p class="body-text">
-            <span data-i18n="about.p2">Serving clients across the United States with agency-level execution — which means you get American-quality work at a fraction of agency cost.</span>
-          </p>
+          <h2>
+            <span data-i18n="about.h2a">Not a freelancer.</span><br>
+            <span data-i18n="about.h2b">A partner in your growth.</span>
+          </h2>
+          <p class="body-text" data-i18n="about.p1">I'm a Software Engineer with a degree in Software Development &amp; Management. I've spent years watching businesses lose money because their digital presence didn't match their real value. That's the problem I fix.</p>
+          <p class="body-text" data-i18n="about.p2">Serving clients across the United States with agency-level execution — which means you get American-quality work at a fraction of agency cost.</p>
           <a href="#contact" class="btn btn--primary" data-i18n="about.btn">Work With Me</a>
         </div>
-        <div class="about-strip__cards reveal reveal--delay-1">
+        <div class="about-strip__cards scroll-anim">
           <div class="value-card">
             <div class="value-card__icon">🎯</div>
             <h3 data-i18n="vc.r.title">Results-First</h3>
@@ -161,154 +162,129 @@
   <!-- SERVICES -->
   <section class="services" id="services">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header scroll-anim">
         <p class="overline" data-i18n="srv.overline">What I Do</p>
         <h2>I sell you <span data-i18n="srv.h2a">digital presence</span>,<br><span data-i18n="srv.h2b">not just a website.</span></h2>
-        <p class="section-sub"><span data-i18n="srv.sub">The difference between a website and a digital presence is the difference between existing and winning.</span></p>
+        <p class="section-sub" data-i18n="srv.sub">The difference between a website and a digital presence is the difference between existing and winning.</p>
       </div>
-
       <div class="services__grid">
-        <div class="service-card reveal">
+        <div class="service-card scroll-anim">
           <div class="service-card__number">01</div>
-          <h3>Landing Pages</h3>
-          <p>High-converting single pages built to turn visitors into customers. Perfect for campaigns, products, and local services.</p>
+          <h3 data-i18n="s1.title">Landing Pages</h3>
+          <p data-i18n="s1.desc">High-converting single pages built to turn visitors into customers. Perfect for campaigns, products, and local services.</p>
           <ul class="service-card__list">
-            <li>Compelling copywriting structure</li>
-            <li>WhatsApp & social integration</li>
-            <li>SEO fundamentals built-in</li>
+            <li data-i18n="s1.l1">Compelling copywriting structure</li>
+            <li data-i18n="s1.l2">WhatsApp &amp; social integration</li>
+            <li data-i18n="s1.l3">SEO fundamentals built-in</li>
           </ul>
         </div>
-        <div class="service-card reveal reveal--delay-1">
+        <div class="service-card scroll-anim">
           <div class="service-card__number">02</div>
-          <h3>Business Websites</h3>
-          <p>Multi-section sites that establish authority, build trust, and generate consistent leads for serious businesses.</p>
+          <h3 data-i18n="s2.title">Business Websites</h3>
+          <p data-i18n="s2.desc">Multi-section sites that establish authority, build trust, and generate consistent leads for serious businesses.</p>
           <ul class="service-card__list">
-            <li>3–6 professional sections</li>
-            <li>Functional contact forms</li>
-            <li>Speed & performance optimized</li>
+            <li data-i18n="s2.l1">3–6 professional sections</li>
+            <li data-i18n="s2.l2">Functional contact forms</li>
+            <li data-i18n="s2.l3">Speed &amp; performance optimized</li>
           </ul>
         </div>
-        <div class="service-card reveal reveal--delay-2">
+        <div class="service-card scroll-anim">
           <div class="service-card__number">03</div>
-          <h3>Full-Stack Web Apps</h3>
-          <p>Complete solutions with databases, user authentication, APIs and custom dashboards for businesses ready to scale.</p>
+          <h3 data-i18n="s3.title">Full-Stack Web Apps</h3>
+          <p data-i18n="s3.desc">Complete solutions with databases, user authentication, APIs and custom dashboards for businesses ready to scale.</p>
           <ul class="service-card__list">
-            <li>Node.js / PHP backends</li>
-            <li>CRM & lead management</li>
-            <li>Secure authentication systems</li>
+            <li data-i18n="s3.l1">Node.js / PHP backends</li>
+            <li data-i18n="s3.l2">CRM &amp; lead management</li>
+            <li data-i18n="s3.l3">Secure authentication systems</li>
           </ul>
         </div>
-        <div class="service-card service-card--accent reveal reveal--delay-3">
+        <div class="service-card service-card--accent scroll-anim">
           <div class="service-card__number">04</div>
-          <h3>Digital Strategy</h3>
-          <p>Not sure what you need? I audit your current presence and create a roadmap to digital dominance. Then I execute it.</p>
+          <h3 data-i18n="s4.title">Digital Strategy</h3>
+          <p data-i18n="s4.desc">Not sure what you need? I audit your current presence and create a roadmap to digital dominance. Then I execute it.</p>
           <ul class="service-card__list">
-            <li>Competitor analysis</li>
-            <li>SEO & content strategy</li>
-            <li>Hosting & tech stack guidance</li>
+            <li data-i18n="s4.l1">Competitor analysis</li>
+            <li data-i18n="s4.l2">SEO &amp; content strategy</li>
+            <li data-i18n="s4.l3">Hosting &amp; tech stack guidance</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════
-       PORTFOLIO
-  ═══════════════════════════════════════ -->
+  <!-- PORTFOLIO -->
   <section class="portfolio" id="portfolio">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header scroll-anim">
         <p class="overline" data-i18n="pf.overline">Real Work, Real Results</p>
-        <h2>Projects I've <span data-i18n="pf.h2">built & shipped</span>.</h2>
-        <p class="section-sub"><span data-i18n="pf.sub">Every project below is live and built from scratch — no templates, no shortcuts.</span></p>
+        <h2>Projects I've <span data-i18n="pf.h2">built &amp; shipped</span>.</h2>
+        <p class="section-sub" data-i18n="pf.sub">Every project below is live and built from scratch — no templates, no shortcuts.</p>
       </div>
 
-      <!-- FILTER TABS -->
-      <div class="portfolio__filters reveal">
-        <button class="pf-btn pf-btn--active" data-filter="all"><span data-i18n="pf.all">All Projects</span></button>
-        <button class="pf-btn" data-filter="live">🌐 <span data-i18n="pf.live">Live Sites</span></button>
+      <div class="portfolio__filters scroll-anim">
+        <button class="pf-btn pf-btn--active" data-filter="all" data-i18n="pf.all">All Projects</button>
+        <button class="pf-btn" data-filter="live" data-i18n="pf.live">Live Sites</button>
       </div>
 
       <div class="portfolio__grid" id="portfolioGrid">
 
-        <!-- 1 — Sabor Mexicano -->
-        <div class="pj-card reveal" data-type="live">
+        <div class="pj-card scroll-anim" data-type="live">
           <div class="pj-card__preview">
-            <iframe
-              src="https://damian7777777777.github.io/Sabor-Mexicano/"
-              title="Sabor Mexicano preview"
-              loading="lazy"
-              tabindex="-1"
-              scrolling="no">
-            </iframe>
+            <iframe src="https://damian7777777777.github.io/Sabor-Mexicano/" title="Sabor Mexicano" loading="lazy" tabindex="-1" scrolling="no"></iframe>
             <div class="pj-card__overlay">
               <a href="https://damian7777777777.github.io/Sabor-Mexicano/" target="_blank" rel="noopener" class="pj-card__view-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                View Live Site
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-i18n="pj.view">View Live Site</span>
               </a>
             </div>
           </div>
           <div class="pj-card__info">
             <div class="pj-card__meta">
               <span class="pj-card__tag pj-card__tag--live">Live</span>
-              <span class="pj-card__tag">Restaurant</span>
-              <span class="pj-card__tag">Landing Page</span>
+              <span class="pj-card__tag" data-i18n="pj.restaurant">Restaurant</span>
+              <span class="pj-card__tag" data-i18n="pj.landing">Landing Page</span>
             </div>
             <h3>Sabor Mexicano</h3>
-            <p>A vibrant restaurant landing page with menu, atmosphere, and online presence designed to drive foot traffic and reservations.</p>
+            <p data-i18n="p1.desc">A vibrant restaurant landing page designed to drive foot traffic and reservations.</p>
             <a href="https://damian7777777777.github.io/Sabor-Mexicano/" target="_blank" rel="noopener" class="pj-card__link">
-              Visit site
+              <span data-i18n="pj.visit">Visit site</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- 2 — Barber -->
-        <div class="pj-card reveal reveal--delay-1" data-type="live">
+        <div class="pj-card scroll-anim" data-type="live">
           <div class="pj-card__preview">
-            <iframe
-              src="https://damian7777777777.github.io/Barber/"
-              title="Barber Shop preview"
-              loading="lazy"
-              tabindex="-1"
-              scrolling="no">
-            </iframe>
+            <iframe src="https://damian7777777777.github.io/Barber/" title="Barber Shop" loading="lazy" tabindex="-1" scrolling="no"></iframe>
             <div class="pj-card__overlay">
               <a href="https://damian7777777777.github.io/Barber/" target="_blank" rel="noopener" class="pj-card__view-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                View Live Site
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-i18n="pj.view">View Live Site</span>
               </a>
             </div>
           </div>
           <div class="pj-card__info">
             <div class="pj-card__meta">
               <span class="pj-card__tag pj-card__tag--live">Live</span>
-              <span class="pj-card__tag">Barbershop</span>
-              <span class="pj-card__tag">Local Business</span>
+              <span class="pj-card__tag" data-i18n="pj.barber">Barbershop</span>
+              <span class="pj-card__tag" data-i18n="pj.local">Local Business</span>
             </div>
             <h3>Barber Shop</h3>
-            <p>A bold, modern site for a local barbershop — built to attract walk-ins, showcase services, and establish street-level credibility online.</p>
+            <p data-i18n="p2.desc">A bold, modern site for a local barbershop built to attract walk-ins and establish credibility online.</p>
             <a href="https://damian7777777777.github.io/Barber/" target="_blank" rel="noopener" class="pj-card__link">
-              Visit site
+              <span data-i18n="pj.visit">Visit site</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- 3 — Demo Landing Page -->
-        <div class="pj-card reveal reveal--delay-2" data-type="live">
+        <div class="pj-card scroll-anim" data-type="live">
           <div class="pj-card__preview">
-            <iframe
-              src="https://damian7777777777.github.io/demo-landing-page/"
-              title="Demo Landing Page preview"
-              loading="lazy"
-              tabindex="-1"
-              scrolling="no">
-            </iframe>
+            <iframe src="https://damian7777777777.github.io/demo-landing-page/" title="Demo Landing Page" loading="lazy" tabindex="-1" scrolling="no"></iframe>
             <div class="pj-card__overlay">
               <a href="https://damian7777777777.github.io/demo-landing-page/" target="_blank" rel="noopener" class="pj-card__view-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                View Live Site
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-i18n="pj.view">View Live Site</span>
               </a>
             </div>
           </div>
@@ -316,88 +292,73 @@
             <div class="pj-card__meta">
               <span class="pj-card__tag pj-card__tag--live">Live</span>
               <span class="pj-card__tag">Demo</span>
-              <span class="pj-card__tag">Conversion Page</span>
+              <span class="pj-card__tag" data-i18n="pj.conversion">Conversion Page</span>
             </div>
             <h3>Demo Landing Page</h3>
-            <p>A high-conversion landing page template showcasing modern design patterns, persuasive copy structure, and mobile-first performance.</p>
+            <p data-i18n="p3.desc">A high-conversion landing page showcasing modern design, persuasive copy structure, and mobile-first performance.</p>
             <a href="https://damian7777777777.github.io/demo-landing-page/" target="_blank" rel="noopener" class="pj-card__link">
-              Visit site
+              <span data-i18n="pj.visit">Visit site</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- 4 — Pet Shop -->
-        <div class="pj-card reveal" data-type="live">
+        <div class="pj-card scroll-anim" data-type="live">
           <div class="pj-card__preview">
-            <iframe
-              src="https://damian7777777777.github.io/petShop/"
-              title="Pet Shop preview"
-              loading="lazy"
-              tabindex="-1"
-              scrolling="no">
-            </iframe>
+            <iframe src="https://damian7777777777.github.io/petShop/" title="Pet Shop" loading="lazy" tabindex="-1" scrolling="no"></iframe>
             <div class="pj-card__overlay">
               <a href="https://damian7777777777.github.io/petShop/" target="_blank" rel="noopener" class="pj-card__view-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                View Live Site
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-i18n="pj.view">View Live Site</span>
               </a>
             </div>
           </div>
           <div class="pj-card__info">
             <div class="pj-card__meta">
               <span class="pj-card__tag pj-card__tag--live">Live</span>
-              <span class="pj-card__tag">E-commerce</span>
+              <span class="pj-card__tag" data-i18n="pj.ecom">E-commerce</span>
               <span class="pj-card__tag">Pet Industry</span>
             </div>
             <h3>Pet Shop</h3>
-            <p>A full e-commerce concept for a pet shop — product catalog, shopping experience, and UI designed for pet owners ready to buy.</p>
+            <p data-i18n="p4.desc">A full e-commerce concept — product catalog and shopping experience designed for pet owners ready to buy.</p>
             <a href="https://damian7777777777.github.io/petShop/" target="_blank" rel="noopener" class="pj-card__link">
-              Visit site
+              <span data-i18n="pj.visit">Visit site</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- 5 — Demo Menú Digital -->
-        <div class="pj-card reveal reveal--delay-1" data-type="live">
+        <div class="pj-card scroll-anim" data-type="live">
           <div class="pj-card__preview">
-            <iframe
-              src="https://damian7777777777.github.io/demo-menuDigital/"
-              title="Digital Menu preview"
-              loading="lazy"
-              tabindex="-1"
-              scrolling="no">
-            </iframe>
+            <iframe src="https://damian7777777777.github.io/demo-menuDigital/" title="Digital Menu" loading="lazy" tabindex="-1" scrolling="no"></iframe>
             <div class="pj-card__overlay">
               <a href="https://damian7777777777.github.io/demo-menuDigital/" target="_blank" rel="noopener" class="pj-card__view-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                View Live Site
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span data-i18n="pj.view">View Live Site</span>
               </a>
             </div>
           </div>
           <div class="pj-card__info">
             <div class="pj-card__meta">
               <span class="pj-card__tag pj-card__tag--live">Live</span>
-              <span class="pj-card__tag">Restaurant</span>
-              <span class="pj-card__tag">Digital Menu</span>
+              <span class="pj-card__tag" data-i18n="pj.restaurant">Restaurant</span>
+              <span class="pj-card__tag" data-i18n="pj.menu">Digital Menu</span>
             </div>
             <h3>Digital Menu</h3>
-            <p>A QR-ready digital menu solution for restaurants — no printing costs, instant updates, and a premium dining experience on any device.</p>
+            <p data-i18n="p5.desc">A QR-ready digital menu — no printing costs, instant updates, premium dining experience on any device.</p>
             <a href="https://damian7777777777.github.io/demo-menuDigital/" target="_blank" rel="noopener" class="pj-card__link">
-              Visit site
+              <span data-i18n="pj.visit">Visit site</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- CTA card -->
-        <div class="pj-card pj-card--cta reveal reveal--delay-2" data-type="all">
+        <div class="pj-card pj-card--cta scroll-anim" data-type="live">
           <div class="pj-card__cta-inner">
             <div class="pj-card__cta-icon">🚀</div>
-            <h3>Your project<br>could be next.</h3>
-            <p>Every business here started with one conversation. Let's have yours.</p>
-            <a href="#contact" class="btn btn--primary">Start a Project</a>
+            <h3 data-i18n="pj.cta.h3">Your project<br>could be next.</h3>
+            <p data-i18n="pj.cta.p">Every business here started with one conversation. Let's have yours.</p>
+            <a href="#contact" class="btn btn--primary" data-i18n="pj.cta.btn">Start a Project</a>
           </div>
         </div>
 
@@ -408,100 +369,98 @@
   <!-- PACKAGES -->
   <section class="packages" id="packages">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header scroll-anim">
         <p class="overline" data-i18n="pkg.overline">Transparent Pricing</p>
         <h2>Pick your <span data-i18n="pkg.h2">growth level</span>.</h2>
-        <p class="section-sub"><span data-i18n="pkg.sub">Every package is a complete solution. No upsells mid-project. No surprises.</span></p>
+        <p class="section-sub" data-i18n="pkg.sub">Every package is a complete solution. No upsells mid-project. No surprises.</p>
       </div>
-
       <div class="packages__grid">
 
-        <div class="pkg-card reveal">
-          <div class="pkg-card__badge">Starter</div>
+        <div class="pkg-card scroll-anim">
+          <div class="pkg-card__badge" data-i18n="pk1.name">Starter</div>
           <div class="pkg-card__price">
-            <span class="pkg-card__from">from</span>
+            <span class="pkg-card__from" data-i18n="pkg.from">from</span>
             <span class="pkg-card__amount">$190</span>
             <span class="pkg-card__period">USD</span>
           </div>
-          <p class="pkg-card__desc">Perfect for freelancers, local services, and solopreneurs who need a professional first step online.</p>
+          <p class="pkg-card__desc" data-i18n="pk1.desc">Perfect for freelancers, local services, and solopreneurs who need a professional first step online.</p>
           <ul class="pkg-card__features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 1 Landing Page</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Mobile Responsive Design</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> WhatsApp / Instagram CTA</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Contact Form (no backend)</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Basic SEO Setup</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Delivered in 3–5 days</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk1.f1">1 Landing Page</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk1.f2">Mobile Responsive Design</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk1.f3">WhatsApp / Instagram CTA</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk1.f4">Contact Form</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk1.f5">Basic SEO Setup</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk1.f6">Delivered in 3–5 days</span></li>
           </ul>
-          <a href="#contact" class="btn btn--outline pkg-card__btn">Get Started</a>
+          <a href="#contact" class="btn btn--outline pkg-card__btn" data-i18n="pkg.start">Get Started</a>
         </div>
 
-        <div class="pkg-card pkg-card--popular reveal reveal--delay-1">
-          <div class="pkg-card__popular-label">Most Popular</div>
-          <div class="pkg-card__badge">Professional</div>
+        <div class="pkg-card pkg-card--popular scroll-anim">
+          <div class="pkg-card__popular-label" data-i18n="pkg.popular">Most Popular</div>
+          <div class="pkg-card__badge" data-i18n="pk2.name">Professional</div>
           <div class="pkg-card__price">
-            <span class="pkg-card__from">from</span>
+            <span class="pkg-card__from" data-i18n="pkg.from">from</span>
             <span class="pkg-card__amount">$290</span>
             <span class="pkg-card__period">USD</span>
           </div>
-          <p class="pkg-card__desc">For established businesses that want to look credible, rank on Google, and convert real leads.</p>
+          <p class="pkg-card__desc" data-i18n="pk2.desc">For established businesses that want to look credible, rank on Google, and convert real leads.</p>
           <ul class="pkg-card__features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 3–6 Page Sections</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Functional Email Forms</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Social Media Integration</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Scroll Animations</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Speed Optimization</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Domain + Hosting Setup</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk2.f1">3–6 Page Sections</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk2.f2">Functional Email Forms</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk2.f3">Social Media Integration</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk2.f4">Scroll Animations</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk2.f5">Speed Optimization</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk2.f6">Domain + Hosting Setup</span></li>
           </ul>
-          <a href="#contact" class="btn btn--primary pkg-card__btn">Get Started</a>
+          <a href="#contact" class="btn btn--primary pkg-card__btn" data-i18n="pkg.start">Get Started</a>
         </div>
 
-        <div class="pkg-card reveal reveal--delay-2">
-          <div class="pkg-card__badge">Business</div>
+        <div class="pkg-card scroll-anim">
+          <div class="pkg-card__badge" data-i18n="pk3.name">Business</div>
           <div class="pkg-card__price">
-            <span class="pkg-card__from">from</span>
+            <span class="pkg-card__from" data-i18n="pkg.from">from</span>
             <span class="pkg-card__amount">$590</span>
             <span class="pkg-card__period">USD</span>
           </div>
-          <p class="pkg-card__desc">Full digital infrastructure. Backend, database, lead management — built to scale with your business.</p>
+          <p class="pkg-card__desc" data-i18n="pk3.desc">Full digital infrastructure. Backend, database, lead management — built to scale with your business.</p>
           <ul class="pkg-card__features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Everything in Professional</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Node.js / PHP Backend</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Lead & Contact Database</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Simple Admin Panel</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> CRM Integration</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Security & VPS Setup</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk3.f1">Everything in Professional</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk3.f2">Node.js / PHP Backend</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk3.f3">Lead &amp; Contact Database</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk3.f4">Simple Admin Panel</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk3.f5">CRM Integration</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk3.f6">Security &amp; VPS Setup</span></li>
           </ul>
-          <a href="#contact" class="btn btn--outline pkg-card__btn">Get Started</a>
+          <a href="#contact" class="btn btn--outline pkg-card__btn" data-i18n="pkg.start">Get Started</a>
         </div>
 
-        <div class="pkg-card pkg-card--premium reveal reveal--delay-3">
-          <div class="pkg-card__badge">Premium</div>
+        <div class="pkg-card pkg-card--premium scroll-anim">
+          <div class="pkg-card__badge" data-i18n="pk4.name">Premium</div>
           <div class="pkg-card__price">
-            <span class="pkg-card__from">from</span>
+            <span class="pkg-card__from" data-i18n="pkg.from">from</span>
             <span class="pkg-card__amount">$1,199</span>
             <span class="pkg-card__period">USD</span>
           </div>
-          <p class="pkg-card__desc">Agency-level execution. Custom design, full-stack development, and long-term partnership for companies that want to dominate.</p>
+          <p class="pkg-card__desc" data-i18n="pk4.desc">Agency-level execution. Custom design, full-stack development, and long-term partnership for companies that want to dominate.</p>
           <ul class="pkg-card__features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Custom UI/UX Design</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Full-Stack Development</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> User Authentication & API</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Professional Deployment</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Monthly Maintenance</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Priority Support</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk4.f1">Custom UI/UX Design</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk4.f2">Full-Stack Development</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk4.f3">User Authentication &amp; API</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk4.f4">Professional Deployment</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk4.f5">Monthly Maintenance</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> <span data-i18n="pk4.f6">Priority Support</span></li>
           </ul>
-          <a href="#contact" class="btn btn--gold pkg-card__btn">Let's Talk</a>
+          <a href="#contact" class="btn btn--gold pkg-card__btn" data-i18n="pkg.talk">Let's Talk</a>
         </div>
 
       </div>
-
-      <div class="extras reveal">
-        <p class="extras__label">Add-ons available:</p>
+      <div class="extras scroll-anim">
+        <p class="extras__label" data-i18n="extras.label">Add-ons available:</p>
         <div class="extras__pills">
-          <span>🌐 Domain Registration — $15–30/yr</span>
-          <span>🖥️ Hosting Setup — $50–150/yr</span>
-          <span>🔧 Monthly Maintenance — from $20/mo</span>
-          <span>✏️ Extra Changes — $25–50/hr</span>
+          <span data-i18n="extras.domain">🌐 Domain Registration — $15–30/yr</span>
+          <span data-i18n="extras.hosting">🖥️ Hosting Setup — $50–150/yr</span>
+          <span data-i18n="extras.maint">🔧 Monthly Maintenance — from $20/mo</span>
+          <span data-i18n="extras.changes">✏️ Extra Changes — $25–50/hr</span>
         </div>
       </div>
     </div>
@@ -510,40 +469,40 @@
   <!-- PROCESS -->
   <section class="process" id="process">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header scroll-anim">
         <p class="overline" data-i18n="proc.overline">How It Works</p>
         <h2>From <span data-i18n="proc.h2a">idea to live</span><br><span data-i18n="proc.h2b">in days, not months.</span></h2>
       </div>
       <div class="process__steps">
-        <div class="process__step reveal">
+        <div class="process__step scroll-anim">
           <div class="process__step-num">01</div>
           <div class="process__step-content">
-            <h3>Free Discovery Call</h3>
-            <p>We talk about your business, goals, and what success looks like. 30 minutes that save months of wrong direction.</p>
+            <h3 data-i18n="pr1.title">Free Discovery Call</h3>
+            <p data-i18n="pr1.desc">We talk about your business, goals, and what success looks like. 30 minutes that save months of wrong direction.</p>
           </div>
         </div>
         <div class="process__connector"></div>
-        <div class="process__step reveal reveal--delay-1">
+        <div class="process__step scroll-anim">
           <div class="process__step-num">02</div>
           <div class="process__step-content">
-            <h3>Proposal & Strategy</h3>
-            <p>I send a clear proposal with timeline, tech stack, and exact deliverables. No vague estimates.</p>
+            <h3 data-i18n="pr2.title">Proposal &amp; Strategy</h3>
+            <p data-i18n="pr2.desc">I send a clear proposal with timeline, tech stack, and exact deliverables. No vague estimates.</p>
           </div>
         </div>
         <div class="process__connector"></div>
-        <div class="process__step reveal reveal--delay-2">
+        <div class="process__step scroll-anim">
           <div class="process__step-num">03</div>
           <div class="process__step-content">
-            <h3>Build & Review</h3>
-            <p>You see progress, give feedback, and we iterate until it's exactly right. You're always in the loop.</p>
+            <h3 data-i18n="pr3.title">Build &amp; Review</h3>
+            <p data-i18n="pr3.desc">You see progress, give feedback, and we iterate until it's exactly right. You're always in the loop.</p>
           </div>
         </div>
         <div class="process__connector"></div>
-        <div class="process__step reveal reveal--delay-3">
+        <div class="process__step scroll-anim">
           <div class="process__step-num">04</div>
           <div class="process__step-content">
-            <h3>Launch & Grow</h3>
-            <p>Your site goes live, SEO is set, and I don't disappear. I'm your partner for what comes next.</p>
+            <h3 data-i18n="pr4.title">Launch &amp; Grow</h3>
+            <p data-i18n="pr4.desc">Your site goes live, SEO is set, and I don't disappear. I'm your partner for what comes next.</p>
           </div>
         </div>
       </div>
@@ -551,12 +510,12 @@
   </section>
 
   <!-- CTA BANNER -->
-  <section class="cta-banner reveal">
+  <section class="cta-banner scroll-anim">
     <div class="cta-banner__bg"></div>
     <div class="container">
       <div class="cta-banner__inner">
         <h2><span data-i18n="cta.h2a">Your competitors are</span><br><span data-i18n="cta.h2b">already online.</span></h2>
-        <p><span data-i18n="cta.p">Every day without a professional digital presence is revenue left on the table. Let's change that — starting this week.</span></p>
+        <p data-i18n="cta.p">Every day without a professional digital presence is revenue left on the table. Let's change that — starting this week.</p>
         <a href="#contact" class="btn btn--white">
           <span data-i18n="cta.btn">Start For Free</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -569,65 +528,64 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="contact__inner">
-        <div class="contact__info reveal">
+        <div class="contact__info scroll-anim">
           <p class="overline" data-i18n="con.overline">Let's Build Something</p>
           <h2><span data-i18n="con.h2a">Ready to</span><br><span data-i18n="con.h2b">dominate your market?</span></h2>
-          <p class="body-text"><span data-i18n="con.p">Tell me about your business. I'll respond within 24 hours with a plan — not a pitch.</span></p>
-
+          <p class="body-text" data-i18n="con.p">Tell me about your business. I'll respond within 24 hours with a plan — not a pitch.</p>
           <div class="contact__channels">
-            <a href="https://wa.me/4428484517" class="channel-link" target="_blank" rel="noopener">
+            <a href="https://wa.me/524428484517" class="channel-link" target="_blank" rel="noopener">
               <div class="channel-link__icon channel-link__icon--wa">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               </div>
-              <span>WhatsApp Me</span>
+              <span data-i18n="con.wa">WhatsApp Me</span>
             </a>
-            <a href="/cdn-cgi/l/email-protection#7216131f1b131c0617151d32151f131b1e5c111d1f" class="channel-link">
+            <a href="mailto:damiantego@gmail.com" class="channel-link">
               <div class="channel-link__icon channel-link__icon--email">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
-              <span><span class="__cf_email__" data-cfemail="593d38343038372d3c3e36193e34383035773a3634">[email&#160;protected]</span></span>
+              <span>damiantego@gmail.com</span>
             </a>
           </div>
         </div>
 
-        <form class="contact__form reveal reveal--delay-1" id="contactForm">
+        <form class="contact__form scroll-anim" id="contactForm">
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="John Smith" required />
+              <label for="fname" data-i18n="form.name">Your Name</label>
+              <input type="text" id="fname" name="name" placeholder="John Smith" required />
             </div>
             <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="john@business.com" required />
+              <label for="femail" data-i18n="form.email">Email Address</label>
+              <input type="email" id="femail" name="email" placeholder="john@business.com" required />
             </div>
           </div>
           <div class="form-group">
-            <label for="business">Business / Industry</label>
-            <input type="text" id="business" name="business" placeholder="e.g. HVAC company in Texas" />
+            <label for="fbusiness" data-i18n="form.business">Business / Industry</label>
+            <input type="text" id="fbusiness" name="business" placeholder="e.g. HVAC company in Texas" />
           </div>
           <div class="form-group">
-            <label for="package">I'm interested in...</label>
-            <select id="package" name="package">
-              <option value="">Select a package</option>
-              <option value="starter">Starter — Landing Page ($190+)</option>
-              <option value="professional">Professional — Business Site ($290+)</option>
-              <option value="business">Business — With Backend ($590+)</option>
-              <option value="premium">Premium — Full-Stack ($1,199+)</option>
-              <option value="unsure">Not sure — Let's talk</option>
+            <label for="fpackage" data-i18n="form.package">I'm interested in...</label>
+            <select id="fpackage" name="package">
+              <option value="" data-i18n="form.select">Select a package</option>
+              <option value="starter"      data-i18n="form.o1">Starter — Landing Page ($190+)</option>
+              <option value="professional" data-i18n="form.o2">Professional — Business Site ($290+)</option>
+              <option value="business"     data-i18n="form.o3">Business — With Backend ($590+)</option>
+              <option value="premium"      data-i18n="form.o4">Premium — Full-Stack ($1,199+)</option>
+              <option value="unsure"       data-i18n="form.o5">Not sure — Let's talk</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="message">Tell me about your project</label>
-            <textarea id="message" name="message" placeholder="What does your business do? What's your main goal?" rows="4" required></textarea>
+            <label for="fmessage" data-i18n="form.message">Tell me about your project</label>
+            <textarea id="fmessage" name="message" placeholder="What does your business do? What's your main goal?" rows="4" required></textarea>
           </div>
-          <button type="submit" class="btn btn--primary btn--full">
-            Send My Project Details
+          <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+            <span data-i18n="form.submit">Send My Project Details</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <p class="form__note">I reply within 24 hours. No spam, ever.</p>
+          <p class="form__note" data-i18n="form.note">I reply within 24 hours. No spam, ever.</p>
           <div class="form__success" id="formSuccess">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="#00e67a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke="#00e67a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Message sent! I'll be in touch within 24 hours.
+            <span data-i18n="form.success">Message sent! I'll be in touch within 24 hours.</span>
           </div>
         </form>
       </div>
@@ -640,17 +598,26 @@
       <div class="footer__inner">
         <div class="footer__brand">
           <div class="footer__logo">DA<span>.</span></div>
-          <p>Damian Aguilera<br>Software Engineer & Digital Strategist</p>
+          <p>Damian Aguilera<br>Software Engineer &amp; Digital Strategist</p>
         </div>
         <div class="footer__links">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#portfolio">Work</a>
-          <a href="#packages">Packages</a>
-          <a href="#contact">Contact</a>
+          <a href="#about"     data-i18n="nav.about">About</a>
+          <a href="#services"  data-i18n="nav.services">Services</a>
+          <a href="#portfolio" data-i18n="nav.work">Work</a>
+          <a href="#packages"  data-i18n="nav.packages">Packages</a>
+          <a href="#contact"   data-i18n="nav.cta">Let's Talk</a>
         </div>
       </div>
       <div class="footer__bottom">
         <p data-i18n="footer.copy">© 2025 Damian Aguilera. All rights reserved.</p>
         <a href="https://github.com/Damian7777777777" target="_blank" rel="noopener" class="footer__gh">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-1
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
