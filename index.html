@@ -19,12 +19,17 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav__links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Work</a></li>
-      <li><a href="#packages">Packages</a></li>
-      <li><a href="#contact" class="nav__cta">Let's Talk</a></li>
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#services" data-i18n="nav.services">Services</a></li>
+      <li><a href="#portfolio" data-i18n="nav.work">Work</a></li>
+      <li><a href="#packages" data-i18n="nav.packages">Packages</a></li>
+      <li><a href="#contact" class="nav__cta" data-i18n="nav.cta">Let's Talk</a></li>
     </ul>
+    <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+      <span class="lang-toggle__option lang-toggle__option--active" data-lang="en">EN</span>
+      <span class="lang-toggle__divider">|</span>
+      <span class="lang-toggle__option" data-lang="es">ES</span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -36,42 +41,42 @@
     <div class="hero__content">
       <div class="hero__badge reveal">
         <span class="badge__dot"></span>
-        Available for new projects
+        <span data-i18n="hero.badge">Available for new projects</span>
       </div>
 
       <h1 class="hero__headline reveal reveal--delay-1">
-        Your Business<br>
-        Deserves a<br>
-        <span class="hero__highlight">Digital Presence<br>That Wins.</span>
+        <span data-i18n="hero.h1a">Your Business</span><br>
+        <span data-i18n="hero.h1b">Deserves a</span><br>
+        <span class="hero__highlight"><span data-i18n="hero.h1c">Digital Presence</span><br><span data-i18n="hero.h1d">That Wins.</span></span>
       </h1>
 
       <p class="hero__sub reveal reveal--delay-2">
-        I'm <strong>Damian Aguilera</strong> — Software Engineer & Digital Strategist.<br>
-        I don't just build websites. I build <em>growth engines</em> for US businesses.
+        I'm <strong>Damian Aguilera</strong> — <span data-i18n="hero.role">Software Engineer & Digital Strategist</span>.<br>
+        <span data-i18n="hero.sub">I don't just build websites. I build <em>growth engines</em> for US businesses.</span>
       </p>
 
       <div class="hero__actions reveal reveal--delay-3">
         <a href="#portfolio" class="btn btn--primary">
-          See My Work
+          <span data-i18n="hero.cta1">See My Work</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="#contact" class="btn btn--ghost">Book a Free Call</a>
+        <a href="#contact" class="btn btn--ghost" data-i18n="hero.cta2">Book a Free Call</a>
       </div>
 
       <div class="hero__trust reveal reveal--delay-4">
         <div class="trust__item">
           <span class="trust__num" data-count="50">0</span><span class="trust__plus">+</span>
-          <span class="trust__label">Projects Delivered</span>
+          <span class="trust__label"><span data-i18n="trust.projects">Projects Delivered</span></span>
         </div>
         <div class="trust__divider"></div>
         <div class="trust__item">
           <span class="trust__num" data-count="100">0</span><span class="trust__plus">%</span>
-          <span class="trust__label">Client Satisfaction</span>
+          <span class="trust__label"><span data-i18n="trust.satisfaction">Client Satisfaction</span></span>
         </div>
         <div class="trust__divider"></div>
         <div class="trust__item">
           <span class="trust__num" data-count="3">0</span><span class="trust__plus">x</span>
-          <span class="trust__label">Avg. Traffic Growth</span>
+          <span class="trust__label"><span data-i18n="trust.growth">Avg. Traffic Growth</span></span>
         </div>
       </div>
     </div>
@@ -117,39 +122,36 @@
     <div class="container">
       <div class="about-strip__inner">
         <div class="about-strip__text reveal">
-          <p class="overline">Who I Am</p>
-          <h2>Not a freelancer.<br><span>A partner in your growth.</span></h2>
+          <p class="overline" data-i18n="about.overline">Who I Am</p>
+          <h2><span data-i18n="about.h2a">Not a freelancer.</span><br><span data-i18n="about.h2b">A partner in your growth.</span></h2>
           <p class="body-text">
-            I'm a Software Engineer with a degree in Software Development & Management. 
-            I've spent years watching businesses lose money because their digital presence 
-            didn't match their real value. That's the problem I fix.
+            <span data-i18n="about.p1">I'm a Software Engineer with a degree in Software Development & Management. I've spent years watching businesses lose money because their digital presence didn't match their real value. That's the problem I fix.</span>
           </p>
           <p class="body-text">
-            Serving clients across the United States with agency-level execution — which means 
-            you get American-quality work at a fraction of agency cost.
+            <span data-i18n="about.p2">Serving clients across the United States with agency-level execution — which means you get American-quality work at a fraction of agency cost.</span>
           </p>
-          <a href="#contact" class="btn btn--primary">Work With Me</a>
+          <a href="#contact" class="btn btn--primary" data-i18n="about.btn">Work With Me</a>
         </div>
         <div class="about-strip__cards reveal reveal--delay-1">
           <div class="value-card">
             <div class="value-card__icon">🎯</div>
-            <h3>Results-First</h3>
-            <p>Every pixel has a purpose. I design for conversions, not just aesthetics.</p>
+            <h3 data-i18n="vc.r.title">Results-First</h3>
+            <p data-i18n="vc.r.desc">Every pixel has a purpose. I design for conversions, not just aesthetics.</p>
           </div>
           <div class="value-card">
             <div class="value-card__icon">⚡</div>
-            <h3>Fast Delivery</h3>
-            <p>Landing pages in 3–5 days. Full projects in 2–4 weeks. Deadlines respected.</p>
+            <h3 data-i18n="vc.f.title">Fast Delivery</h3>
+            <p data-i18n="vc.f.desc">Landing pages in 3–5 days. Full projects in 2–4 weeks. Deadlines respected.</p>
           </div>
           <div class="value-card">
             <div class="value-card__icon">🔒</div>
-            <h3>You Own It All</h3>
-            <p>Full code ownership. No lock-in. No hidden fees. Your site, your rules.</p>
+            <h3 data-i18n="vc.o.title">You Own It All</h3>
+            <p data-i18n="vc.o.desc">Full code ownership. No lock-in. No hidden fees. Your site, your rules.</p>
           </div>
           <div class="value-card">
             <div class="value-card__icon">🌐</div>
-            <h3>US Market Ready</h3>
-            <p>Built for American audiences — copy, UX, speed, and SEO tuned for US traffic.</p>
+            <h3 data-i18n="vc.u.title">US Market Ready</h3>
+            <p data-i18n="vc.u.desc">Built for American audiences — copy, UX, speed, and SEO tuned for US traffic.</p>
           </div>
         </div>
       </div>
@@ -160,9 +162,9 @@
   <section class="services" id="services">
     <div class="container">
       <div class="section-header reveal">
-        <p class="overline">What I Do</p>
-        <h2>I sell you <span>digital presence</span>,<br>not just a website.</h2>
-        <p class="section-sub">The difference between a website and a digital presence is the difference between existing and winning.</p>
+        <p class="overline" data-i18n="srv.overline">What I Do</p>
+        <h2>I sell you <span data-i18n="srv.h2a">digital presence</span>,<br><span data-i18n="srv.h2b">not just a website.</span></h2>
+        <p class="section-sub"><span data-i18n="srv.sub">The difference between a website and a digital presence is the difference between existing and winning.</span></p>
       </div>
 
       <div class="services__grid">
@@ -216,16 +218,15 @@
   <section class="portfolio" id="portfolio">
     <div class="container">
       <div class="section-header reveal">
-        <p class="overline">Real Work, Real Results</p>
-        <h2>Projects I've <span>built & shipped</span>.</h2>
-        <p class="section-sub">Every project below is live and built from scratch — no templates, no shortcuts.</p>
+        <p class="overline" data-i18n="pf.overline">Real Work, Real Results</p>
+        <h2>Projects I've <span data-i18n="pf.h2">built & shipped</span>.</h2>
+        <p class="section-sub"><span data-i18n="pf.sub">Every project below is live and built from scratch — no templates, no shortcuts.</span></p>
       </div>
 
       <!-- FILTER TABS -->
       <div class="portfolio__filters reveal">
-        <button class="pf-btn pf-btn--active" data-filter="all">All Projects</button>
-        <button class="pf-btn" data-filter="live">🌐 Live Sites</button>
-        <button class="pf-btn" data-filter="github">⚙️ GitHub</button>
+        <button class="pf-btn pf-btn--active" data-filter="all"><span data-i18n="pf.all">All Projects</span></button>
+        <button class="pf-btn" data-filter="live">🌐 <span data-i18n="pf.live">Live Sites</span></button>
       </div>
 
       <div class="portfolio__grid" id="portfolioGrid">
@@ -327,64 +328,64 @@
         </div>
 
         <!-- 4 — Pet Shop -->
-        <div class="pj-card reveal" data-type="github">
-          <div class="pj-card__preview pj-card__preview--gh">
-            <div class="pj-card__gh-screen">
-              <div class="pj-card__gh-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              </div>
-              <p class="pj-card__gh-name">petShop</p>
-              <p class="pj-card__gh-sub">View source on GitHub</p>
-            </div>
+        <div class="pj-card reveal" data-type="live">
+          <div class="pj-card__preview">
+            <iframe
+              src="https://damian7777777777.github.io/petShop/"
+              title="Pet Shop preview"
+              loading="lazy"
+              tabindex="-1"
+              scrolling="no">
+            </iframe>
             <div class="pj-card__overlay">
-              <a href="https://github.com/Damian7777777777/petShop/" target="_blank" rel="noopener" class="pj-card__view-btn">
+              <a href="https://damian7777777777.github.io/petShop/" target="_blank" rel="noopener" class="pj-card__view-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                View on GitHub
+                View Live Site
               </a>
             </div>
           </div>
           <div class="pj-card__info">
             <div class="pj-card__meta">
-              <span class="pj-card__tag pj-card__tag--gh">GitHub</span>
+              <span class="pj-card__tag pj-card__tag--live">Live</span>
               <span class="pj-card__tag">E-commerce</span>
               <span class="pj-card__tag">Pet Industry</span>
             </div>
             <h3>Pet Shop</h3>
             <p>A full e-commerce concept for a pet shop — product catalog, shopping experience, and UI designed for pet owners ready to buy.</p>
-            <a href="https://github.com/Damian7777777777/petShop/" target="_blank" rel="noopener" class="pj-card__link">
-              View source
+            <a href="https://damian7777777777.github.io/petShop/" target="_blank" rel="noopener" class="pj-card__link">
+              Visit site
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
         </div>
 
         <!-- 5 — Demo Menú Digital -->
-        <div class="pj-card reveal reveal--delay-1" data-type="github">
-          <div class="pj-card__preview pj-card__preview--gh">
-            <div class="pj-card__gh-screen">
-              <div class="pj-card__gh-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              </div>
-              <p class="pj-card__gh-name">demo-menuDigital</p>
-              <p class="pj-card__gh-sub">View source on GitHub</p>
-            </div>
+        <div class="pj-card reveal reveal--delay-1" data-type="live">
+          <div class="pj-card__preview">
+            <iframe
+              src="https://damian7777777777.github.io/demo-menuDigital/"
+              title="Digital Menu preview"
+              loading="lazy"
+              tabindex="-1"
+              scrolling="no">
+            </iframe>
             <div class="pj-card__overlay">
-              <a href="https://github.com/Damian7777777777/demo-menuDigital/" target="_blank" rel="noopener" class="pj-card__view-btn">
+              <a href="https://damian7777777777.github.io/demo-menuDigital/" target="_blank" rel="noopener" class="pj-card__view-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                View on GitHub
+                View Live Site
               </a>
             </div>
           </div>
           <div class="pj-card__info">
             <div class="pj-card__meta">
-              <span class="pj-card__tag pj-card__tag--gh">GitHub</span>
+              <span class="pj-card__tag pj-card__tag--live">Live</span>
               <span class="pj-card__tag">Restaurant</span>
               <span class="pj-card__tag">Digital Menu</span>
             </div>
             <h3>Digital Menu</h3>
             <p>A QR-ready digital menu solution for restaurants — no printing costs, instant updates, and a premium dining experience on any device.</p>
-            <a href="https://github.com/Damian7777777777/demo-menuDigital/" target="_blank" rel="noopener" class="pj-card__link">
-              View source
+            <a href="https://damian7777777777.github.io/demo-menuDigital/" target="_blank" rel="noopener" class="pj-card__link">
+              Visit site
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
@@ -408,9 +409,9 @@
   <section class="packages" id="packages">
     <div class="container">
       <div class="section-header reveal">
-        <p class="overline">Transparent Pricing</p>
-        <h2>Pick your <span>growth level</span>.</h2>
-        <p class="section-sub">Every package is a complete solution. No upsells mid-project. No surprises.</p>
+        <p class="overline" data-i18n="pkg.overline">Transparent Pricing</p>
+        <h2>Pick your <span data-i18n="pkg.h2">growth level</span>.</h2>
+        <p class="section-sub"><span data-i18n="pkg.sub">Every package is a complete solution. No upsells mid-project. No surprises.</span></p>
       </div>
 
       <div class="packages__grid">
@@ -510,8 +511,8 @@
   <section class="process" id="process">
     <div class="container">
       <div class="section-header reveal">
-        <p class="overline">How It Works</p>
-        <h2>From <span>idea to live</span><br>in days, not months.</h2>
+        <p class="overline" data-i18n="proc.overline">How It Works</p>
+        <h2>From <span data-i18n="proc.h2a">idea to live</span><br><span data-i18n="proc.h2b">in days, not months.</span></h2>
       </div>
       <div class="process__steps">
         <div class="process__step reveal">
@@ -554,10 +555,10 @@
     <div class="cta-banner__bg"></div>
     <div class="container">
       <div class="cta-banner__inner">
-        <h2>Your competitors are<br><span>already online.</span></h2>
-        <p>Every day without a professional digital presence is revenue left on the table. Let's change that — starting this week.</p>
+        <h2><span data-i18n="cta.h2a">Your competitors are</span><br><span data-i18n="cta.h2b">already online.</span></h2>
+        <p><span data-i18n="cta.p">Every day without a professional digital presence is revenue left on the table. Let's change that — starting this week.</span></p>
         <a href="#contact" class="btn btn--white">
-          Start For Free
+          <span data-i18n="cta.btn">Start For Free</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -569,9 +570,9 @@
     <div class="container">
       <div class="contact__inner">
         <div class="contact__info reveal">
-          <p class="overline">Let's Build Something</p>
-          <h2>Ready to<br><span>dominate your market?</span></h2>
-          <p class="body-text">Tell me about your business. I'll respond within 24 hours with a plan — not a pitch.</p>
+          <p class="overline" data-i18n="con.overline">Let's Build Something</p>
+          <h2><span data-i18n="con.h2a">Ready to</span><br><span data-i18n="con.h2b">dominate your market?</span></h2>
+          <p class="body-text"><span data-i18n="con.p">Tell me about your business. I'll respond within 24 hours with a plan — not a pitch.</span></p>
 
           <div class="contact__channels">
             <a href="https://wa.me/4428484517" class="channel-link" target="_blank" rel="noopener">
@@ -580,11 +581,11 @@
               </div>
               <span>WhatsApp Me</span>
             </a>
-            <a href="mailto:damiantego@gmail.com" class="channel-link">
+            <a href="/cdn-cgi/l/email-protection#7216131f1b131c0617151d32151f131b1e5c111d1f" class="channel-link">
               <div class="channel-link__icon channel-link__icon--email">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
-              <span>damiantego@gmail.com</span>
+              <span><span class="__cf_email__" data-cfemail="593d38343038372d3c3e36193e34383035773a3634">[email&#160;protected]</span></span>
             </a>
           </div>
         </div>
@@ -650,15 +651,6 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p>© 2025 Damian Aguilera. All rights reserved.</p>
+        <p data-i18n="footer.copy">© 2025 Damian Aguilera. All rights reserved.</p>
         <a href="https://github.com/Damian7777777777" target="_blank" rel="noopener" class="footer__gh">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-          GitHub
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-1
