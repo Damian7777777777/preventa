@@ -1195,3 +1195,54 @@ h3 { font-size: 1.2rem; font-weight: 700; }
   .pj-card__preview { height: 180px; }
   .pj-card--cta { min-height: 260px; }
 }
+
+/* ===========================
+   LANGUAGE TOGGLE
+=========================== */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--surface);
+  border: 1.5px solid var(--border-2);
+  border-radius: 50px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+.lang-toggle:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 12px var(--gold-glow);
+}
+.lang-toggle__option {
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-3);
+  letter-spacing: 0.08em;
+  transition: color var(--transition-fast);
+  padding: 0 2px;
+}
+.lang-toggle__option--active {
+  color: var(--gold);
+}
+.lang-toggle__divider {
+  font-size: 0.7rem;
+  color: var(--border-2);
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .lang-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 200;
+    background: var(--bg-2);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    padding: 8px 16px;
+  }
+  .lang-toggle__option { font-size: 0.85rem; }
+}
