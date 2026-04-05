@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //  ✅ El cliente no necesita WhatsApp ni nada extra
   //  ✅ Gratis hasta 50 envíos/mes (más que suficiente para empezar)
   //
-  const FORMSPREE_ID = 'xaqllbbo'; // <-- CAMBIA ESTO
+  const FORMSPREE_ID = 'YOUR_FORM_ID'; // <-- CAMBIA ESTO
 
   const form        = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
@@ -225,4 +225,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+});
+
+
+// ── PORTFOLIO FILTER ─────────────────────────────────────────
+const filterBtns = document.querySelectorAll('.pf-btn');
+const pjCards    = document.querySelectorAll('.pj-card[data-type]');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.dataset.filter;
+
+    // update active button
+    filterBtns.forEach(b => b.classList.remove('pf-btn--active'));
+    btn.classList.add('pf-btn--active');
+
+    // show/hide cards
+    pjCards.forEach(card => {
+      const type = card.dataset.type;
+      const show = filter === 'all' || type === filter || card.classList.contains('pj-card--cta');
+      card.classList.toggle('pf-hidden', !show);
+
+      // re-trigger reveal animation
+      if (show) {
+        card.classList.remove('visible');
+        requestAnimationFrame(() => {
+          setTimeout(() => card.classList.add('visible'), 50);
+        });
+      }
+    });
+  });
 });
