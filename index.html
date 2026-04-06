@@ -7,328 +7,8 @@
   <meta name="description" content="I build digital presence that converts. Websites, strategy, and growth for US businesses ready to dominate online.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
-  <style>
-/* ── TOKENS ─────────────────────────────────────────────── */
-:root {
-  --bg:       #08080d;
-  --bg-2:     #0e0e16;
-  --bg-3:     #13131e;
-  --surface:  #181825;
-  --surface-2:#1e1e2e;
-  --border:   rgba(255,255,255,0.06);
-  --border-2: rgba(255,255,255,0.11);
-
-  --gold:     #c9a84c;
-  --gold-lt:  #e8c97a;
-  --gold-glow:rgba(201,168,76,0.18);
-  --green:    #3dd68c;
-  --green-dim:rgba(61,214,140,0.09);
-  --blue:     #60a5fa;
-  --text:     #ede8e0;
-  --text-2:   #8a8496;
-  --text-3:   #4a4558;
-
-  --ff-head: 'Fraunces', Georgia, serif;
-  --ff-body: 'DM Sans', sans-serif;
-
-  --r-sm: 6px;  --r-md: 12px;  --r-lg: 18px;  --r-xl: 26px;
-  --ease: cubic-bezier(0.16,1,0.3,1);
-}
-
-/* ── RESET ──────────────────────────────────────────────── */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--ff-body);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}
-ul{list-style:none}
-.container{max-width:1120px;margin:0 auto;padding:0 28px}
-
-/* ── TYPE ───────────────────────────────────────────────── */
-h1,h2,h3{font-family:var(--ff-head);line-height:1.07;letter-spacing:-0.025em}
-h2{font-size:clamp(2.2rem,5vw,3.2rem);font-weight:900}
-h3{font-size:1.15rem;font-weight:700}
-.overline{font-family:var(--ff-body);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-bottom:14px;display:block}
-.body-text{color:var(--text-2);line-height:1.8;margin-bottom:16px}
-.section-sub{color:var(--text-2);font-size:1rem;max-width:520px;margin-top:14px;line-height:1.75}
-.section-header{margin-bottom:60px}
-.gold{color:var(--gold)}
-em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
-
-/* ── ANIMATIONS ─────────────────────────────────────────── */
-.will-animate{opacity:0;transform:translateY(24px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
-.is-visible{opacity:1;transform:none}
-.d1{transition-delay:.08s}.d2{transition-delay:.18s}.d3{transition-delay:.28s}.d4{transition-delay:.38s}
-
-/* ── BUTTONS ────────────────────────────────────────────── */
-.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--ff-body);font-weight:600;font-size:.88rem;padding:13px 26px;border-radius:4px;border:none;cursor:pointer;transition:transform .22s var(--ease),box-shadow .22s,background .15s;white-space:nowrap;letter-spacing:.01em}
-.btn svg{transition:transform .2s var(--ease)}
-.btn:hover svg{transform:translateX(3px)}
-
-.btn--primary{background:var(--gold);color:#08080d}
-.btn--primary:hover{background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 8px 28px var(--gold-glow)}
-.btn--ghost{background:transparent;color:var(--text);border:1px solid var(--border-2)}
-.btn--ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
-.btn--outline{background:transparent;color:var(--gold);border:1px solid var(--gold)}
-.btn--outline:hover{background:var(--gold);color:#08080d;transform:translateY(-2px)}
-.btn--full{width:100%;justify-content:center;padding:15px}
-
-/* ── NAV ────────────────────────────────────────────────── */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:22px 40px;gap:20px;transition:background .3s,padding .3s,border-bottom .3s}
-.nav.scrolled{background:rgba(8,8,13,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 40px}
-.nav__logo{font-family:var(--ff-head);font-size:1.35rem;font-weight:900;letter-spacing:-.04em;font-style:italic}
-.nav__logo span{color:var(--gold)}
-.nav__links{display:flex;align-items:center;gap:32px;flex:1;justify-content:center}
-.nav__links a{font-size:.84rem;font-weight:500;color:var(--text-2);transition:color .15s;letter-spacing:.01em}
-.nav__links a:hover{color:var(--text)}
-.nav__cta{background:var(--gold)!important;color:#08080d!important;padding:9px 20px;border-radius:4px;font-weight:600!important}
-.nav__cta:hover{background:var(--gold-lt)!important;box-shadow:0 4px 18px var(--gold-glow)}
-.nav__menu-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.nav__menu-btn span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:2px;transition:transform .3s,opacity .3s}
-.nav__menu-btn.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-.nav__menu-btn.open span:nth-child(2){opacity:0}
-.nav__menu-btn.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.lang-toggle{display:flex;align-items:center;gap:3px;background:var(--surface);border:1px solid var(--border-2);border-radius:4px;padding:6px 12px;cursor:pointer;flex-shrink:0;transition:border-color .2s}
-.lang-toggle:hover{border-color:var(--gold)}
-.lang-toggle__option{font-size:.72rem;font-weight:600;color:var(--text-3);letter-spacing:.1em}
-.lang-toggle__option--active{color:var(--gold)}
-.lang-toggle__divider{font-size:.68rem;color:var(--border-2);margin:0 1px}
-
-/* ── HERO ───────────────────────────────────────────────── */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;padding:120px 0 80px;max-width:1120px;margin:0 auto;padding-left:28px;padding-right:28px;position:relative}
-.hero::before{content:'';position:absolute;top:0;left:-200px;right:-200px;bottom:0;background:radial-gradient(ellipse 60% 50% at 30% 40%,rgba(201,168,76,.06),transparent);pointer-events:none}
-
-.hero__eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:28px}
-.hero__dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse-dot 2.2s infinite}
-@keyframes pulse-dot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(61,214,140,.4)}60%{opacity:.8;box-shadow:0 0 0 6px rgba(61,214,140,0)}}
-.hero__eyebrow span{font-size:.8rem;font-weight:500;color:var(--text-2);letter-spacing:.02em}
-
-.hero__headline{font-size:clamp(3rem,5.5vw,4.6rem);font-weight:900;line-height:1.03;margin-bottom:26px}
-.hero__headline .line{display:block}
-.hero__headline .accent{font-style:italic;color:var(--gold)}
-.hero__sub{font-size:1.05rem;color:var(--text-2);margin-bottom:40px;max-width:480px;line-height:1.8}
-.hero__sub strong{color:var(--text);font-weight:500}
-.hero__actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:56px}
-.hero__stats{display:flex;align-items:center;gap:0;border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;background:var(--surface);width:fit-content}
-.stat{padding:18px 28px;text-align:center;position:relative}
-.stat+.stat::before{content:'';position:absolute;left:0;top:20%;bottom:20%;width:1px;background:var(--border)}
-.stat__n{font-family:var(--ff-head);font-size:1.9rem;font-weight:900;line-height:1;display:block}
-.stat__suffix{font-family:var(--ff-head);font-size:1.2rem;color:var(--gold)}
-.stat__l{font-size:.72rem;color:var(--text-3);display:block;margin-top:3px;letter-spacing:.04em}
-
-/* Mockup */
-.hero__visual{position:relative}
-.mockup{background:var(--surface);border:1px solid var(--border-2);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5);position:relative}
-.mockup__bar{background:var(--bg-2);padding:11px 16px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--border)}
-.mockup__bar .dot{width:9px;height:9px;border-radius:50%}
-.mockup__bar .dot:nth-child(1){background:#ff5f57}
-.mockup__bar .dot:nth-child(2){background:#febc2e}
-.mockup__bar .dot:nth-child(3){background:#28c840}
-.mockup__bar .url{flex:1;background:var(--surface);border-radius:4px;padding:4px 10px;font-size:.72rem;color:var(--text-3);margin:0 8px}
-.mockup__body{padding:22px}
-.mockup__hero{background:linear-gradient(135deg,var(--bg-3),var(--surface-2));border-radius:var(--r-sm);padding:24px;margin-bottom:14px}
-.mockup__tag-row{display:flex;gap:6px;margin-bottom:16px}
-.mockup__tag-sim{height:20px;border-radius:3px;background:var(--gold-glow);border:1px solid rgba(201,168,76,.2)}
-.mockup__tag-sim:first-child{width:72px}.mockup__tag-sim:last-child{width:50px;background:var(--green-dim);border-color:rgba(61,214,140,.2)}
-.mockup__h{background:linear-gradient(90deg,var(--gold-lt),var(--gold));border-radius:3px;margin-bottom:8px;animation:shimmer 2.8s infinite}
-.mockup__h--1{height:20px;width:85%}
-.mockup__h--2{height:20px;width:70%}
-.mockup__h--3{height:13px;width:90%;background:var(--surface-2);margin-top:12px}
-.mockup__h--4{height:13px;width:75%;background:var(--surface-2)}
-@keyframes shimmer{0%,100%{opacity:.7}50%{opacity:1}}
-.mockup__btn-row{display:flex;gap:8px;margin-top:16px}
-.mockup__btn{height:32px;border-radius:4px;flex:1;background:var(--gold);animation:shimmer 3s infinite .3s}
-.mockup__btn--ghost{background:transparent;border:1px solid var(--border-2);animation-delay:.6s}
-.mockup__cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.mockup__card{background:var(--bg-2);border-radius:var(--r-sm);padding:12px;border:1px solid var(--border)}
-.mockup__card-icon{width:24px;height:24px;background:var(--gold-glow);border-radius:4px;margin-bottom:8px}
-.mockup__card-line{height:8px;background:var(--surface-2);border-radius:3px;margin-bottom:5px}
-.mockup__card-line:last-child{width:60%}
-.mockup__float{position:absolute;background:var(--bg-2);border:1px solid var(--border-2);border-radius:var(--r-sm);padding:9px 13px;font-size:.72rem;font-weight:600;display:flex;align-items:center;gap:7px;animation:float 4s ease-in-out infinite;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.3)}
-.mockup__float--1{top:-16px;right:-20px;color:var(--green);border-color:rgba(61,214,140,.2);animation-delay:0s}
-.mockup__float--2{bottom:60px;right:-24px;color:var(--gold);border-color:rgba(201,168,76,.2);animation-delay:1.4s}
-.mockup__float--3{bottom:-10px;left:-20px;color:var(--blue);border-color:rgba(96,165,250,.2);animation-delay:.7s}
-.mockup__float-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-.mockup__float--1 .mockup__float-dot{background:var(--green)}
-.mockup__float--2 .mockup__float-dot{background:var(--gold)}
-.mockup__float--3 .mockup__float-dot{background:var(--blue)}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-
-/* ── ABOUT ──────────────────────────────────────────────── */
-.about{padding:110px 0;border-top:1px solid var(--border)}
-.about__inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.about__label{display:inline-block;font-size:.72rem;font-weight:600;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;border:1px solid rgba(201,168,76,.25);border-radius:4px;padding:5px 12px;margin-bottom:20px}
-.about__cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.value-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:24px;transition:border-color .3s,transform .3s}
-.value-card:hover{border-color:var(--border-2);transform:translateY(-3px)}
-.value-card__num{font-family:var(--ff-head);font-size:.72rem;font-weight:700;color:var(--gold);letter-spacing:.1em;margin-bottom:12px;display:block}
-.value-card h3{font-size:1rem;margin-bottom:8px}
-.value-card p{font-size:.85rem;color:var(--text-2);line-height:1.6}
-
-/* ── SERVICES ───────────────────────────────────────────── */
-.services{padding:110px 0;background:var(--bg-2);border-top:1px solid var(--border)}
-.services__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden}
-.service-card{background:var(--bg-2);padding:40px;transition:background .25s}
-.service-card:hover{background:var(--surface)}
-.service-card__num{font-family:var(--ff-head);font-size:.72rem;font-weight:700;color:var(--gold);letter-spacing:.1em;margin-bottom:18px;display:block}
-.service-card h3{font-size:1.2rem;margin-bottom:12px}
-.service-card p{font-size:.9rem;color:var(--text-2);line-height:1.7;margin-bottom:20px}
-.service-card__list{display:flex;flex-direction:column;gap:8px}
-.service-card__list li{font-size:.83rem;color:var(--text-3);display:flex;align-items:center;gap:8px}
-.service-card__list li::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0}
-.service-card--accent{background:linear-gradient(135deg,rgba(201,168,76,.06),var(--bg-2) 60%)}
-.service-card--accent:hover{background:linear-gradient(135deg,rgba(201,168,76,.1),var(--surface) 60%)}
-
-/* ── PORTFOLIO ──────────────────────────────────────────── */
-.portfolio{padding:110px 0;border-top:1px solid var(--border)}
-.portfolio__filters{display:flex;gap:8px;margin-bottom:40px}
-.pf-btn{font-family:var(--ff-body);font-size:.82rem;font-weight:600;padding:8px 18px;border-radius:4px;border:1px solid var(--border);background:transparent;color:var(--text-2);cursor:pointer;transition:all .2s;letter-spacing:.02em}
-.pf-btn--active,.pf-btn:hover{background:var(--gold);color:#08080d;border-color:var(--gold)}
-.portfolio__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.pj-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;display:flex;flex-direction:column;transition:border-color .3s,transform .3s,box-shadow .3s}
-.pj-card:hover{border-color:var(--border-2);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.4)}
-.pj-card__preview{position:relative;height:195px;overflow:hidden;background:var(--bg-2);flex-shrink:0}
-.pj-card__preview iframe{width:200%;height:200%;transform:scale(.5);transform-origin:top left;border:none;pointer-events:none;display:block}
-.pj-card__overlay{position:absolute;inset:0;background:rgba(8,8,13,.82);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;backdrop-filter:blur(6px)}
-.pj-card:hover .pj-card__overlay{opacity:1}
-.pj-card__view-btn{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;color:#08080d;background:var(--gold);padding:10px 20px;border-radius:4px;transition:transform .2s,background .2s}
-.pj-card__view-btn:hover{background:var(--gold-lt);transform:scale(1.04)}
-.pj-card__info{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1}
-.pj-card__meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px}
-.pj-card__tag{font-size:.68rem;font-weight:600;padding:3px 9px;border-radius:3px;background:var(--bg-2);border:1px solid var(--border);color:var(--text-3);letter-spacing:.04em}
-.pj-card__tag--live{background:var(--green-dim);border-color:rgba(61,214,140,.2);color:var(--green)}
-.pj-card__info h3{font-size:.98rem;margin-bottom:6px}
-.pj-card__info p{font-size:.83rem;color:var(--text-2);line-height:1.55;flex:1;margin-bottom:14px}
-.pj-card__link{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;color:var(--gold);transition:gap .15s}
-.pj-card__link:hover{gap:10px}
-
-.pj-card--cta{background:var(--bg-2);border-color:var(--border-2);align-items:center;justify-content:center;min-height:320px}
-.pj-card--cta:hover{border-color:var(--gold);box-shadow:0 0 48px var(--gold-glow)}
-.pj-card__cta-inner{text-align:center;padding:36px 28px}
-.pj-card__cta-inner h3{font-family:var(--ff-head);font-size:1.5rem;font-weight:900;margin-bottom:12px;line-height:1.2}
-.pj-card__cta-inner p{font-size:.88rem;color:var(--text-2);margin-bottom:22px;line-height:1.6}
-
-/* ── PACKAGES ───────────────────────────────────────────── */
-.packages{padding:110px 0;background:var(--bg-2);border-top:1px solid var(--border)}
-.packages__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
-.pkg-card{background:var(--bg-3);border:1px solid var(--border);border-radius:var(--r-lg);padding:34px;position:relative;transition:border-color .3s,transform .3s}
-.pkg-card:hover{transform:translateY(-4px)}
-.pkg-card--popular{border-color:var(--gold);background:linear-gradient(160deg,rgba(201,168,76,.07),var(--bg-3) 55%)}
-.pkg-card--popular:hover{box-shadow:0 20px 60px var(--gold-glow)}
-.pkg-card--premium{border-color:rgba(96,165,250,.18);background:linear-gradient(160deg,rgba(96,165,250,.04),var(--bg-3) 55%)}
-.pkg-card__popular-label{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#08080d;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:4px 16px;border-radius:3px;white-space:nowrap}
-.pkg-card__name{font-size:.7rem;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.14em;margin-bottom:6px}
-.pkg-card__price{display:flex;align-items:baseline;gap:4px;margin-bottom:6px}
-.pkg-card__from{font-size:.8rem;color:var(--text-2)}
-.pkg-card__amount{font-family:var(--ff-head);font-size:2.6rem;font-weight:900;line-height:1}
-.pkg-card__currency{font-size:.85rem;color:var(--text-2)}
-.pkg-card__tagline{font-family:var(--ff-head);font-style:italic;font-size:.95rem;color:var(--gold-lt);margin-bottom:10px}
-.pkg-card__desc{font-size:.86rem;color:var(--text-2);margin-bottom:22px;line-height:1.65}
-.pkg-card__features{display:flex;flex-direction:column;gap:9px;margin-bottom:22px;border-top:1px solid var(--border);padding-top:18px}
-.pkg-card__features li{display:flex;align-items:flex-start;gap:9px;font-size:.85rem;color:var(--text-2);line-height:1.4}
-.pkg-card__features li::before{content:'';width:5px;height:5px;background:var(--green);border-radius:50%;flex-shrink:0;margin-top:6px}
-.pkg-card__bonus{font-size:.8rem;color:var(--text-3);border-top:1px solid var(--border);padding-top:14px;margin-bottom:20px;line-height:1.5}
-.pkg-card__bonus strong{display:block;color:var(--gold);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
-.pkg-card__btn{display:flex;width:100%;justify-content:center;padding:12px 20px;font-size:.86rem}
-
-.extras{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:18px 24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
-.extras__label{font-size:.72rem;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.12em;white-space:nowrap}
-.extras__pills{display:flex;flex-wrap:wrap;gap:8px}
-.extras__pills span{font-size:.8rem;color:var(--text-2);background:var(--bg-2);border:1px solid var(--border);border-radius:3px;padding:5px 12px}
-
-/* ── PROCESS ────────────────────────────────────────────── */
-.process{padding:110px 0;border-top:1px solid var(--border)}
-.process__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;background:var(--border)}
-.process__step{background:var(--surface);padding:36px 28px;position:relative}
-.process__step-num{font-family:var(--ff-head);font-size:3rem;font-weight:900;color:rgba(201,168,76,.12);line-height:1;margin-bottom:20px;display:block}
-.process__step h3{font-size:1rem;margin-bottom:10px}
-.process__step p{font-size:.85rem;color:var(--text-2);line-height:1.65}
-
-/* ── CTA BANNER ─────────────────────────────────────────── */
-.cta-banner{padding:100px 0;background:var(--bg-2);border-top:1px solid var(--border);text-align:center;position:relative;overflow:hidden}
-.cta-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(201,168,76,.05),transparent);pointer-events:none}
-.cta-banner__inner{position:relative;z-index:1}
-.cta-banner h2{margin-bottom:18px}
-.cta-banner p{color:var(--text-2);font-size:1.05rem;max-width:520px;margin:0 auto 36px;line-height:1.75}
-.cta-banner .btn{margin:0 auto}
-
-/* ── CONTACT ────────────────────────────────────────────── */
-.contact{padding:110px 0;border-top:1px solid var(--border)}
-.contact__inner{display:grid;grid-template-columns:1fr 1.5fr;gap:72px;align-items:start}
-.contact__channels{display:flex;flex-direction:column;gap:12px;margin-top:28px}
-.channel-link{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:var(--r-md);border:1px solid var(--border);background:var(--surface);transition:border-color .2s,transform .2s}
-.channel-link:hover{border-color:var(--border-2);transform:translateX(4px)}
-.channel-link__icon{width:42px;height:42px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.channel-link__icon--wa{background:rgba(37,211,102,.12);color:#25d366}
-.channel-link__icon--email{background:var(--gold-glow);color:var(--gold)}
-.channel-link__text{font-size:.9rem;font-weight:500;color:var(--text)}
-.channel-link__sub{font-size:.78rem;color:var(--text-3);display:block;margin-top:1px}
-
-.contact__form{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);padding:38px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.form-group{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
-.form-group label{font-size:.8rem;font-weight:600;color:var(--text-3);letter-spacing:.04em;text-transform:uppercase}
-.form-group input,.form-group select,.form-group textarea{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-sm);padding:12px 14px;font-family:var(--ff-body);font-size:.92rem;color:var(--text);transition:border-color .15s;-webkit-appearance:none}
-.form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-3)}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
-.form-group select option{background:var(--bg-2)}
-.form-group textarea{resize:vertical;min-height:100px}
-.form__note{text-align:center;font-size:.77rem;color:var(--text-3);margin-top:12px}
-.form__success{display:none;align-items:center;justify-content:center;gap:10px;margin-top:16px;padding:14px;background:var(--green-dim);border:1px solid rgba(61,214,140,.2);border-radius:var(--r-sm);font-size:.9rem;color:var(--green);font-weight:500}
-.form__success.show{display:flex}
-
-/* ── FOOTER ─────────────────────────────────────────────── */
-.footer{background:var(--bg-2);border-top:1px solid var(--border);padding:52px 0 36px}
-.footer__inner{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;margin-bottom:36px;flex-wrap:wrap}
-.footer__logo{font-family:var(--ff-head);font-size:1.6rem;font-weight:900;font-style:italic;line-height:1;margin-bottom:8px}
-.footer__logo span{color:var(--gold)}
-.footer__brand p{font-size:.83rem;color:var(--text-2);line-height:1.65}
-.footer__links{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
-.footer__links a{font-size:.85rem;color:var(--text-2);transition:color .15s}
-.footer__links a:hover{color:var(--gold)}
-.footer__bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:28px;border-top:1px solid var(--border);flex-wrap:wrap}
-.footer__bottom p{font-size:.78rem;color:var(--text-3)}
-.footer__gh{display:flex;align-items:center;gap:7px;font-size:.8rem;color:var(--text-3);transition:color .15s}
-.footer__gh:hover{color:var(--gold)}
-
-/* ── RESPONSIVE ─────────────────────────────────────────── */
-@media(max-width:1024px){
-  .hero{grid-template-columns:1fr;text-align:center;justify-items:center;padding-top:100px}
-  .hero__sub{margin:0 auto 40px}
-  .hero__actions{justify-content:center}
-  .hero__stats{margin:0 auto}
-  .hero__visual{display:none}
-  .about__inner{grid-template-columns:1fr;gap:50px}
-  .services__grid{grid-template-columns:1fr}
-  .portfolio__grid{grid-template-columns:repeat(2,1fr)}
-  .packages__grid{grid-template-columns:1fr}
-  .process__grid{grid-template-columns:repeat(2,1fr)}
-  .contact__inner{grid-template-columns:1fr;gap:44px}
-  .form-row{grid-template-columns:1fr}
-}
-@media(max-width:640px){
-  .nav{padding:16px 20px}
-  .nav.scrolled{padding:10px 20px}
-  .nav__links{position:fixed;top:0;right:0;width:78%;max-width:300px;height:100vh;background:rgba(8,8,13,.98);backdrop-filter:blur(22px);flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;padding:40px 28px;border-left:1px solid var(--border);transform:translateX(100%);transition:transform .35s var(--ease);z-index:99}
-  .nav__links.open{transform:translateX(0)}
-  .nav__links a{font-size:1.05rem;color:var(--text)}
-  .nav__menu-btn{display:flex}
-  .nav__overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:98}
-  .nav__overlay.show{display:block}
-  .lang-toggle{position:fixed;bottom:24px;right:20px;z-index:200}
-  .portfolio__grid{grid-template-columns:1fr}
-  .process__grid{grid-template-columns:1fr}
-  .contact__form{padding:24px}
-  .extras{flex-direction:column;align-items:flex-start}
-  .footer__inner{flex-direction:column}
-  .footer__bottom{flex-direction:column;text-align:center}
-  .stat{padding:14px 20px}
-  .stat__n{font-size:1.6rem}
-  .hero__headline{font-size:2.5rem}
-  h2{font-size:1.95rem}
-}
-@keyframes spin{to{transform:rotate(360deg)}}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700;1,9..144,900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -339,11 +19,11 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
       <span></span><span></span><span></span>
     </button>
     <ul class="nav__links" id="navLinks">
-      <li><a href="#about"    data-i18n="nav.about">About</a></li>
-      <li><a href="#services" data-i18n="nav.services">Services</a></li>
+      <li><a href="#about"     data-i18n="nav.about">About</a></li>
+      <li><a href="#services"  data-i18n="nav.services">Services</a></li>
       <li><a href="#portfolio" data-i18n="nav.work">Work</a></li>
-      <li><a href="#packages" data-i18n="nav.packages">Packages</a></li>
-      <li><a href="#contact"  data-i18n="nav.cta" class="nav__cta">Let's Talk</a></li>
+      <li><a href="#packages"  data-i18n="nav.packages">Packages</a></li>
+      <li><a href="#contact"   data-i18n="nav.cta" class="nav__cta">Let's Talk</a></li>
     </ul>
     <button class="lang-toggle" id="langToggle" aria-label="Switch language">
       <span class="lang-toggle__option lang-toggle__option--active" data-lang="en">EN</span>
@@ -353,128 +33,127 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
   </nav>
 
   <!-- HERO -->
-  <section id="hero">
-    <div class="hero">
-      <div class="hero__content">
-        <div class="hero__eyebrow will-animate">
-          <span class="hero__dot"></span>
-          <span data-i18n="hero.badge">Available for new projects</span>
-        </div>
+  <section class="hero" id="hero">
+    <div class="hero__bg-grid"></div>
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
 
-        <h1 class="hero__headline will-animate d1">
-          <span class="line" data-i18n="hero.h1a">Your Business</span>
-          <span class="line" data-i18n="hero.h1b">Deserves a</span>
-          <span class="line accent" data-i18n="hero.h1c">Digital Presence</span>
-          <span class="line accent" data-i18n="hero.h1d">That Wins.</span>
-        </h1>
-
-        <p class="hero__sub will-animate d2">
-          I'm <strong>Damian Aguilera</strong> —
-          <span data-i18n="hero.role">Software Engineer &amp; Digital Strategist.</span>
-          <br>
-          <span data-i18n="hero.sub">I build <em>growth engines</em> for US businesses.</span>
-        </p>
-
-        <div class="hero__actions will-animate d3">
-          <a href="#portfolio" class="btn btn--primary">
-            <span data-i18n="hero.cta1">See My Work</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#contact" class="btn btn--ghost" data-i18n="hero.cta2">Book a Free Call</a>
-        </div>
-
-        <div class="hero__stats will-animate d4">
-          <div class="stat">
-            <span class="stat__n"><span class="trust__num" data-count="50">0</span><span class="stat__suffix">+</span></span>
-            <span class="stat__l" data-i18n="trust.projects">Projects Delivered</span>
-          </div>
-          <div class="stat">
-            <span class="stat__n"><span class="trust__num" data-count="100">0</span><span class="stat__suffix">%</span></span>
-            <span class="stat__l" data-i18n="trust.satisfaction">Client Satisfaction</span>
-          </div>
-          <div class="stat">
-            <span class="stat__n"><span class="trust__num" data-count="3">0</span><span class="stat__suffix">x</span></span>
-            <span class="stat__l" data-i18n="trust.growth">Avg. Traffic Growth</span>
-          </div>
-        </div>
+    <div class="hero__content">
+      <div class="hero__badge anim">
+        <span class="badge__dot"></span>
+        <span data-i18n="hero.badge">Available for new projects</span>
       </div>
 
-      <div class="hero__visual will-animate d2">
-        <div class="mockup">
-          <div class="mockup__bar">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="url">yourbusiness.com</span>
+      <h1 class="hero__headline anim anim--d1">
+        <span data-i18n="hero.h1a">Your Business</span><br>
+        <span data-i18n="hero.h1b">Deserves a</span><br>
+        <span class="hero__highlight">
+          <span data-i18n="hero.h1c">Digital Presence</span><br>
+          <span data-i18n="hero.h1d">That Wins.</span>
+        </span>
+      </h1>
+
+      <p class="hero__sub anim anim--d2">
+        <span data-i18n="hero.intro">I'm</span> <strong>Damian Aguilera</strong> —
+        <span data-i18n="hero.role">Software Engineer &amp; Digital Strategist</span>.<br>
+        <span data-i18n="hero.sub">I don't just build websites. I build <em>growth engines</em> for US businesses.</span>
+      </p>
+
+      <div class="hero__actions anim anim--d3">
+        <a href="#portfolio" class="btn btn--primary">
+          <span data-i18n="hero.cta1">See My Work</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn btn--ghost" data-i18n="hero.cta2">Book a Free Call</a>
+      </div>
+
+      <div class="hero__trust anim anim--d4">
+        <div class="trust__item">
+          <span class="trust__num" data-count="50">0</span><span class="trust__plus">+</span>
+          <span class="trust__label" data-i18n="trust.projects">Projects Delivered</span>
+        </div>
+        <div class="trust__divider"></div>
+        <div class="trust__item">
+          <span class="trust__num" data-count="100">0</span><span class="trust__plus">%</span>
+          <span class="trust__label" data-i18n="trust.satisfaction">Client Satisfaction</span>
+        </div>
+        <div class="trust__divider"></div>
+        <div class="trust__item">
+          <span class="trust__num" data-count="3">0</span><span class="trust__plus">x</span>
+          <span class="trust__label" data-i18n="trust.growth">Avg. Traffic Growth</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__visual anim anim--d2">
+      <div class="mockup">
+        <div class="mockup__bar">
+          <span></span><span></span><span></span>
+          <div class="mockup__url">yourbusiness.com</div>
+        </div>
+        <div class="mockup__screen">
+          <div class="mockup__line mockup__line--title"></div>
+          <div class="mockup__line mockup__line--sub"></div>
+          <div class="mockup__btn-row">
+            <div class="mockup__btn-sim"></div>
+            <div class="mockup__btn-sim mockup__btn-sim--ghost"></div>
           </div>
-          <div class="mockup__body">
-            <div class="mockup__hero">
-              <div class="mockup__tag-row">
-                <div class="mockup__tag-sim"></div>
-                <div class="mockup__tag-sim"></div>
-              </div>
-              <div class="mockup__h mockup__h--1"></div>
-              <div class="mockup__h mockup__h--2"></div>
-              <div class="mockup__h mockup__h--3"></div>
-              <div class="mockup__h mockup__h--4"></div>
-              <div class="mockup__btn-row">
-                <div class="mockup__btn"></div>
-                <div class="mockup__btn mockup__btn--ghost"></div>
-              </div>
-            </div>
-            <div class="mockup__cards">
-              <div class="mockup__card"><div class="mockup__card-icon"></div><div class="mockup__card-line"></div><div class="mockup__card-line"></div></div>
-              <div class="mockup__card"><div class="mockup__card-icon"></div><div class="mockup__card-line"></div><div class="mockup__card-line"></div></div>
-              <div class="mockup__card"><div class="mockup__card-icon"></div><div class="mockup__card-line"></div><div class="mockup__card-line"></div></div>
-            </div>
+          <div class="mockup__card-row">
+            <div class="mockup__card"></div>
+            <div class="mockup__card"></div>
+            <div class="mockup__card"></div>
           </div>
-          <div class="mockup__float mockup__float--1">
-            <span class="mockup__float-dot"></span>
-            SEO Optimized
-          </div>
-          <div class="mockup__float mockup__float--2">
-            <span class="mockup__float-dot"></span>
-            Lightning Fast
-          </div>
-          <div class="mockup__float mockup__float--3">
-            <span class="mockup__float-dot"></span>
-            Mobile-First
-          </div>
+          <div class="mockup__line mockup__line--short"></div>
+          <div class="mockup__line mockup__line--short mockup__line--w60"></div>
+        </div>
+        <div class="mockup__tag mockup__tag--1">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#3dd68c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          SEO Optimized
+        </div>
+        <div class="mockup__tag mockup__tag--2">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Lightning Fast
+        </div>
+        <div class="mockup__tag mockup__tag--3">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" stroke="#60a5fa" stroke-width="2"/></svg>
+          Mobile-First
         </div>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="about" id="about">
+  <section class="about-strip" id="about">
     <div class="container">
-      <div class="about__inner">
-        <div class="will-animate">
-          <span class="about__label" data-i18n="about.overline">Who I Am</span>
+      <div class="about-strip__inner">
+        <div class="about-strip__text scroll-anim">
+          <p class="overline" data-i18n="about.overline">Who I Am</p>
           <h2>
-            <span data-i18n="about.h2a">Not a freelancer.</span><br>
-            <span data-i18n="about.h2b">A partner in your growth.</span>
+            <span data-i18n="about.h2a">Built different.</span><br>
+            <span data-i18n="about.h2b">Focused on your growth.</span>
           </h2>
-          <p class="body-text" style="margin-top:22px" data-i18n="about.p1">I'm a Software Engineer with a degree in Software Development &amp; Management. I've spent years watching businesses lose money because their digital presence didn't match their real value. That's the problem I fix.</p>
-          <p class="body-text" data-i18n="about.p2">Serving clients across the United States with agency-level execution — which means you get American-quality work at a fraction of agency cost.</p>
-          <a href="#contact" class="btn btn--primary" style="margin-top:8px" data-i18n="about.btn">Work With Me</a>
+          <p class="body-text" data-i18n="about.p1">I'm a Software Engineer with a degree in Software Development &amp; Management. I've spent years watching businesses lose money because their digital presence didn't match their real value. That's the problem I solve.</p>
+          <p class="body-text" data-i18n="about.p2">I deliver agency-level execution for US businesses — professional quality, direct communication, and results you can measure. No middlemen, no delays.</p>
+          <a href="#contact" class="btn btn--primary" data-i18n="about.btn">Work With Me</a>
         </div>
-        <div class="about__cards will-animate d2">
+        <div class="about-strip__cards scroll-anim">
           <div class="value-card">
-            <span class="value-card__num">01</span>
+            <div class="value-card__num">01</div>
             <h3 data-i18n="vc.r.title">Results-First</h3>
             <p data-i18n="vc.r.desc">Every pixel has a purpose. I design for conversions, not just aesthetics.</p>
           </div>
           <div class="value-card">
-            <span class="value-card__num">02</span>
+            <div class="value-card__num">02</div>
             <h3 data-i18n="vc.f.title">Fast Delivery</h3>
             <p data-i18n="vc.f.desc">Landing pages in 3–5 days. Full projects in 2–4 weeks. Deadlines respected.</p>
           </div>
           <div class="value-card">
-            <span class="value-card__num">03</span>
+            <div class="value-card__num">03</div>
             <h3 data-i18n="vc.o.title">You Own It All</h3>
             <p data-i18n="vc.o.desc">Full code ownership. No lock-in. No hidden fees. Your site, your rules.</p>
           </div>
           <div class="value-card">
-            <span class="value-card__num">04</span>
+            <div class="value-card__num">04</div>
             <h3 data-i18n="vc.u.title">US Market Ready</h3>
             <p data-i18n="vc.u.desc">Built for American audiences — copy, UX, speed, and SEO tuned for US traffic.</p>
           </div>
@@ -486,14 +165,14 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
   <!-- SERVICES -->
   <section class="services" id="services">
     <div class="container">
-      <div class="section-header will-animate">
+      <div class="section-header scroll-anim">
         <p class="overline" data-i18n="srv.overline">What I Do</p>
-        <h2>I build <em>digital presence</em>,<br><span data-i18n="srv.h2b">not just a website.</span></h2>
+        <h2><span data-i18n="srv.h2a">Digital presence</span>,<br><span data-i18n="srv.h2b">engineered to convert.</span></h2>
         <p class="section-sub" data-i18n="srv.sub">The difference between a website and a digital presence is the difference between existing and winning.</p>
       </div>
       <div class="services__grid">
-        <div class="service-card will-animate">
-          <span class="service-card__num">01</span>
+        <div class="service-card scroll-anim">
+          <div class="service-card__number">01</div>
           <h3 data-i18n="s1.title">Landing Pages</h3>
           <p data-i18n="s1.desc">High-converting single pages built to turn visitors into customers. Perfect for campaigns, products, and local services.</p>
           <ul class="service-card__list">
@@ -502,8 +181,8 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
             <li data-i18n="s1.l3">SEO fundamentals built-in</li>
           </ul>
         </div>
-        <div class="service-card will-animate d1">
-          <span class="service-card__num">02</span>
+        <div class="service-card scroll-anim">
+          <div class="service-card__number">02</div>
           <h3 data-i18n="s2.title">Business Websites</h3>
           <p data-i18n="s2.desc">Multi-section sites that establish authority, build trust, and generate consistent leads for serious businesses.</p>
           <ul class="service-card__list">
@@ -512,8 +191,8 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
             <li data-i18n="s2.l3">Speed &amp; performance optimized</li>
           </ul>
         </div>
-        <div class="service-card will-animate d2">
-          <span class="service-card__num">03</span>
+        <div class="service-card scroll-anim">
+          <div class="service-card__number">03</div>
           <h3 data-i18n="s3.title">Full-Stack Web Apps</h3>
           <p data-i18n="s3.desc">Complete solutions with databases, user authentication, APIs and custom dashboards for businesses ready to scale.</p>
           <ul class="service-card__list">
@@ -522,10 +201,10 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
             <li data-i18n="s3.l3">Secure authentication systems</li>
           </ul>
         </div>
-        <div class="service-card service-card--accent will-animate d3">
-          <span class="service-card__num">04</span>
+        <div class="service-card service-card--accent scroll-anim">
+          <div class="service-card__number">04</div>
           <h3 data-i18n="s4.title">Digital Strategy</h3>
-          <p data-i18n="s4.desc">Not sure what you need? I audit your current presence and create a roadmap to digital dominance. Then I execute it.</p>
+          <p data-i18n="s4.desc">Not sure what you need? I audit your current presence and build a roadmap to digital dominance. Then I execute it.</p>
           <ul class="service-card__list">
             <li data-i18n="s4.l1">Competitor analysis</li>
             <li data-i18n="s4.l2">SEO &amp; content strategy</li>
@@ -539,24 +218,25 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
   <!-- PORTFOLIO -->
   <section class="portfolio" id="portfolio">
     <div class="container">
-      <div class="section-header will-animate">
+      <div class="section-header scroll-anim">
         <p class="overline" data-i18n="pf.overline">Real Work, Real Results</p>
-        <h2>Projects I've <em data-i18n="pf.h2">built &amp; shipped.</em></h2>
+        <h2>Projects I've <span class="gold-text" data-i18n="pf.h2">built &amp; shipped</span>.</h2>
         <p class="section-sub" data-i18n="pf.sub">Every project below is live and built from scratch — no templates, no shortcuts.</p>
       </div>
 
-      <div class="portfolio__filters will-animate">
+      <div class="portfolio__filters scroll-anim">
         <button class="pf-btn pf-btn--active" data-filter="all" data-i18n="pf.all">All Projects</button>
         <button class="pf-btn" data-filter="live" data-i18n="pf.live">Live Sites</button>
       </div>
 
       <div class="portfolio__grid" id="portfolioGrid">
-        <div class="pj-card will-animate" data-type="live">
+
+        <div class="pj-card scroll-anim" data-type="live">
           <div class="pj-card__preview">
             <iframe src="https://damian7777777777.github.io/Sabor-Mexicano/" title="Sabor Mexicano" loading="lazy" tabindex="-1" scrolling="no"></iframe>
             <div class="pj-card__overlay">
               <a href="https://damian7777777777.github.io/Sabor-Mexicano/" target="_blank" rel="noopener" class="pj-card__view-btn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span data-i18n="pj.view">View Live Site</span>
               </a>
             </div>
@@ -571,17 +251,17 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
             <p data-i18n="p1.desc">A vibrant restaurant landing page designed to drive foot traffic and reservations.</p>
             <a href="https://damian7777777777.github.io/Sabor-Mexicano/" target="_blank" rel="noopener" class="pj-card__link">
               <span data-i18n="pj.visit">Visit site</span>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
         </div>
 
-        <div class="pj-card will-animate d1" data-type="live">
+        <div class="pj-card scroll-anim" data-type="live">
           <div class="pj-card__preview">
             <iframe src="https://damian7777777777.github.io/Barber/" title="Barber Shop" loading="lazy" tabindex="-1" scrolling="no"></iframe>
             <div class="pj-card__overlay">
               <a href="https://damian7777777777.github.io/Barber/" target="_blank" rel="noopener" class="pj-card__view-btn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span data-i18n="pj.view">View Live Site</span>
               </a>
             </div>
@@ -596,17 +276,17 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
             <p data-i18n="p2.desc">A bold, modern site for a local barbershop built to attract walk-ins and establish credibility online.</p>
             <a href="https://damian7777777777.github.io/Barber/" target="_blank" rel="noopener" class="pj-card__link">
               <span data-i18n="pj.visit">Visit site</span>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
         </div>
 
-        <div class="pj-card will-animate d2" data-type="live">
+        <div class="pj-card scroll-anim" data-type="live">
           <div class="pj-card__preview">
             <iframe src="https://damian7777777777.github.io/demo-landing-page/" title="Demo Landing Page" loading="lazy" tabindex="-1" scrolling="no"></iframe>
             <div class="pj-card__overlay">
               <a href="https://damian7777777777.github.io/demo-landing-page/" target="_blank" rel="noopener" class="pj-card__view-btn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span data-i18n="pj.view">View Live Site</span>
               </a>
             </div>
@@ -618,20 +298,20 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
               <span class="pj-card__tag" data-i18n="pj.conversion">Conversion Page</span>
             </div>
             <h3>Demo Landing Page</h3>
-            <p data-i18n="p3.desc">A high-conversion landing page showcasing modern design, persuasive copy structure, and mobile-first performance.</p>
+            <p data-i18n="p3.desc">A high-conversion landing page showcasing modern design, persuasive copy, and mobile-first performance.</p>
             <a href="https://damian7777777777.github.io/demo-landing-page/" target="_blank" rel="noopener" class="pj-card__link">
               <span data-i18n="pj.visit">Visit site</span>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
         </div>
 
-        <div class="pj-card will-animate" data-type="live">
+        <div class="pj-card scroll-anim" data-type="live">
           <div class="pj-card__preview">
             <iframe src="https://damian7777777777.github.io/petShop/" title="Pet Shop" loading="lazy" tabindex="-1" scrolling="no"></iframe>
             <div class="pj-card__overlay">
               <a href="https://damian7777777777.github.io/petShop/" target="_blank" rel="noopener" class="pj-card__view-btn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span data-i18n="pj.view">View Live Site</span>
               </a>
             </div>
@@ -646,17 +326,17 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
             <p data-i18n="p4.desc">A full e-commerce concept — product catalog and shopping experience designed for pet owners ready to buy.</p>
             <a href="https://damian7777777777.github.io/petShop/" target="_blank" rel="noopener" class="pj-card__link">
               <span data-i18n="pj.visit">Visit site</span>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
         </div>
 
-        <div class="pj-card will-animate d1" data-type="live">
+        <div class="pj-card scroll-anim" data-type="live">
           <div class="pj-card__preview">
             <iframe src="https://damian7777777777.github.io/demo-menuDigital/" title="Digital Menu" loading="lazy" tabindex="-1" scrolling="no"></iframe>
             <div class="pj-card__overlay">
               <a href="https://damian7777777777.github.io/demo-menuDigital/" target="_blank" rel="noopener" class="pj-card__view-btn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 <span data-i18n="pj.view">View Live Site</span>
               </a>
             </div>
@@ -671,18 +351,22 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
             <p data-i18n="p5.desc">A QR-ready digital menu — no printing costs, instant updates, premium dining experience on any device.</p>
             <a href="https://damian7777777777.github.io/demo-menuDigital/" target="_blank" rel="noopener" class="pj-card__link">
               <span data-i18n="pj.visit">Visit site</span>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
         </div>
 
-        <div class="pj-card pj-card--cta will-animate d2" data-type="live">
+        <div class="pj-card pj-card--cta scroll-anim" data-type="live">
           <div class="pj-card__cta-inner">
+            <div class="pj-card__cta-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
             <h3 data-i18n="pj.cta.h3">Your project<br>could be next.</h3>
             <p data-i18n="pj.cta.p">Every business here started with one conversation. Let's have yours.</p>
             <a href="#contact" class="btn btn--primary" data-i18n="pj.cta.btn">Start a Project</a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -690,96 +374,98 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
   <!-- PACKAGES -->
   <section class="packages" id="packages">
     <div class="container">
-      <div class="section-header will-animate">
-        <p class="overline" data-i18n="pkg.overline">Transparent Pricing</p>
-        <h2><span data-i18n="pkg.h2a">Choose your</span> <em data-i18n="pkg.h2b">growth level.</em></h2>
-        <p class="section-sub" data-i18n="pkg.sub">No hidden fees. No surprises. Pay once, own it forever.</p>
+      <div class="section-header scroll-anim">
+        <p class="overline" data-i18n="pkg.overline">Investment &amp; Scope</p>
+        <h2><span data-i18n="pkg.h2a">Choose your</span><br><span class="gold-text" data-i18n="pkg.h2b">growth level.</span></h2>
+        <p class="section-sub" data-i18n="pkg.sub">No hidden fees. No surprises. One investment — yours forever.</p>
       </div>
 
       <div class="packages__grid">
+
         <!-- BASIC -->
-        <div class="pkg-card will-animate">
-          <div class="pkg-card__name" data-i18n="pk1.name">Basic</div>
+        <div class="pkg-card scroll-anim">
+          <div class="pkg-card__badge" data-i18n="pk1.name">Basic</div>
           <div class="pkg-card__price">
             <span class="pkg-card__from" data-i18n="pkg.from">from</span>
             <span class="pkg-card__amount">$150</span>
-            <span class="pkg-card__currency">USD</span>
+            <span class="pkg-card__period">USD</span>
           </div>
           <p class="pkg-card__tagline" data-i18n="pk1.tagline">Your first step to being found online.</p>
-          <p class="pkg-card__desc" data-i18n="pk1.desc">For freelancers and local services that need a professional online presence — fast.</p>
+          <p class="pkg-card__desc" data-i18n="pk1.desc">Ideal for independent professionals and local services that need a polished online presence — delivered fast.</p>
           <ul class="pkg-card__features">
-            <li data-i18n="pk1.f1">1 Landing Page</li>
-            <li data-i18n="pk1.f2">Mobile Responsive Design</li>
-            <li data-i18n="pk1.f3">WhatsApp CTA Button</li>
-            <li data-i18n="pk1.f4">Basic SEO Setup</li>
-            <li data-i18n="pk1.f5">Delivered in 3–5 days</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk1.f1">1 Landing Page</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk1.f2">Mobile Responsive Design</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk1.f3">WhatsApp CTA Button</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk1.f4">Basic SEO Setup</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk1.f5">Delivered in 3–5 days</span></li>
           </ul>
           <div class="pkg-card__bonus">
-            <strong data-i18n="pkg.bonus">Bonus included</strong>
+            <span class="bonus__label" data-i18n="pkg.bonus">Included:</span>
             <span data-i18n="pk1.bonus">WhatsApp Business Setup Guide</span>
           </div>
-          <a href="https://wa.me/524428484517?text=Hi!%20I'm%20interested%20in%20the%20Basic%20package" target="_blank" rel="noopener" class="btn btn--outline pkg-card__btn" data-i18n="pkg.quote">Quote on WhatsApp</a>
+          <a href="https://wa.me/524428484517?text=Hi!%20I'm%20interested%20in%20the%20Basic%20package" target="_blank" rel="noopener" class="btn btn--outline pkg-card__btn" data-i18n="pkg.quote">Get a Quote</a>
         </div>
 
-        <!-- STANDARD -->
-        <div class="pkg-card pkg-card--popular will-animate d1">
+        <!-- STANDARD (HERO) -->
+        <div class="pkg-card pkg-card--popular scroll-anim">
           <div class="pkg-card__popular-label" data-i18n="pkg.popular">Best Results</div>
-          <div class="pkg-card__name" data-i18n="pk2.name">Standard</div>
+          <div class="pkg-card__badge" data-i18n="pk2.name">Standard</div>
           <div class="pkg-card__price">
             <span class="pkg-card__from" data-i18n="pkg.from">from</span>
             <span class="pkg-card__amount">$250</span>
-            <span class="pkg-card__currency">USD</span>
+            <span class="pkg-card__period">USD</span>
           </div>
           <p class="pkg-card__tagline" data-i18n="pk2.tagline">More clients. More sales. More calls.</p>
-          <p class="pkg-card__desc" data-i18n="pk2.desc">For businesses ready to be taken seriously online. This is what actually brings in clients.</p>
+          <p class="pkg-card__desc" data-i18n="pk2.desc">For businesses ready to establish a serious online presence. This is what actually moves the needle.</p>
           <ul class="pkg-card__features">
-            <li data-i18n="pk2.f1">3–5 Sections Full Website</li>
-            <li data-i18n="pk2.f2">Conversion-Optimized Design</li>
-            <li data-i18n="pk2.f3">WhatsApp + Contact Form</li>
-            <li data-i18n="pk2.f4">Google-Ready SEO</li>
-            <li data-i18n="pk2.f5">Social Media Integration</li>
-            <li data-i18n="pk2.f6">Speed &amp; Performance Optimized</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk2.f1">3–5 Sections Full Website</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk2.f2">Conversion-Optimized Design</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk2.f3">WhatsApp + Contact Form</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk2.f4">Google-Ready SEO</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk2.f5">Social Media Integration</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk2.f6">Speed &amp; Performance Optimized</span></li>
           </ul>
           <div class="pkg-card__bonus">
-            <strong data-i18n="pkg.bonus">Bonus included</strong>
+            <span class="bonus__label" data-i18n="pkg.bonus">Included:</span>
             <span data-i18n="pk2.bonus">Mini Sales Guide + Basic SEO Report</span>
           </div>
-          <a href="https://wa.me/524428484517?text=Hi!%20I'm%20interested%20in%20the%20Standard%20package" target="_blank" rel="noopener" class="btn btn--primary pkg-card__btn" data-i18n="pkg.quote">Quote on WhatsApp</a>
+          <a href="https://wa.me/524428484517?text=Hi!%20I'm%20interested%20in%20the%20Standard%20package" target="_blank" rel="noopener" class="btn btn--primary pkg-card__btn" data-i18n="pkg.quote">Get a Quote</a>
         </div>
 
         <!-- PREMIUM -->
-        <div class="pkg-card pkg-card--premium will-animate d2">
-          <div class="pkg-card__name" data-i18n="pk3.name">Premium</div>
+        <div class="pkg-card pkg-card--premium scroll-anim">
+          <div class="pkg-card__badge" data-i18n="pk3.name">Premium</div>
           <div class="pkg-card__price">
             <span class="pkg-card__from" data-i18n="pkg.from">from</span>
             <span class="pkg-card__amount">$600</span>
-            <span class="pkg-card__currency">USD</span>
+            <span class="pkg-card__period">USD</span>
           </div>
           <p class="pkg-card__tagline" data-i18n="pk3.tagline">A complete digital growth system.</p>
-          <p class="pkg-card__desc" data-i18n="pk3.desc">Not just a website — a full strategy to dominate your market, built and executed for you.</p>
+          <p class="pkg-card__desc" data-i18n="pk3.desc">Not just a website — a full strategy to dominate your market, built and executed end-to-end.</p>
           <ul class="pkg-card__features">
-            <li data-i18n="pk3.f1">Everything in Standard</li>
-            <li data-i18n="pk3.f2">Conversion Rate Optimization</li>
-            <li data-i18n="pk3.f3">Professional Sales Copywriting</li>
-            <li data-i18n="pk3.f4">Competitor &amp; Market Analysis</li>
-            <li data-i18n="pk3.f5">Lead Capture System</li>
-            <li data-i18n="pk3.f6">30-Day Priority Support</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk3.f1">Everything in Standard</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk3.f2">Conversion Rate Optimization</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk3.f3">Professional Sales Copywriting</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk3.f4">Competitor &amp; Market Analysis</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk3.f5">Lead Capture System</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk3.f6">30-Day Priority Support</span></li>
           </ul>
           <div class="pkg-card__bonus">
-            <strong data-i18n="pkg.bonus">Bonus included</strong>
+            <span class="bonus__label" data-i18n="pkg.bonus">Included:</span>
             <span data-i18n="pk3.bonus">Digital Growth Strategy Session</span>
           </div>
-          <a href="https://wa.me/524428484517?text=Hi!%20I'm%20interested%20in%20the%20Premium%20package" target="_blank" rel="noopener" class="btn btn--outline pkg-card__btn" data-i18n="pkg.talkwa">Let's Talk on WhatsApp</a>
+          <a href="https://wa.me/524428484517?text=Hi!%20I'm%20interested%20in%20the%20Premium%20package" target="_blank" rel="noopener" class="btn btn--gold pkg-card__btn" data-i18n="pkg.talkwa">Let's Talk</a>
         </div>
+
       </div>
 
-      <div class="extras will-animate">
+      <div class="extras scroll-anim">
         <p class="extras__label" data-i18n="extras.label">Add-ons available:</p>
         <div class="extras__pills">
           <span data-i18n="extras.domain">Domain Registration — $15–30/yr</span>
           <span data-i18n="extras.hosting">Hosting Setup — $50–150/yr</span>
           <span data-i18n="extras.maint">Monthly Maintenance — from $20/mo</span>
-          <span data-i18n="extras.changes">Extra Changes — $25–50/hr</span>
+          <span data-i18n="extras.changes">Extra Revisions — $25–50/hr</span>
         </div>
       </div>
     </div>
@@ -788,45 +474,56 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
   <!-- PROCESS -->
   <section class="process" id="process">
     <div class="container">
-      <div class="section-header will-animate">
+      <div class="section-header scroll-anim">
         <p class="overline" data-i18n="proc.overline">How It Works</p>
-        <h2>From <em data-i18n="proc.h2a">idea to live</em><br><span data-i18n="proc.h2b">in days, not months.</span></h2>
+        <h2><span data-i18n="proc.h2a">From idea to live</span><br><span class="gold-text" data-i18n="proc.h2b">in days, not months.</span></h2>
       </div>
-      <div class="process__grid">
-        <div class="process__step will-animate">
-          <span class="process__step-num">01</span>
-          <h3 data-i18n="pr1.title">Free Discovery Call</h3>
-          <p data-i18n="pr1.desc">We talk about your business, goals, and what success looks like. 30 minutes that save months of wrong direction.</p>
+      <div class="process__steps">
+        <div class="process__step scroll-anim">
+          <div class="process__step-num">01</div>
+          <div class="process__step-content">
+            <h3 data-i18n="pr1.title">Discovery Call</h3>
+            <p data-i18n="pr1.desc">We talk about your business, goals, and what success looks like. 30 minutes that save months of wrong direction.</p>
+          </div>
         </div>
-        <div class="process__step will-animate d1">
-          <span class="process__step-num">02</span>
-          <h3 data-i18n="pr2.title">Proposal &amp; Strategy</h3>
-          <p data-i18n="pr2.desc">I send a clear proposal with timeline, tech stack, and exact deliverables. No vague estimates.</p>
+        <div class="process__connector"></div>
+        <div class="process__step scroll-anim">
+          <div class="process__step-num">02</div>
+          <div class="process__step-content">
+            <h3 data-i18n="pr2.title">Proposal &amp; Strategy</h3>
+            <p data-i18n="pr2.desc">You receive a clear proposal with timeline, tech stack, and exact deliverables. No vague estimates.</p>
+          </div>
         </div>
-        <div class="process__step will-animate d2">
-          <span class="process__step-num">03</span>
-          <h3 data-i18n="pr3.title">Build &amp; Review</h3>
-          <p data-i18n="pr3.desc">You see progress, give feedback, and we iterate until it's exactly right. You're always in the loop.</p>
+        <div class="process__connector"></div>
+        <div class="process__step scroll-anim">
+          <div class="process__step-num">03</div>
+          <div class="process__step-content">
+            <h3 data-i18n="pr3.title">Build &amp; Review</h3>
+            <p data-i18n="pr3.desc">You see progress, give feedback, and we iterate until it's exactly right. You're always in the loop.</p>
+          </div>
         </div>
-        <div class="process__step will-animate d3">
-          <span class="process__step-num">04</span>
-          <h3 data-i18n="pr4.title">Launch &amp; Grow</h3>
-          <p data-i18n="pr4.desc">Your site goes live, SEO is set, and I don't disappear. I'm your partner for what comes next.</p>
+        <div class="process__connector"></div>
+        <div class="process__step scroll-anim">
+          <div class="process__step-num">04</div>
+          <div class="process__step-content">
+            <h3 data-i18n="pr4.title">Launch &amp; Grow</h3>
+            <p data-i18n="pr4.desc">Your site goes live, SEO is configured, and the work doesn't stop. I stay as your growth partner.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA BANNER -->
-  <section class="cta-banner will-animate">
+  <section class="cta-banner scroll-anim">
+    <div class="cta-banner__bg"></div>
     <div class="container">
       <div class="cta-banner__inner">
-        <p class="overline" data-i18n="cta.overline">Don't Wait</p>
-        <h2><span data-i18n="cta.h2a">Your competitors are</span><br><em data-i18n="cta.h2b">already online.</em></h2>
+        <h2><span data-i18n="cta.h2a">Your competitors are</span><br><span data-i18n="cta.h2b">already online.</span></h2>
         <p data-i18n="cta.p">Every day without a professional digital presence is revenue left on the table. Let's change that — starting this week.</p>
         <a href="#contact" class="btn btn--primary btn--lg">
-          <span data-i18n="cta.btn">Start For Free</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-i18n="cta.btn">Start the Conversation</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
     </div>
@@ -836,33 +533,27 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
   <section class="contact" id="contact">
     <div class="container">
       <div class="contact__inner">
-        <div class="contact__info will-animate">
+        <div class="contact__info scroll-anim">
           <p class="overline" data-i18n="con.overline">Let's Build Something</p>
-          <h2><span data-i18n="con.h2a">Ready to</span><br><em data-i18n="con.h2b">dominate your market?</em></h2>
-          <p class="body-text" style="margin-top:18px" data-i18n="con.p">Tell me about your business. I'll respond within 24 hours with a plan — not a pitch.</p>
+          <h2><span data-i18n="con.h2a">Ready to</span><br><span class="gold-text" data-i18n="con.h2b">dominate your market?</span></h2>
+          <p class="body-text" data-i18n="con.p">Tell me about your business. I'll respond within 24 hours with a plan — not a pitch.</p>
           <div class="contact__channels">
             <a href="https://wa.me/524428484517" class="channel-link" target="_blank" rel="noopener">
               <div class="channel-link__icon channel-link__icon--wa">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               </div>
-              <div>
-                <span class="channel-link__text" data-i18n="con.wa">WhatsApp Me</span>
-                <span class="channel-link__sub">Fastest response</span>
-              </div>
+              <span data-i18n="con.wa">WhatsApp — Fastest Response</span>
             </a>
             <a href="mailto:damiantego@gmail.com" class="channel-link">
               <div class="channel-link__icon channel-link__icon--email">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
-              <div>
-                <span class="channel-link__text">damiantego@gmail.com</span>
-                <span class="channel-link__sub">Reply within 24 hours</span>
-              </div>
+              <span>damiantego@gmail.com</span>
             </a>
           </div>
         </div>
 
-        <form class="contact__form will-animate d2" id="contactForm">
+        <form class="contact__form scroll-anim" id="contactForm">
           <div class="form-row">
             <div class="form-group">
               <label for="fname" data-i18n="form.name">Your Name</label>
@@ -884,7 +575,7 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
               <option value="basic"      data-i18n="form.o1">Basic — $150 USD</option>
               <option value="standard"   data-i18n="form.o2">Standard — $250 USD</option>
               <option value="premium"    data-i18n="form.o3">Premium — $600 USD</option>
-              <option value="unsure"     data-i18n="form.o4">Not sure — Let's talk</option>
+              <option value="unsure"     data-i18n="form.o5">Not sure — Let's talk</option>
             </select>
           </div>
           <div class="form-group">
@@ -893,11 +584,11 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
           </div>
           <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
             <span data-i18n="form.submit">Send My Project Details</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <p class="form__note" data-i18n="form.note">I reply within 24 hours. No spam, ever.</p>
           <div class="form__success" id="formSuccess">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="#3dd68c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke="#3dd68c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span data-i18n="form.success">Message sent! I'll be in touch within 24 hours.</span>
           </div>
         </form>
@@ -924,275 +615,13 @@ em{font-family:var(--ff-head);font-style:italic;color:var(--gold-lt)}
       <div class="footer__bottom">
         <p data-i18n="footer.copy">© 2025 Damian Aguilera. All rights reserved.</p>
         <a href="https://github.com/Damian7777777777" target="_blank" rel="noopener" class="footer__gh">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
           GitHub
         </a>
       </div>
     </div>
   </footer>
 
-  <script>
-// ── ANIMATIONS ─────────────────────────────────────────────────
-(function(){
-  const els = document.querySelectorAll('.will-animate');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('is-visible');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
-  els.forEach(el => obs.observe(el));
-  // Trigger above-fold elements immediately
-  setTimeout(() => {
-    document.querySelectorAll('.hero .will-animate, #hero .will-animate').forEach(el => el.classList.add('is-visible'));
-  }, 60);
-})();
-
-// ── NAV ────────────────────────────────────────────────────────
-(function(){
-  const nav = document.getElementById('nav');
-  const update = () => nav.classList.toggle('scrolled', window.scrollY > 50);
-  window.addEventListener('scroll', update, { passive: true });
-  update();
-})();
-
-// ── MOBILE MENU ────────────────────────────────────────────────
-(function(){
-  const btn = document.getElementById('menuBtn');
-  const links = document.getElementById('navLinks');
-  if (!btn) return;
-  const overlay = document.createElement('div');
-  overlay.className = 'nav__overlay';
-  document.body.appendChild(overlay);
-  const open  = () => { btn.classList.add('open'); links.classList.add('open'); overlay.classList.add('show'); document.body.style.overflow='hidden'; };
-  const close = () => { btn.classList.remove('open'); links.classList.remove('open'); overlay.classList.remove('show'); document.body.style.overflow=''; };
-  btn.addEventListener('click', () => links.classList.contains('open') ? close() : open());
-  overlay.addEventListener('click', close);
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
-})();
-
-// ── COUNTERS ───────────────────────────────────────────────────
-(function(){
-  const counters = document.querySelectorAll('.trust__num[data-count]');
-  if (!counters.length) return;
-  let triggered = false;
-  const animate = el => {
-    const target = parseInt(el.dataset.count, 10);
-    const start = performance.now();
-    const step = now => {
-      const p = Math.min((now - start) / 1600, 1);
-      const e = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
-      el.textContent = Math.floor(e * target);
-      if (p < 1) requestAnimationFrame(step); else el.textContent = target;
-    };
-    requestAnimationFrame(step);
-  };
-  const obs = new IntersectionObserver(entries => {
-    if (triggered) return;
-    entries.forEach(e => { if (e.isIntersecting) { triggered = true; counters.forEach(animate); obs.disconnect(); } });
-  }, { threshold: 0.5 });
-  const wrap = counters[0].closest('.hero__stats');
-  if (wrap) obs.observe(wrap);
-})();
-
-// ── SMOOTH SCROLL ──────────────────────────────────────────────
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-  });
-});
-
-// ── FORM ───────────────────────────────────────────────────────
-(function(){
-  const form = document.getElementById('contactForm');
-  const success = document.getElementById('formSuccess');
-  const btn = document.getElementById('submitBtn');
-  if (!form) return;
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const orig = btn.innerHTML;
-    btn.disabled = true;
-    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="animation:spin .75s linear infinite;flex-shrink:0"><circle cx="12" cy="12" r="9" stroke="rgba(0,0,0,.25)" stroke-width="2.5"/><path d="M12 3a9 9 0 019 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg> Sending…`;
-    try {
-      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', { method:'POST', headers:{'Accept':'application/json'}, body: new FormData(form) });
-      if (res.ok) { form.reset(); btn.innerHTML = orig; btn.disabled = false; success.classList.add('show'); setTimeout(() => success.classList.remove('show'), 7000); }
-      else throw new Error('error');
-    } catch { btn.disabled = false; btn.innerHTML = 'Error — try again'; setTimeout(() => { btn.innerHTML = orig; }, 3000); }
-  });
-})();
-
-// ── I18N ───────────────────────────────────────────────────────
-const T = {
-  en: {
-    'nav.about':'About','nav.services':'Services','nav.work':'Work','nav.packages':'Packages','nav.cta':"Let's Talk",
-    'hero.badge':'Available for new projects',
-    'hero.h1a':'Your Business','hero.h1b':'Deserves a','hero.h1c':'Digital Presence','hero.h1d':'That Wins.',
-    'hero.role':'Software Engineer & Digital Strategist.',
-    'hero.sub':'I build <em>growth engines</em> for US businesses.',
-    'hero.cta1':'See My Work','hero.cta2':'Book a Free Call',
-    'trust.projects':'Projects Delivered','trust.satisfaction':'Client Satisfaction','trust.growth':'Avg. Traffic Growth',
-    'about.overline':'Who I Am','about.h2a':'Not a freelancer.','about.h2b':'A partner in your growth.',
-    'about.p1':"I'm a Software Engineer with a degree in Software Development & Management. I've spent years watching businesses lose money because their digital presence didn't match their real value. That's the problem I fix.",
-    'about.p2':'Serving clients across the United States with agency-level execution — which means you get American-quality work at a fraction of agency cost.',
-    'about.btn':'Work With Me',
-    'vc.r.title':'Results-First','vc.r.desc':'Every pixel has a purpose. I design for conversions, not just aesthetics.',
-    'vc.f.title':'Fast Delivery','vc.f.desc':'Landing pages in 3–5 days. Full projects in 2–4 weeks. Deadlines respected.',
-    'vc.o.title':'You Own It All','vc.o.desc':'Full code ownership. No lock-in. No hidden fees. Your site, your rules.',
-    'vc.u.title':'US Market Ready','vc.u.desc':'Built for American audiences — copy, UX, speed, and SEO tuned for US traffic.',
-    'srv.overline':'What I Do','srv.h2b':'not just a website.',
-    'srv.sub':'The difference between a website and a digital presence is the difference between existing and winning.',
-    's1.title':'Landing Pages','s1.desc':'High-converting single pages built to turn visitors into customers. Perfect for campaigns, products, and local services.',
-    's1.l1':'Compelling copywriting structure','s1.l2':'WhatsApp & social integration','s1.l3':'SEO fundamentals built-in',
-    's2.title':'Business Websites','s2.desc':'Multi-section sites that establish authority, build trust, and generate consistent leads for serious businesses.',
-    's2.l1':'3–6 professional sections','s2.l2':'Functional contact forms','s2.l3':'Speed & performance optimized',
-    's3.title':'Full-Stack Web Apps','s3.desc':'Complete solutions with databases, user authentication, APIs and custom dashboards for businesses ready to scale.',
-    's3.l1':'Node.js / PHP backends','s3.l2':'CRM & lead management','s3.l3':'Secure authentication systems',
-    's4.title':'Digital Strategy','s4.desc':"Not sure what you need? I audit your current presence and create a roadmap to digital dominance. Then I execute it.",
-    's4.l1':'Competitor analysis','s4.l2':'SEO & content strategy','s4.l3':'Hosting & tech stack guidance',
-    'pf.overline':'Real Work, Real Results','pf.h2':'built & shipped.','pf.sub':'Every project below is live and built from scratch — no templates, no shortcuts.',
-    'pf.all':'All Projects','pf.live':'Live Sites',
-    'pj.view':'View Live Site','pj.visit':'Visit site',
-    'pj.restaurant':'Restaurant','pj.barber':'Barbershop','pj.landing':'Landing Page','pj.local':'Local Business','pj.ecom':'E-commerce','pj.menu':'Digital Menu','pj.conversion':'Conversion Page',
-    'p1.desc':'A vibrant restaurant landing page designed to drive foot traffic and reservations.',
-    'p2.desc':'A bold, modern site for a local barbershop built to attract walk-ins and establish credibility online.',
-    'p3.desc':'A high-conversion landing page showcasing modern design, persuasive copy structure, and mobile-first performance.',
-    'p4.desc':'A full e-commerce concept — product catalog and shopping experience designed for pet owners ready to buy.',
-    'p5.desc':'A QR-ready digital menu — no printing costs, instant updates, premium dining experience on any device.',
-    'pj.cta.h3':'Your project<br>could be next.','pj.cta.p':'Every business here started with one conversation. Let\'s have yours.','pj.cta.btn':'Start a Project',
-    'pkg.overline':'Transparent Pricing','pkg.h2a':'Choose your','pkg.h2b':'growth level.',
-    'pkg.sub':'No hidden fees. No surprises. Pay once, own it forever.',
-    'pkg.from':'from','pkg.popular':'Best Results','pkg.bonus':'Bonus included',
-    'pkg.quote':'Quote on WhatsApp','pkg.talkwa':"Let's Talk on WhatsApp",
-    'pk1.name':'Basic','pk1.tagline':'Your first step to being found online.',
-    'pk1.desc':'For freelancers and local services that need a professional online presence — fast.',
-    'pk1.f1':'1 Landing Page','pk1.f2':'Mobile Responsive Design','pk1.f3':'WhatsApp CTA Button','pk1.f4':'Basic SEO Setup','pk1.f5':'Delivered in 3–5 days',
-    'pk1.bonus':'WhatsApp Business Setup Guide',
-    'pk2.name':'Standard','pk2.tagline':'More clients. More sales. More calls.',
-    'pk2.desc':'For businesses ready to be taken seriously online. This is what actually brings in clients.',
-    'pk2.f1':'3–5 Sections Full Website','pk2.f2':'Conversion-Optimized Design','pk2.f3':'WhatsApp + Contact Form','pk2.f4':'Google-Ready SEO','pk2.f5':'Social Media Integration','pk2.f6':'Speed & Performance Optimized',
-    'pk2.bonus':'Mini Sales Guide + Basic SEO Report',
-    'pk3.name':'Premium','pk3.tagline':'A complete digital growth system.',
-    'pk3.desc':'Not just a website — a full strategy to dominate your market, built and executed for you.',
-    'pk3.f1':'Everything in Standard','pk3.f2':'Conversion Rate Optimization','pk3.f3':'Professional Sales Copywriting','pk3.f4':'Competitor & Market Analysis','pk3.f5':'Lead Capture System','pk3.f6':'30-Day Priority Support',
-    'pk3.bonus':'Digital Growth Strategy Session',
-    'extras.label':'Add-ons available:','extras.domain':'Domain Registration — $15–30/yr','extras.hosting':'Hosting Setup — $50–150/yr','extras.maint':'Monthly Maintenance — from $20/mo','extras.changes':'Extra Changes — $25–50/hr',
-    'proc.overline':'How It Works','proc.h2a':'idea to live','proc.h2b':'in days, not months.',
-    'pr1.title':'Free Discovery Call','pr1.desc':'We talk about your business, goals, and what success looks like. 30 minutes that save months of wrong direction.',
-    'pr2.title':'Proposal & Strategy','pr2.desc':'I send a clear proposal with timeline, tech stack, and exact deliverables. No vague estimates.',
-    'pr3.title':'Build & Review','pr3.desc':"You see progress, give feedback, and we iterate until it's exactly right. You're always in the loop.",
-    'pr4.title':'Launch & Grow','pr4.desc':"Your site goes live, SEO is set, and I don't disappear. I'm your partner for what comes next.",
-    'cta.overline':'Don\'t Wait','cta.h2a':'Your competitors are','cta.h2b':'already online.',
-    'cta.p':'Every day without a professional digital presence is revenue left on the table. Let\'s change that — starting this week.',
-    'cta.btn':'Start For Free',
-    'con.overline':"Let's Build Something",'con.h2a':'Ready to','con.h2b':'dominate your market?',
-    'con.p':"Tell me about your business. I'll respond within 24 hours with a plan — not a pitch.",
-    'con.wa':'WhatsApp Me',
-    'form.name':'Your Name','form.email':'Email Address','form.business':'Business / Industry',
-    'form.package':"I'm interested in...",'form.select':'Select a package',
-    'form.o1':'Basic — $150 USD','form.o2':'Standard — $250 USD','form.o3':'Premium — $600 USD','form.o4':"Not sure — Let's talk",
-    'form.message':'Tell me about your project','form.submit':'Send My Project Details',
-    'form.note':'I reply within 24 hours. No spam, ever.','form.success':"Message sent! I'll be in touch within 24 hours.",
-    'footer.copy':'© 2025 Damian Aguilera. All rights reserved.',
-  },
-  es: {
-    'nav.about':'Sobre Mí','nav.services':'Servicios','nav.work':'Portafolio','nav.packages':'Paquetes','nav.cta':'Hablemos',
-    'hero.badge':'Disponible para nuevos proyectos',
-    'hero.h1a':'Tu Negocio','hero.h1b':'Merece una','hero.h1c':'Presencia Digital','hero.h1d':'Que Gane.',
-    'hero.role':'Ingeniero de Software y Estratega Digital.',
-    'hero.sub':'Construyo <em>motores de crecimiento</em> para negocios en EE.UU.',
-    'hero.cta1':'Ver Mi Trabajo','hero.cta2':'Llamada Gratuita',
-    'trust.projects':'Proyectos Entregados','trust.satisfaction':'Satisfacción del Cliente','trust.growth':'Crecimiento Promedio',
-    'about.overline':'Quién Soy','about.h2a':'No soy un freelancer.','about.h2b':'Soy tu socio de crecimiento.',
-    'about.p1':'Soy Ingeniero de Software con carrera en Desarrollo y Gestión de Software. Pasé años viendo cómo los negocios pierden dinero porque su presencia digital no refleja su valor real. Ese es el problema que resuelvo.',
-    'about.p2':'Atiendo clientes en todo Estados Unidos con ejecución de nivel agencia — lo que significa que obtienes trabajo de calidad americana a una fracción del costo.',
-    'about.btn':'Trabajar Conmigo',
-    'vc.r.title':'Resultados Primero','vc.r.desc':'Cada píxel tiene un propósito. Diseño para conversiones, no solo estética.',
-    'vc.f.title':'Entrega Rápida','vc.f.desc':'Landing pages en 3–5 días. Proyectos completos en 2–4 semanas. Plazos respetados.',
-    'vc.o.title':'Todo es Tuyo','vc.o.desc':'Propiedad total del código. Sin ataduras. Sin cargos ocultos. Tu sitio, tus reglas.',
-    'vc.u.title':'Listo para EE.UU.','vc.u.desc':'Construido para audiencias americanas — copy, UX, velocidad y SEO optimizados para tráfico de EE.UU.',
-    'srv.overline':'Qué Hago','srv.h2b':'no solo un sitio web.',
-    'srv.sub':'La diferencia entre un sitio web y una presencia digital es la diferencia entre existir y ganar.',
-    's1.title':'Landing Pages','s1.desc':'Páginas únicas de alta conversión construidas para convertir visitantes en clientes. Perfectas para campañas, productos y servicios locales.',
-    's1.l1':'Estructura de copy persuasiva','s1.l2':'Integración de WhatsApp y redes','s1.l3':'Fundamentos de SEO integrados',
-    's2.title':'Sitios de Negocio','s2.desc':'Sitios multisección que establecen autoridad, generan confianza y producen clientes constantes para negocios serios.',
-    's2.l1':'3–6 secciones profesionales','s2.l2':'Formularios de contacto funcionales','s2.l3':'Velocidad y rendimiento optimizado',
-    's3.title':'Aplicaciones Web Full-Stack','s3.desc':'Soluciones completas con bases de datos, autenticación, APIs y dashboards personalizados para negocios listos para escalar.',
-    's3.l1':'Backends en Node.js / PHP','s3.l2':'CRM y gestión de leads','s3.l3':'Sistemas de autenticación seguros',
-    's4.title':'Estrategia Digital','s4.desc':'¿No sabes qué necesitas? Audito tu presencia actual y creo una hoja de ruta para dominar tu mercado. Luego lo ejecuto.',
-    's4.l1':'Análisis de competencia','s4.l2':'Estrategia de SEO y contenido','s4.l3':'Guía de hosting y stack tecnológico',
-    'pf.overline':'Trabajo Real, Resultados Reales','pf.h2':'construidos y publicados.','pf.sub':'Cada proyecto está en vivo y construido desde cero — sin templates, sin atajos.',
-    'pf.all':'Todos los Proyectos','pf.live':'Sitios en Vivo',
-    'pj.view':'Ver Sitio en Vivo','pj.visit':'Visitar sitio',
-    'pj.restaurant':'Restaurante','pj.barber':'Barbería','pj.landing':'Landing Page','pj.local':'Negocio Local','pj.ecom':'E-commerce','pj.menu':'Menú Digital','pj.conversion':'Página de Conversión',
-    'p1.desc':'Landing page de restaurante diseñada para generar visitas y reservaciones.',
-    'p2.desc':'Sitio moderno para barbería local, construido para atraer clientes y establecer credibilidad en línea.',
-    'p3.desc':'Landing page de alta conversión con diseño moderno, copy persuasivo y rendimiento mobile-first.',
-    'p4.desc':'Concepto de e-commerce completo — catálogo de productos y experiencia de compra para dueños de mascotas.',
-    'p5.desc':'Menú digital listo para QR — sin costos de impresión, actualizaciones instantáneas, experiencia premium.',
-    'pj.cta.h3':'Tu proyecto<br>podría ser el siguiente.','pj.cta.p':'Cada negocio aquí empezó con una conversación. Tengamos la tuya.','pj.cta.btn':'Iniciar Proyecto',
-    'pkg.overline':'Precios Transparentes','pkg.h2a':'Elige tu','pkg.h2b':'nivel de crecimiento.',
-    'pkg.sub':'Sin cargos ocultos. Sin sorpresas. Pagas una vez, es tuyo para siempre.',
-    'pkg.from':'desde','pkg.popular':'Mejores Resultados','pkg.bonus':'Bonus incluido',
-    'pkg.quote':'Cotizar en WhatsApp','pkg.talkwa':'Hablemos en WhatsApp',
-    'pk1.name':'Básico','pk1.tagline':'Tu primer paso para ser encontrado en línea.',
-    'pk1.desc':'Para freelancers y servicios locales que necesitan presencia profesional en línea — rápido.',
-    'pk1.f1':'1 Landing Page','pk1.f2':'Diseño Responsive','pk1.f3':'Botón CTA a WhatsApp','pk1.f4':'SEO Básico','pk1.f5':'Entrega en 3–5 días',
-    'pk1.bonus':'Guía de Configuración WhatsApp Business',
-    'pk2.name':'Estándar','pk2.tagline':'Más clientes. Más ventas. Más llamadas.',
-    'pk2.desc':'Para negocios listos para ser tomados en serio en línea. Esto es lo que realmente trae clientes.',
-    'pk2.f1':'Sitio Completo 3–5 Secciones','pk2.f2':'Diseño Optimizado para Conversión','pk2.f3':'WhatsApp + Formulario de Contacto','pk2.f4':'SEO Listo para Google','pk2.f5':'Integración Redes Sociales','pk2.f6':'Optimización de Velocidad y Rendimiento',
-    'pk2.bonus':'Mini Guía de Ventas + Reporte SEO Básico',
-    'pk3.name':'Premium','pk3.tagline':'Un sistema completo de crecimiento digital.',
-    'pk3.desc':'No solo un sitio web — una estrategia completa para dominar tu mercado, construida y ejecutada para ti.',
-    'pk3.f1':'Todo lo del Estándar','pk3.f2':'Optimización de Tasa de Conversión','pk3.f3':'Copywriting de Ventas Profesional','pk3.f4':'Análisis de Competencia y Mercado','pk3.f5':'Sistema de Captura de Leads','pk3.f6':'Soporte Prioritario 30 días',
-    'pk3.bonus':'Sesión de Estrategia de Crecimiento Digital',
-    'extras.label':'Add-ons disponibles:','extras.domain':'Registro de Dominio — $15–30/año','extras.hosting':'Configuración de Hosting — $50–150/año','extras.maint':'Mantenimiento Mensual — desde $20/mes','extras.changes':'Cambios Adicionales — $25–50/hr',
-    'proc.overline':'Cómo Funciona','proc.h2a':'idea a en vivo','proc.h2b':'en días, no meses.',
-    'pr1.title':'Llamada de Descubrimiento','pr1.desc':'Hablamos de tu negocio, objetivos y qué significa el éxito. 30 minutos que ahorran meses de dirección equivocada.',
-    'pr2.title':'Propuesta y Estrategia','pr2.desc':'Envío una propuesta clara con cronograma, tech stack y entregables exactos. Sin estimaciones vagas.',
-    'pr3.title':'Construir y Revisar','pr3.desc':'Ves el progreso, das feedback e iteramos hasta que quede perfecto. Siempre estás al tanto.',
-    'pr4.title':'Lanzar y Crecer','pr4.desc':'Tu sitio sale en vivo, el SEO está configurado y no desaparezco. Soy tu socio para lo que viene.',
-    'cta.overline':'No Esperes','cta.h2a':'Tu competencia ya está','cta.h2b':'en línea.',
-    'cta.p':'Cada día sin presencia digital profesional es dinero que se queda sobre la mesa. Cambiemos eso — empezando esta semana.',
-    'cta.btn':'Empezar Gratis',
-    'con.overline':'Construyamos Algo','con.h2a':'Listo para','con.h2b':'dominar tu mercado?',
-    'con.p':'Cuéntame sobre tu negocio. Respondo en menos de 24 horas con un plan — no un discurso de ventas.',
-    'con.wa':'WhatsApp',
-    'form.name':'Tu Nombre','form.email':'Correo Electrónico','form.business':'Negocio / Industria',
-    'form.package':'Me interesa...','form.select':'Selecciona un paquete',
-    'form.o1':'Básico — $150 USD','form.o2':'Estándar — $250 USD','form.o3':'Premium — $600 USD','form.o4':'No estoy seguro — Hablemos',
-    'form.message':'Cuéntame sobre tu proyecto','form.submit':'Enviar Detalles del Proyecto',
-    'form.note':'Respondo en menos de 24 hrs. Sin spam, nunca.','form.success':'¡Mensaje enviado! Me pongo en contacto en menos de 24 horas.',
-    'footer.copy':'© 2025 Damian Aguilera. Todos los derechos reservados.',
-  }
-};
-
-const PH = {
-  en: { fname:'John Smith', femail:'john@business.com', fbusiness:'e.g. HVAC company in Texas', fmessage:"What does your business do? What's your main goal?" },
-  es: { fname:'Juan Pérez', femail:'juan@negocio.com', fbusiness:'ej. Taller mecánico en Querétaro', fmessage:'¿A qué se dedica tu negocio? ¿Cuál es tu objetivo principal?' }
-};
-
-let lang = 'en';
-function applyLang(l) {
-  lang = l;
-  const t = T[l];
-  document.querySelectorAll('[data-i18n]').forEach(el => { if (t[el.dataset.i18n] !== undefined) el.innerHTML = t[el.dataset.i18n]; });
-  const ph = PH[l];
-  Object.entries(ph).forEach(([id, val]) => { const el = document.getElementById(id); if (el) el.placeholder = val; });
-  document.querySelectorAll('.lang-toggle__option').forEach(o => o.classList.toggle('lang-toggle__option--active', o.dataset.lang === l));
-  document.documentElement.lang = l;
-  try { localStorage.setItem('da_lang', l); } catch(e){}
-}
-(function(){
-  const toggle = document.getElementById('langToggle');
-  if (!toggle) return;
-  toggle.addEventListener('click', () => applyLang(lang === 'en' ? 'es' : 'en'));
-  toggle.querySelectorAll('.lang-toggle__option').forEach(o => o.addEventListener('click', e => { e.stopPropagation(); applyLang(o.dataset.lang); }));
-  try { const s = localStorage.getItem('da_lang'); if (s === 'es' || s === 'en') applyLang(s); } catch(e){}
-})();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
