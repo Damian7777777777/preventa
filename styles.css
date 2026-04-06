@@ -1,627 +1,722 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Damian Aguilera — Digital Presence Architect</title>
-  <meta name="description" content="I build digital presence that converts. Websites, strategy, and growth for US businesses ready to dominate online.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700;1,9..144,900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
 
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <div class="nav__logo">DA<span>.</span></div>
-    <button class="nav__menu-btn" id="menuBtn" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav__links" id="navLinks">
-      <li><a href="#about"     data-i18n="nav.about">About</a></li>
-      <li><a href="#services"  data-i18n="nav.services">Services</a></li>
-      <li><a href="#portfolio" data-i18n="nav.work">Work</a></li>
-      <li><a href="#packages"  data-i18n="nav.packages">Packages</a></li>
-      <li><a href="#contact"   data-i18n="nav.cta" class="nav__cta">Let's Talk</a></li>
-    </ul>
-    <button class="lang-toggle" id="langToggle" aria-label="Switch language">
-      <span class="lang-toggle__option lang-toggle__option--active" data-lang="en">EN</span>
-      <span class="lang-toggle__divider">|</span>
-      <span class="lang-toggle__option" data-lang="es">ES</span>
-    </button>
-  </nav>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero__bg-grid"></div>
-    <div class="hero__orb hero__orb--1"></div>
-    <div class="hero__orb hero__orb--2"></div>
 
-    <div class="hero__content">
-      <div class="hero__badge anim">
-        <span class="badge__dot"></span>
-        <span data-i18n="hero.badge">Available for new projects</span>
-      </div>
+/* ===========================
+   DESIGN TOKENS
+=========================== */
+:root {
+  --bg:         #0a0a0f;
+  --bg-2:       #111118;
+  --bg-3:       #16161f;
+  --surface:    #1a1a26;
+  --surface-2:  #22222f;
+  --border:     rgba(255,255,255,0.07);
+  --border-2:   rgba(255,255,255,0.12);
 
-      <h1 class="hero__headline anim anim--d1">
-        <span data-i18n="hero.h1a">Your Business</span><br>
-        <span data-i18n="hero.h1b">Deserves a</span><br>
-        <span class="hero__highlight">
-          <span data-i18n="hero.h1c">Digital Presence</span><br>
-          <span data-i18n="hero.h1d">That Wins.</span>
-        </span>
-      </h1>
+  --gold:       #f5a623;
+  --gold-light: #ffc85a;
+  --gold-glow:  rgba(245,166,35,0.18);
+  --green:      #00e67a;
+  --green-dim:  rgba(0,230,122,0.12);
+  --blue:       #4fc3f7;
+  --blue-dim:   rgba(79,195,247,0.12);
 
-      <p class="hero__sub anim anim--d2">
-        <span data-i18n="hero.intro">I'm</span> <strong>Damian Aguilera</strong> —
-        <span data-i18n="hero.role">Software Engineer &amp; Digital Strategist</span>.<br>
-        <span data-i18n="hero.sub">I don't just build websites. I build <em>growth engines</em> for US businesses.</span>
-      </p>
+  --text:       #f0f0f8;
+  --text-2:     #9898b0;
+  --text-3:     #5a5a72;
 
-      <div class="hero__actions anim anim--d3">
-        <a href="#portfolio" class="btn btn--primary">
-          <span data-i18n="hero.cta1">See My Work</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#contact" class="btn btn--ghost" data-i18n="hero.cta2">Book a Free Call</a>
-      </div>
+  --font-head:  'Syne', sans-serif;
+  --font-body:  'DM Sans', sans-serif;
 
-      <div class="hero__trust anim anim--d4">
-        <div class="trust__item">
-          <span class="trust__num" data-count="50">0</span><span class="trust__plus">+</span>
-          <span class="trust__label" data-i18n="trust.projects">Projects Delivered</span>
-        </div>
-        <div class="trust__divider"></div>
-        <div class="trust__item">
-          <span class="trust__num" data-count="100">0</span><span class="trust__plus">%</span>
-          <span class="trust__label" data-i18n="trust.satisfaction">Client Satisfaction</span>
-        </div>
-        <div class="trust__divider"></div>
-        <div class="trust__item">
-          <span class="trust__num" data-count="3">0</span><span class="trust__plus">x</span>
-          <span class="trust__label" data-i18n="trust.growth">Avg. Traffic Growth</span>
-        </div>
-      </div>
-    </div>
+  --radius-sm:  8px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
 
-    <div class="hero__visual anim anim--d2">
-      <div class="mockup">
-        <div class="mockup__bar">
-          <span></span><span></span><span></span>
-          <div class="mockup__url">yourbusiness.com</div>
-        </div>
-        <div class="mockup__screen">
-          <div class="mockup__line mockup__line--title"></div>
-          <div class="mockup__line mockup__line--sub"></div>
-          <div class="mockup__btn-row">
-            <div class="mockup__btn-sim"></div>
-            <div class="mockup__btn-sim mockup__btn-sim--ghost"></div>
-          </div>
-          <div class="mockup__card-row">
-            <div class="mockup__card"></div>
-            <div class="mockup__card"></div>
-            <div class="mockup__card"></div>
-          </div>
-          <div class="mockup__line mockup__line--short"></div>
-          <div class="mockup__line mockup__line--short mockup__line--w60"></div>
-        </div>
-        <div class="mockup__tag mockup__tag--1">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#3dd68c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          SEO Optimized
-        </div>
-        <div class="mockup__tag mockup__tag--2">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Lightning Fast
-        </div>
-        <div class="mockup__tag mockup__tag--3">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" stroke="#60a5fa" stroke-width="2"/></svg>
-          Mobile-First
-        </div>
-      </div>
-    </div>
-  </section>
+  --shadow-gold: 0 0 40px rgba(245,166,35,0.25);
+  --shadow-card: 0 4px 32px rgba(0,0,0,0.4);
+  --shadow-deep: 0 8px 64px rgba(0,0,0,0.6);
 
-  <!-- ABOUT -->
-  <section class="about-strip" id="about">
-    <div class="container">
-      <div class="about-strip__inner">
-        <div class="about-strip__text scroll-anim">
-          <p class="overline" data-i18n="about.overline">Who I Am</p>
-          <h2>
-            <span data-i18n="about.h2a">Built different.</span><br>
-            <span data-i18n="about.h2b">Focused on your growth.</span>
-          </h2>
-          <p class="body-text" data-i18n="about.p1">I'm a Software Engineer with a degree in Software Development &amp; Management. I've spent years watching businesses lose money because their digital presence didn't match their real value. That's the problem I solve.</p>
-          <p class="body-text" data-i18n="about.p2">I deliver agency-level execution for US businesses — professional quality, direct communication, and results you can measure. No middlemen, no delays.</p>
-          <a href="#contact" class="btn btn--primary" data-i18n="about.btn">Work With Me</a>
-        </div>
-        <div class="about-strip__cards scroll-anim">
-          <div class="value-card">
-            <div class="value-card__num">01</div>
-            <h3 data-i18n="vc.r.title">Results-First</h3>
-            <p data-i18n="vc.r.desc">Every pixel has a purpose. I design for conversions, not just aesthetics.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-card__num">02</div>
-            <h3 data-i18n="vc.f.title">Fast Delivery</h3>
-            <p data-i18n="vc.f.desc">Landing pages in 3–5 days. Full projects in 2–4 weeks. Deadlines respected.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-card__num">03</div>
-            <h3 data-i18n="vc.o.title">You Own It All</h3>
-            <p data-i18n="vc.o.desc">Full code ownership. No lock-in. No hidden fees. Your site, your rules.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-card__num">04</div>
-            <h3 data-i18n="vc.u.title">US Market Ready</h3>
-            <p data-i18n="vc.u.desc">Built for American audiences — copy, UX, speed, and SEO tuned for US traffic.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  --ease:       cubic-bezier(0.16,1,0.3,1);
+}
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-header scroll-anim">
-        <p class="overline" data-i18n="srv.overline">What I Do</p>
-        <h2><span data-i18n="srv.h2a">Digital presence</span>,<br><span data-i18n="srv.h2b">engineered to convert.</span></h2>
-        <p class="section-sub" data-i18n="srv.sub">The difference between a website and a digital presence is the difference between existing and winning.</p>
-      </div>
-      <div class="services__grid">
-        <div class="service-card scroll-anim">
-          <div class="service-card__number">01</div>
-          <h3 data-i18n="s1.title">Landing Pages</h3>
-          <p data-i18n="s1.desc">High-converting single pages built to turn visitors into customers. Perfect for campaigns, products, and local services.</p>
-          <ul class="service-card__list">
-            <li data-i18n="s1.l1">Compelling copywriting structure</li>
-            <li data-i18n="s1.l2">WhatsApp &amp; social integration</li>
-            <li data-i18n="s1.l3">SEO fundamentals built-in</li>
-          </ul>
-        </div>
-        <div class="service-card scroll-anim">
-          <div class="service-card__number">02</div>
-          <h3 data-i18n="s2.title">Business Websites</h3>
-          <p data-i18n="s2.desc">Multi-section sites that establish authority, build trust, and generate consistent leads for serious businesses.</p>
-          <ul class="service-card__list">
-            <li data-i18n="s2.l1">3–6 professional sections</li>
-            <li data-i18n="s2.l2">Functional contact forms</li>
-            <li data-i18n="s2.l3">Speed &amp; performance optimized</li>
-          </ul>
-        </div>
-        <div class="service-card scroll-anim">
-          <div class="service-card__number">03</div>
-          <h3 data-i18n="s3.title">Full-Stack Web Apps</h3>
-          <p data-i18n="s3.desc">Complete solutions with databases, user authentication, APIs and custom dashboards for businesses ready to scale.</p>
-          <ul class="service-card__list">
-            <li data-i18n="s3.l1">Node.js / PHP backends</li>
-            <li data-i18n="s3.l2">CRM &amp; lead management</li>
-            <li data-i18n="s3.l3">Secure authentication systems</li>
-          </ul>
-        </div>
-        <div class="service-card service-card--accent scroll-anim">
-          <div class="service-card__number">04</div>
-          <h3 data-i18n="s4.title">Digital Strategy</h3>
-          <p data-i18n="s4.desc">Not sure what you need? I audit your current presence and build a roadmap to digital dominance. Then I execute it.</p>
-          <ul class="service-card__list">
-            <li data-i18n="s4.l1">Competitor analysis</li>
-            <li data-i18n="s4.l2">SEO &amp; content strategy</li>
-            <li data-i18n="s4.l3">Hosting &amp; tech stack guidance</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+/* ===========================
+   RESET
+=========================== */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width:100%; display:block; }
+a  { text-decoration:none; color:inherit; }
+ul { list-style:none; }
 
-  <!-- PORTFOLIO -->
-  <section class="portfolio" id="portfolio">
-    <div class="container">
-      <div class="section-header scroll-anim">
-        <p class="overline" data-i18n="pf.overline">Real Work, Real Results</p>
-        <h2>Projects I've <span class="gold-text" data-i18n="pf.h2">built &amp; shipped</span>.</h2>
-        <p class="section-sub" data-i18n="pf.sub">Every project below is live and built from scratch — no templates, no shortcuts.</p>
-      </div>
+.container { max-width:1140px; margin:0 auto; padding:0 20px; }
 
-      <div class="portfolio__filters scroll-anim">
-        <button class="pf-btn pf-btn--active" data-filter="all" data-i18n="pf.all">All Projects</button>
-        <button class="pf-btn" data-filter="live" data-i18n="pf.live">Live Sites</button>
-      </div>
+/* ===========================
+   TYPOGRAPHY
+=========================== */
+h1,h2,h3,h4 {
+  font-family: var(--font-head);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+h2 { font-size: clamp(2rem,5vw,3rem); }
+h3 { font-size: 1.2rem; font-weight: 700; }
 
-      <div class="portfolio__grid" id="portfolioGrid">
+.overline {
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.body-text   { color:var(--text-2); line-height:1.75; margin-bottom:16px; }
+.section-sub { color:var(--text-2); font-size:1.05rem; max-width:560px; margin-top:12px; }
 
-        <div class="pj-card scroll-anim" data-type="live">
-          <div class="pj-card__preview">
-            <iframe src="https://damian7777777777.github.io/Sabor-Mexicano/" title="Sabor Mexicano" loading="lazy" tabindex="-1" scrolling="no"></iframe>
-            <div class="pj-card__overlay">
-              <a href="https://damian7777777777.github.io/Sabor-Mexicano/" target="_blank" rel="noopener" class="pj-card__view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span data-i18n="pj.view">View Live Site</span>
-              </a>
-            </div>
-          </div>
-          <div class="pj-card__info">
-            <div class="pj-card__meta">
-              <span class="pj-card__tag pj-card__tag--live">Live</span>
-              <span class="pj-card__tag" data-i18n="pj.restaurant">Restaurant</span>
-              <span class="pj-card__tag" data-i18n="pj.landing">Landing Page</span>
-            </div>
-            <h3>Sabor Mexicano</h3>
-            <p data-i18n="p1.desc">A vibrant restaurant landing page designed to drive foot traffic and reservations.</p>
-            <a href="https://damian7777777777.github.io/Sabor-Mexicano/" target="_blank" rel="noopener" class="pj-card__link">
-              <span data-i18n="pj.visit">Visit site</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
+/* ===========================
+   ANIMATIONS
+   — .anim fires on page load
+   — .scroll-anim fires on scroll
+   Both are visible by default; JS adds the
+   "will-animate" class BEFORE the transition
+   so text is always readable even if JS fails.
+=========================== */
+.anim,
+.scroll-anim {
+  /* visible by default — JS overrides */
+  opacity: 1;
+  transform: translateY(0);
+}
 
-        <div class="pj-card scroll-anim" data-type="live">
-          <div class="pj-card__preview">
-            <iframe src="https://damian7777777777.github.io/Barber/" title="Barber Shop" loading="lazy" tabindex="-1" scrolling="no"></iframe>
-            <div class="pj-card__overlay">
-              <a href="https://damian7777777777.github.io/Barber/" target="_blank" rel="noopener" class="pj-card__view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span data-i18n="pj.view">View Live Site</span>
-              </a>
-            </div>
-          </div>
-          <div class="pj-card__info">
-            <div class="pj-card__meta">
-              <span class="pj-card__tag pj-card__tag--live">Live</span>
-              <span class="pj-card__tag" data-i18n="pj.barber">Barbershop</span>
-              <span class="pj-card__tag" data-i18n="pj.local">Local Business</span>
-            </div>
-            <h3>Barber Shop</h3>
-            <p data-i18n="p2.desc">A bold, modern site for a local barbershop built to attract walk-ins and establish credibility online.</p>
-            <a href="https://damian7777777777.github.io/Barber/" target="_blank" rel="noopener" class="pj-card__link">
-              <span data-i18n="pj.visit">Visit site</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
+/* JS adds this class first, then removes it to trigger transition */
+.will-animate {
+  opacity: 0 !important;
+  transform: translateY(28px) !important;
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.will-animate.anim--d1 { transition-delay:0.1s; }
+.will-animate.anim--d2 { transition-delay:0.2s; }
+.will-animate.anim--d3 { transition-delay:0.3s; }
+.will-animate.anim--d4 { transition-delay:0.4s; }
 
-        <div class="pj-card scroll-anim" data-type="live">
-          <div class="pj-card__preview">
-            <iframe src="https://damian7777777777.github.io/demo-landing-page/" title="Demo Landing Page" loading="lazy" tabindex="-1" scrolling="no"></iframe>
-            <div class="pj-card__overlay">
-              <a href="https://damian7777777777.github.io/demo-landing-page/" target="_blank" rel="noopener" class="pj-card__view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span data-i18n="pj.view">View Live Site</span>
-              </a>
-            </div>
-          </div>
-          <div class="pj-card__info">
-            <div class="pj-card__meta">
-              <span class="pj-card__tag pj-card__tag--live">Live</span>
-              <span class="pj-card__tag">Demo</span>
-              <span class="pj-card__tag" data-i18n="pj.conversion">Conversion Page</span>
-            </div>
-            <h3>Demo Landing Page</h3>
-            <p data-i18n="p3.desc">A high-conversion landing page showcasing modern design, persuasive copy, and mobile-first performance.</p>
-            <a href="https://damian7777777777.github.io/demo-landing-page/" target="_blank" rel="noopener" class="pj-card__link">
-              <span data-i18n="pj.visit">Visit site</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
+.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
 
-        <div class="pj-card scroll-anim" data-type="live">
-          <div class="pj-card__preview">
-            <iframe src="https://damian7777777777.github.io/petShop/" title="Pet Shop" loading="lazy" tabindex="-1" scrolling="no"></iframe>
-            <div class="pj-card__overlay">
-              <a href="https://damian7777777777.github.io/petShop/" target="_blank" rel="noopener" class="pj-card__view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span data-i18n="pj.view">View Live Site</span>
-              </a>
-            </div>
-          </div>
-          <div class="pj-card__info">
-            <div class="pj-card__meta">
-              <span class="pj-card__tag pj-card__tag--live">Live</span>
-              <span class="pj-card__tag" data-i18n="pj.ecom">E-commerce</span>
-              <span class="pj-card__tag">Pet Industry</span>
-            </div>
-            <h3>Pet Shop</h3>
-            <p data-i18n="p4.desc">A full e-commerce concept — product catalog and shopping experience designed for pet owners ready to buy.</p>
-            <a href="https://damian7777777777.github.io/petShop/" target="_blank" rel="noopener" class="pj-card__link">
-              <span data-i18n="pj.visit">Visit site</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
+/* ===========================
+   BUTTONS
+=========================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 14px 28px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.2s;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+.btn--primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: #0a0a0f;
+  box-shadow: 0 4px 24px var(--gold-glow);
+}
+.btn--primary:hover { transform:translateY(-2px); box-shadow:0 8px 36px rgba(245,166,35,.45); }
+.btn--ghost {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border-2);
+}
+.btn--ghost:hover { background:var(--surface-2); border-color:var(--gold); transform:translateY(-2px); }
+.btn--outline {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--border-2);
+}
+.btn--outline:hover { border-color:var(--gold); color:var(--gold); transform:translateY(-2px); }
+.btn--gold {
+  background: linear-gradient(135deg,#ffd700,var(--gold));
+  color: #0a0a0f;
+  box-shadow: 0 4px 24px var(--gold-glow);
+}
+.btn--gold:hover { transform:translateY(-2px); box-shadow:0 8px 40px rgba(245,166,35,.5); }
+.btn--white { background:#fff; color:#0a0a0f; font-weight:800; }
+.btn--white:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(255,255,255,.2); }
+.btn--full  { width:100%; justify-content:center; padding:16px; }
 
-        <div class="pj-card scroll-anim" data-type="live">
-          <div class="pj-card__preview">
-            <iframe src="https://damian7777777777.github.io/demo-menuDigital/" title="Digital Menu" loading="lazy" tabindex="-1" scrolling="no"></iframe>
-            <div class="pj-card__overlay">
-              <a href="https://damian7777777777.github.io/demo-menuDigital/" target="_blank" rel="noopener" class="pj-card__view-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15,3 21,3 21,9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span data-i18n="pj.view">View Live Site</span>
-              </a>
-            </div>
-          </div>
-          <div class="pj-card__info">
-            <div class="pj-card__meta">
-              <span class="pj-card__tag pj-card__tag--live">Live</span>
-              <span class="pj-card__tag" data-i18n="pj.restaurant">Restaurant</span>
-              <span class="pj-card__tag" data-i18n="pj.menu">Digital Menu</span>
-            </div>
-            <h3>Digital Menu</h3>
-            <p data-i18n="p5.desc">A QR-ready digital menu — no printing costs, instant updates, premium dining experience on any device.</p>
-            <a href="https://damian7777777777.github.io/demo-menuDigital/" target="_blank" rel="noopener" class="pj-card__link">
-              <span data-i18n="pj.visit">Visit site</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
+/* ===========================
+   NAV
+=========================== */
+.nav {
+  position: fixed;
+  top:0; left:0; right:0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  gap: 16px;
+  transition: background 0.3s, padding 0.3s, box-shadow 0.3s;
+}
+.nav.scrolled {
+  background: rgba(10,10,15,.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 1px 0 var(--border);
+  padding: 12px 24px;
+}
+.nav__logo {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.nav__logo span { color:var(--gold); }
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex: 1;
+  justify-content: center;
+}
+.nav__links a {
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-2);
+  transition: color 0.15s;
+}
+.nav__links a:hover { color:var(--text); }
+.nav__cta {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important;
+  color: #0a0a0f !important;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 700 !important;
+}
+.nav__cta:hover { box-shadow:0 4px 16px var(--gold-glow); transform:translateY(-1px); }
+.nav__menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 101;
+}
+.nav__menu-btn span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.nav__menu-btn.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.nav__menu-btn.open span:nth-child(2) { opacity:0; }
+.nav__menu-btn.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
 
-        <div class="pj-card pj-card--cta scroll-anim" data-type="live">
-          <div class="pj-card__cta-inner">
-            <div class="pj-card__cta-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <h3 data-i18n="pj.cta.h3">Your project<br>could be next.</h3>
-            <p data-i18n="pj.cta.p">Every business here started with one conversation. Let's have yours.</p>
-            <a href="#contact" class="btn btn--primary" data-i18n="pj.cta.btn">Start a Project</a>
-          </div>
-        </div>
+/* ===========================
+   LANG TOGGLE
+=========================== */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--surface);
+  border: 1.5px solid var(--border-2);
+  border-radius: 50px;
+  padding: 5px 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.lang-toggle:hover { border-color:var(--gold); box-shadow:0 0 12px var(--gold-glow); }
+.lang-toggle__option {
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-3);
+  letter-spacing: 0.08em;
+  transition: color 0.15s;
+  padding: 0 2px;
+}
+.lang-toggle__option--active { color:var(--gold); }
+.lang-toggle__divider { font-size:0.7rem; color:var(--border-2); }
 
-      </div>
-    </div>
-  </section>
+/* ===========================
+   HERO
+=========================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  padding: 120px 48px 80px;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.hero__bg-grid {
+  position: absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(245,166,35,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,166,35,.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+  z-index:0;
+}
+.hero__orb { position:absolute; border-radius:50%; filter:blur(80px); z-index:0; pointer-events:none; }
+.hero__orb--1 { width:500px; height:500px; background:radial-gradient(circle,rgba(245,166,35,.12),transparent 70%); top:-100px; left:-100px; }
+.hero__orb--2 { width:400px; height:400px; background:radial-gradient(circle,rgba(0,230,122,.08),transparent 70%); bottom:0; right:-50px; }
 
-  <!-- PACKAGES -->
-  <section class="packages" id="packages">
-    <div class="container">
-      <div class="section-header scroll-anim">
-        <p class="overline" data-i18n="pkg.overline">Investment &amp; Scope</p>
-        <h2><span data-i18n="pkg.h2a">Choose your</span><br><span class="gold-text" data-i18n="pkg.h2b">growth level.</span></h2>
-        <p class="section-sub" data-i18n="pkg.sub">No hidden fees. No surprises. One investment — yours forever.</p>
-      </div>
+.hero__content { position:relative; z-index:1; flex:1; max-width:600px; }
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green-dim);
+  border: 1px solid rgba(0,230,122,.25);
+  border-radius: 50px;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--green);
+  margin-bottom: 24px;
+}
+.badge__dot {
+  width:8px; height:8px;
+  background:var(--green);
+  border-radius:50%;
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:.5; transform:scale(.7); }
+}
+.hero__headline {
+  font-size: clamp(2.8rem,6vw,4.2rem);
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+.hero__highlight {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero__sub { font-size:1.1rem; color:var(--text-2); margin-bottom:36px; line-height:1.7; }
+.hero__sub strong { color:var(--text); }
+.hero__sub em { font-style:italic; color:var(--gold-light); }
+.hero__actions { display:flex; gap:12px; margin-bottom:48px; flex-wrap:wrap; }
+.hero__trust   { display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+.trust__item   { text-align:center; }
+.trust__num    { font-family:var(--font-head); font-size:2rem; font-weight:800; line-height:1; }
+.trust__plus   { font-family:var(--font-head); font-size:1.4rem; font-weight:800; color:var(--gold); }
+.trust__label  { font-size:.75rem; color:var(--text-2); display:block; margin-top:2px; }
+.trust__divider { width:1px; height:40px; background:var(--border-2); }
 
-      <div class="packages__grid">
+/* Mockup */
+.hero__visual { position:relative; z-index:1; flex-shrink:0; }
+.mockup {
+  width: 320px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-2);
+  box-shadow: var(--shadow-deep), 0 0 80px rgba(245,166,35,.08);
+  position: relative;
+  overflow: visible;
+}
+.mockup__bar {
+  background:var(--bg-2);
+  padding:10px 16px;
+  display:flex; gap:6px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-bottom:1px solid var(--border);
+}
+.mockup__bar span { width:10px; height:10px; border-radius:50%; }
+.mockup__bar span:nth-child(1){background:#ff5f57;}
+.mockup__bar span:nth-child(2){background:#febc2e;}
+.mockup__bar span:nth-child(3){background:#28c840;}
+.mockup__screen { padding:20px; }
+.mockup__line {
+  height:12px; background:var(--surface-2);
+  border-radius:6px; margin-bottom:10px;
+  animation:shimmer 2.5s infinite;
+}
+.mockup__line--title { width:70%; height:18px; background:linear-gradient(90deg,var(--gold-glow),var(--surface-2)); }
+.mockup__line--sub   { width:90%; }
+.mockup__line--short { width:80%; }
+.mockup__line--w60   { width:60%; }
+@keyframes shimmer { 0%,100%{opacity:.5} 50%{opacity:1} }
+.mockup__btn-row  { display:flex; gap:8px; margin:14px 0; }
+.mockup__btn-sim  { height:30px; flex:1; border-radius:50px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); }
+.mockup__btn-sim--ghost { background:var(--surface-2); border:1px solid var(--border-2); }
+.mockup__card-row { display:flex; gap:8px; margin:14px 0; }
+.mockup__card {
+  flex:1; height:54px;
+  background:var(--bg-2); border-radius:var(--radius-sm);
+  border:1px solid var(--border);
+  animation:shimmer 2.5s infinite;
+}
+.mockup__card:nth-child(2){animation-delay:.3s}
+.mockup__card:nth-child(3){animation-delay:.6s}
+.mockup__tag {
+  position:absolute;
+  display:flex; align-items:center; gap:6px;
+  background:rgba(16,16,22,.95);
+  border:1px solid var(--border-2);
+  border-radius:50px;
+  padding:6px 12px;
+  font-size:.72rem; font-weight:600;
+  white-space:nowrap;
+  animation:float 4s ease-in-out infinite;
+}
+.mockup__tag--1 { top:20px;    right:-80px; color:var(--green); }
+.mockup__tag--2 { bottom:80px; right:-70px; color:var(--gold);  animation-delay:1.3s; }
+.mockup__tag--3 { bottom:20px; left:-70px;  color:var(--blue);  animation-delay:.7s; }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
 
-        <!-- BASIC -->
-        <div class="pkg-card scroll-anim">
-          <div class="pkg-card__badge" data-i18n="pk1.name">Basic</div>
-          <div class="pkg-card__price">
-            <span class="pkg-card__from" data-i18n="pkg.from">from</span>
-            <span class="pkg-card__amount">$150</span>
-            <span class="pkg-card__period">USD</span>
-          </div>
-          <p class="pkg-card__tagline" data-i18n="pk1.tagline">Your first step to being found online.</p>
-          <p class="pkg-card__desc" data-i18n="pk1.desc">Ideal for independent professionals and local services that need a polished online presence — delivered fast.</p>
-          <ul class="pkg-card__features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk1.f1">1 Landing Page</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk1.f2">Mobile Responsive Design</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk1.f3">WhatsApp CTA Button</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk1.f4">Basic SEO Setup</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk1.f5">Delivered in 3–5 days</span></li>
-          </ul>
-          <div class="pkg-card__bonus">
-            <span class="bonus__label" data-i18n="pkg.bonus">Included:</span>
-            <span data-i18n="pk1.bonus">WhatsApp Business Setup Guide</span>
-          </div>
-          <a href="https://wa.me/524428484517?text=Hi!%20I'm%20interested%20in%20the%20Basic%20package" target="_blank" rel="noopener" class="btn btn--outline pkg-card__btn" data-i18n="pkg.quote">Get a Quote</a>
-        </div>
+/* ===========================
+   ABOUT
+=========================== */
+.about-strip {
+  background:var(--bg-2);
+  padding:100px 0;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.about-strip__inner { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
+.about-strip__text h2 { margin-bottom:20px; }
+.about-strip__text h2 span { color:var(--gold); }
+.about-strip__cards { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.value-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius-md); padding:20px;
+  transition:border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.value-card:hover { border-color:var(--gold); box-shadow:0 0 24px var(--gold-glow); transform:translateY(-2px); }
+.value-card__icon { font-size:1.5rem; margin-bottom:10px; }
+.value-card h3 { font-size:1rem; margin-bottom:6px; }
+.value-card p  { font-size:.85rem; color:var(--text-2); line-height:1.5; }
 
-        <!-- STANDARD (HERO) -->
-        <div class="pkg-card pkg-card--popular scroll-anim">
-          <div class="pkg-card__popular-label" data-i18n="pkg.popular">Best Results</div>
-          <div class="pkg-card__badge" data-i18n="pk2.name">Standard</div>
-          <div class="pkg-card__price">
-            <span class="pkg-card__from" data-i18n="pkg.from">from</span>
-            <span class="pkg-card__amount">$250</span>
-            <span class="pkg-card__period">USD</span>
-          </div>
-          <p class="pkg-card__tagline" data-i18n="pk2.tagline">More clients. More sales. More calls.</p>
-          <p class="pkg-card__desc" data-i18n="pk2.desc">For businesses ready to establish a serious online presence. This is what actually moves the needle.</p>
-          <ul class="pkg-card__features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk2.f1">3–5 Sections Full Website</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk2.f2">Conversion-Optimized Design</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk2.f3">WhatsApp + Contact Form</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk2.f4">Google-Ready SEO</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk2.f5">Social Media Integration</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk2.f6">Speed &amp; Performance Optimized</span></li>
-          </ul>
-          <div class="pkg-card__bonus">
-            <span class="bonus__label" data-i18n="pkg.bonus">Included:</span>
-            <span data-i18n="pk2.bonus">Mini Sales Guide + Basic SEO Report</span>
-          </div>
-          <a href="https://wa.me/524428484517?text=Hi!%20I'm%20interested%20in%20the%20Standard%20package" target="_blank" rel="noopener" class="btn btn--primary pkg-card__btn" data-i18n="pkg.quote">Get a Quote</a>
-        </div>
+/* ===========================
+   SERVICES
+=========================== */
+.services { padding:100px 0; }
+.section-header { margin-bottom:56px; }
+.section-header h2 span { color:var(--gold); }
+.services__grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+.service-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius-lg); padding:32px;
+  transition:border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  position:relative; overflow:hidden;
+}
+.service-card::before {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(135deg,var(--gold-glow),transparent 60%);
+  opacity:0; transition:opacity 0.3s;
+}
+.service-card:hover { border-color:rgba(245,166,35,.4); transform:translateY(-4px); box-shadow:var(--shadow-card); }
+.service-card:hover::before { opacity:1; }
+.service-card--accent { background:linear-gradient(135deg,rgba(0,230,122,.05),var(--surface) 60%); border-color:rgba(0,230,122,.15); }
+.service-card__number { font-family:var(--font-head); font-size:.75rem; font-weight:700; color:var(--gold); letter-spacing:.1em; margin-bottom:12px; }
+.service-card h3  { font-size:1.25rem; margin-bottom:12px; }
+.service-card > p { color:var(--text-2); font-size:.95rem; margin-bottom:20px; }
+.service-card__list { display:flex; flex-direction:column; gap:8px; }
+.service-card__list li { font-size:.87rem; color:var(--text-2); padding-left:14px; position:relative; }
+.service-card__list li::before { content:'→'; position:absolute; left:0; color:var(--gold); font-size:.8rem; }
 
-        <!-- PREMIUM -->
-        <div class="pkg-card pkg-card--premium scroll-anim">
-          <div class="pkg-card__badge" data-i18n="pk3.name">Premium</div>
-          <div class="pkg-card__price">
-            <span class="pkg-card__from" data-i18n="pkg.from">from</span>
-            <span class="pkg-card__amount">$600</span>
-            <span class="pkg-card__period">USD</span>
-          </div>
-          <p class="pkg-card__tagline" data-i18n="pk3.tagline">A complete digital growth system.</p>
-          <p class="pkg-card__desc" data-i18n="pk3.desc">Not just a website — a full strategy to dominate your market, built and executed end-to-end.</p>
-          <ul class="pkg-card__features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk3.f1">Everything in Standard</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk3.f2">Conversion Rate Optimization</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk3.f3">Professional Sales Copywriting</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk3.f4">Competitor &amp; Market Analysis</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk3.f5">Lead Capture System</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="pk3.f6">30-Day Priority Support</span></li>
-          </ul>
-          <div class="pkg-card__bonus">
-            <span class="bonus__label" data-i18n="pkg.bonus">Included:</span>
-            <span data-i18n="pk3.bonus">Digital Growth Strategy Session</span>
-          </div>
-          <a href="https://wa.me/524428484517?text=Hi!%20I'm%20interested%20in%20the%20Premium%20package" target="_blank" rel="noopener" class="btn btn--gold pkg-card__btn" data-i18n="pkg.talkwa">Let's Talk</a>
-        </div>
+/* ===========================
+   PORTFOLIO
+=========================== */
+.portfolio { padding:100px 0; }
+.portfolio__filters { display:flex; gap:10px; margin-bottom:40px; flex-wrap:wrap; }
+.pf-btn {
+  font-family:var(--font-head); font-size:.82rem; font-weight:700;
+  padding:8px 18px; border-radius:50px;
+  border:1.5px solid var(--border); background:transparent;
+  color:var(--text-2); cursor:pointer;
+  transition:border-color 0.2s, color 0.2s, background 0.2s;
+}
+.pf-btn:hover { border-color:var(--gold); color:var(--gold); }
+.pf-btn--active { background:linear-gradient(135deg,var(--gold),var(--gold-light)); border-color:transparent; color:#0a0a0f; }
+.portfolio__grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.pj-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius-lg); overflow:hidden;
+  display:flex; flex-direction:column;
+  transition:border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.pj-card:hover { border-color:var(--border-2); transform:translateY(-4px); box-shadow:var(--shadow-card); }
+.pj-card__preview {
+  position:relative; height:210px; overflow:hidden;
+  background:var(--bg-2); flex-shrink:0;
+}
+.pj-card__preview iframe {
+  width:200%; height:200%;
+  transform:scale(.5); transform-origin:top left;
+  border:none; pointer-events:none; display:block;
+}
+.pj-card__overlay {
+  position:absolute; inset:0;
+  background:rgba(10,10,15,.82);
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transition:opacity 0.3s;
+  backdrop-filter:blur(4px);
+}
+.pj-card:hover .pj-card__overlay { opacity:1; }
+.pj-card__view-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--font-head); font-size:.85rem; font-weight:700;
+  color:#0a0a0f;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  padding:10px 20px; border-radius:50px;
+  transition:transform 0.2s, box-shadow 0.2s;
+}
+.pj-card__view-btn:hover { transform:scale(1.04); box-shadow:var(--shadow-gold); }
+.pj-card__info { padding:20px 22px 22px; display:flex; flex-direction:column; flex:1; }
+.pj-card__meta { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+.pj-card__tag {
+  font-size:.7rem; font-weight:600; padding:3px 10px; border-radius:50px;
+  background:var(--bg-2); border:1px solid var(--border);
+  color:var(--text-3); letter-spacing:.02em;
+}
+.pj-card__tag--live { background:var(--green-dim); border-color:rgba(0,230,122,.25); color:var(--green); }
+.pj-card__info h3 { font-size:1.05rem; margin-bottom:8px; }
+.pj-card__info p  { font-size:.85rem; color:var(--text-2); line-height:1.55; flex:1; margin-bottom:14px; }
+.pj-card__link {
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:var(--font-head); font-size:.82rem; font-weight:700;
+  color:var(--gold); transition:gap 0.15s;
+}
+.pj-card__link:hover { gap:10px; }
+.pj-card--cta {
+  background:linear-gradient(135deg,rgba(245,166,35,.08),var(--surface) 60%);
+  border-color:rgba(245,166,35,.2);
+  align-items:center; justify-content:center; min-height:340px;
+}
+.pj-card--cta:hover { border-color:var(--gold); box-shadow:var(--shadow-gold); }
+.pj-card__cta-inner { text-align:center; padding:32px 24px; }
+.pj-card__cta-icon { font-size:2.5rem; margin-bottom:16px; }
+.pj-card__cta-inner h3 { font-size:1.4rem; margin-bottom:12px; line-height:1.2; }
+.pj-card__cta-inner p  { font-size:.9rem; color:var(--text-2); margin-bottom:24px; }
+.pj-card.pf-hidden { display:none; }
 
-      </div>
+/* ===========================
+   PACKAGES
+=========================== */
+.packages { padding:100px 0; background:var(--bg-2); }
+.packages__grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-bottom:40px; }
+.pkg-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius-xl); padding:32px;
+  position:relative; transition:border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.pkg-card:hover { border-color:var(--border-2); transform:translateY(-4px); box-shadow:var(--shadow-card); }
+.pkg-card--popular {
+  border-color:var(--gold);
+  box-shadow:0 0 0 1px var(--gold), var(--shadow-gold);
+  background:linear-gradient(135deg,rgba(245,166,35,.06),var(--surface) 50%);
+}
+.pkg-card--popular:hover { box-shadow:0 0 0 1px var(--gold),0 8px 48px rgba(245,166,35,.3); }
+.pkg-card--premium { border-color:rgba(255,215,0,.3); background:linear-gradient(135deg,rgba(255,215,0,.05),var(--surface) 50%); }
+.pkg-card__popular-label {
+  position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  color:#0a0a0f; font-family:var(--font-head); font-size:.72rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.1em; padding:4px 16px; border-radius:50px; white-space:nowrap;
+}
+.pkg-card__badge { font-family:var(--font-head); font-size:.75rem; font-weight:700; color:var(--text-3); text-transform:uppercase; letter-spacing:.1em; margin-bottom:12px; }
+.pkg-card__price { display:flex; align-items:baseline; gap:4px; margin-bottom:16px; }
+.pkg-card__from   { font-size:.8rem; color:var(--text-2); margin-right:4px; }
+.pkg-card__amount { font-family:var(--font-head); font-size:2.4rem; font-weight:800; line-height:1; }
+.pkg-card__period { font-size:.85rem; color:var(--text-2); }
+.pkg-card__desc   { font-size:.9rem; color:var(--text-2); margin-bottom:24px; line-height:1.6; }
+.pkg-card__features { display:flex; flex-direction:column; gap:10px; margin-bottom:28px; }
+.pkg-card__features li { display:flex; align-items:center; gap:8px; font-size:.88rem; color:var(--text-2); }
+.pkg-card__features li svg { color:var(--green); flex-shrink:0; }
+.pkg-card__btn { display:flex; width:100%; justify-content:center; padding:13px 24px; }
 
-      <div class="extras scroll-anim">
-        <p class="extras__label" data-i18n="extras.label">Add-ons available:</p>
-        <div class="extras__pills">
-          <span data-i18n="extras.domain">Domain Registration — $15–30/yr</span>
-          <span data-i18n="extras.hosting">Hosting Setup — $50–150/yr</span>
-          <span data-i18n="extras.maint">Monthly Maintenance — from $20/mo</span>
-          <span data-i18n="extras.changes">Extra Revisions — $25–50/hr</span>
-        </div>
-      </div>
-    </div>
-  </section>
+.extras {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius-md); padding:20px 24px;
+  display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+}
+.extras__label { font-family:var(--font-head); font-size:.8rem; font-weight:700; color:var(--text-3); text-transform:uppercase; letter-spacing:.1em; white-space:nowrap; }
+.extras__pills { display:flex; flex-wrap:wrap; gap:10px; }
+.extras__pills span { font-size:.82rem; color:var(--text-2); background:var(--bg-2); border:1px solid var(--border); border-radius:50px; padding:6px 14px; }
 
-  <!-- PROCESS -->
-  <section class="process" id="process">
-    <div class="container">
-      <div class="section-header scroll-anim">
-        <p class="overline" data-i18n="proc.overline">How It Works</p>
-        <h2><span data-i18n="proc.h2a">From idea to live</span><br><span class="gold-text" data-i18n="proc.h2b">in days, not months.</span></h2>
-      </div>
-      <div class="process__steps">
-        <div class="process__step scroll-anim">
-          <div class="process__step-num">01</div>
-          <div class="process__step-content">
-            <h3 data-i18n="pr1.title">Discovery Call</h3>
-            <p data-i18n="pr1.desc">We talk about your business, goals, and what success looks like. 30 minutes that save months of wrong direction.</p>
-          </div>
-        </div>
-        <div class="process__connector"></div>
-        <div class="process__step scroll-anim">
-          <div class="process__step-num">02</div>
-          <div class="process__step-content">
-            <h3 data-i18n="pr2.title">Proposal &amp; Strategy</h3>
-            <p data-i18n="pr2.desc">You receive a clear proposal with timeline, tech stack, and exact deliverables. No vague estimates.</p>
-          </div>
-        </div>
-        <div class="process__connector"></div>
-        <div class="process__step scroll-anim">
-          <div class="process__step-num">03</div>
-          <div class="process__step-content">
-            <h3 data-i18n="pr3.title">Build &amp; Review</h3>
-            <p data-i18n="pr3.desc">You see progress, give feedback, and we iterate until it's exactly right. You're always in the loop.</p>
-          </div>
-        </div>
-        <div class="process__connector"></div>
-        <div class="process__step scroll-anim">
-          <div class="process__step-num">04</div>
-          <div class="process__step-content">
-            <h3 data-i18n="pr4.title">Launch &amp; Grow</h3>
-            <p data-i18n="pr4.desc">Your site goes live, SEO is configured, and the work doesn't stop. I stay as your growth partner.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+/* ===========================
+   PROCESS
+=========================== */
+.process { padding:100px 0; }
+.process__steps { display:flex; flex-direction:column; max-width:700px; margin-top:24px; }
+.process__step { display:flex; gap:28px; align-items:flex-start; }
+.process__step-num { font-family:var(--font-head); font-size:2rem; font-weight:800; color:var(--gold); opacity:.4; line-height:1; flex-shrink:0; width:50px; padding-top:4px; }
+.process__step-content h3 { font-size:1.15rem; margin-bottom:8px; }
+.process__step-content p  { font-size:.92rem; color:var(--text-2); line-height:1.65; padding-bottom:8px; }
+.process__connector { width:2px; height:40px; background:linear-gradient(to bottom,var(--gold),transparent); margin-left:24px; opacity:.3; }
 
-  <!-- CTA BANNER -->
-  <section class="cta-banner scroll-anim">
-    <div class="cta-banner__bg"></div>
-    <div class="container">
-      <div class="cta-banner__inner">
-        <h2><span data-i18n="cta.h2a">Your competitors are</span><br><span data-i18n="cta.h2b">already online.</span></h2>
-        <p data-i18n="cta.p">Every day without a professional digital presence is revenue left on the table. Let's change that — starting this week.</p>
-        <a href="#contact" class="btn btn--primary btn--lg">
-          <span data-i18n="cta.btn">Start the Conversation</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
+/* ===========================
+   CTA BANNER
+=========================== */
+.cta-banner {
+  background:var(--bg-3);
+  border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+  padding:80px 0; text-align:center; position:relative; overflow:hidden;
+}
+.cta-banner__bg { position:absolute; inset:0; background:radial-gradient(ellipse 60% 100% at 50% 50%,rgba(245,166,35,.07),transparent); }
+.cta-banner__inner { position:relative; z-index:1; }
+.cta-banner h2 { font-size:clamp(2rem,5vw,3rem); margin-bottom:16px; }
+.cta-banner h2 span { color:var(--gold); }
+.cta-banner p  { color:var(--text-2); font-size:1.05rem; max-width:540px; margin:0 auto 32px; }
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="contact__inner">
-        <div class="contact__info scroll-anim">
-          <p class="overline" data-i18n="con.overline">Let's Build Something</p>
-          <h2><span data-i18n="con.h2a">Ready to</span><br><span class="gold-text" data-i18n="con.h2b">dominate your market?</span></h2>
-          <p class="body-text" data-i18n="con.p">Tell me about your business. I'll respond within 24 hours with a plan — not a pitch.</p>
-          <div class="contact__channels">
-            <a href="https://wa.me/524428484517" class="channel-link" target="_blank" rel="noopener">
-              <div class="channel-link__icon channel-link__icon--wa">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              </div>
-              <span data-i18n="con.wa">WhatsApp — Fastest Response</span>
-            </a>
-            <a href="mailto:damiantego@gmail.com" class="channel-link">
-              <div class="channel-link__icon channel-link__icon--email">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <span>damiantego@gmail.com</span>
-            </a>
-          </div>
-        </div>
+/* ===========================
+   CONTACT
+=========================== */
+.contact { padding:100px 0; }
+.contact__inner { display:grid; grid-template-columns:1fr 1.4fr; gap:64px; align-items:start; }
+.contact__info h2 { margin-bottom:16px; }
+.contact__info h2 span { color:var(--gold); }
+.contact__channels { display:flex; flex-direction:column; gap:12px; margin-top:24px; }
+.channel-link { display:flex; align-items:center; gap:12px; font-size:.95rem; font-weight:500; color:var(--text-2); transition:color 0.15s; }
+.channel-link:hover { color:var(--text); }
+.channel-link__icon { width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; border:1px solid var(--border); }
+.channel-link__icon--wa    { background:rgba(0,230,122,.1); color:var(--green); border-color:rgba(0,230,122,.2); }
+.channel-link__icon--email { background:var(--blue-dim);    color:var(--blue);  border-color:rgba(79,195,247,.2); }
 
-        <form class="contact__form scroll-anim" id="contactForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fname" data-i18n="form.name">Your Name</label>
-              <input type="text" id="fname" name="name" placeholder="John Smith" required />
-            </div>
-            <div class="form-group">
-              <label for="femail" data-i18n="form.email">Email Address</label>
-              <input type="email" id="femail" name="email" placeholder="john@business.com" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="fbusiness" data-i18n="form.business">Business / Industry</label>
-            <input type="text" id="fbusiness" name="business" placeholder="e.g. HVAC company in Texas" />
-          </div>
-          <div class="form-group">
-            <label for="fpackage" data-i18n="form.package">I'm interested in...</label>
-            <select id="fpackage" name="package">
-              <option value="" data-i18n="form.select">Select a package</option>
-              <option value="basic"      data-i18n="form.o1">Basic — $150 USD</option>
-              <option value="standard"   data-i18n="form.o2">Standard — $250 USD</option>
-              <option value="premium"    data-i18n="form.o3">Premium — $600 USD</option>
-              <option value="unsure"     data-i18n="form.o5">Not sure — Let's talk</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="fmessage" data-i18n="form.message">Tell me about your project</label>
-            <textarea id="fmessage" name="message" placeholder="What does your business do? What's your main goal?" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
-            <span data-i18n="form.submit">Send My Project Details</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <p class="form__note" data-i18n="form.note">I reply within 24 hours. No spam, ever.</p>
-          <div class="form__success" id="formSuccess">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="#3dd68c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke="#3dd68c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span data-i18n="form.success">Message sent! I'll be in touch within 24 hours.</span>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
+.contact__form { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-xl); padding:36px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.form-group { display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+.form-group label { font-size:.82rem; font-weight:600; color:var(--text-2); }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background:var(--bg-2); border:1.5px solid var(--border); border-radius:var(--radius-sm);
+  padding:12px 14px; font-family:var(--font-body); font-size:.93rem; color:var(--text);
+  transition:border-color 0.15s, background 0.15s; -webkit-appearance:none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color:var(--text-3); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { outline:none; border-color:var(--gold); background:var(--bg-3); }
+.form-group select option { background:var(--bg-2); }
+.form-group textarea { resize:vertical; min-height:100px; }
+.form__note { text-align:center; font-size:.78rem; color:var(--text-3); margin-top:12px; }
+.form__success {
+  display:none; align-items:center; justify-content:center; gap:10px;
+  margin-top:16px; padding:14px;
+  background:var(--green-dim); border:1px solid rgba(0,230,122,.25);
+  border-radius:var(--radius-sm); font-size:.92rem; color:var(--green); font-weight:500;
+}
+.form__success.show { display:flex; }
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__inner">
-        <div class="footer__brand">
-          <div class="footer__logo">DA<span>.</span></div>
-          <p>Damian Aguilera<br>Software Engineer &amp; Digital Strategist</p>
-        </div>
-        <div class="footer__links">
-          <a href="#about"     data-i18n="nav.about">About</a>
-          <a href="#services"  data-i18n="nav.services">Services</a>
-          <a href="#portfolio" data-i18n="nav.work">Work</a>
-          <a href="#packages"  data-i18n="nav.packages">Packages</a>
-          <a href="#contact"   data-i18n="nav.cta">Let's Talk</a>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <p data-i18n="footer.copy">© 2025 Damian Aguilera. All rights reserved.</p>
-        <a href="https://github.com/Damian7777777777" target="_blank" rel="noopener" class="footer__gh">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-          GitHub
-        </a>
-      </div>
-    </div>
-  </footer>
+/* ===========================
+   FOOTER
+=========================== */
+.footer { background:var(--bg-2); border-top:1px solid var(--border); padding:48px 0 32px; }
+.footer__inner { display:flex; justify-content:space-between; align-items:flex-start; gap:32px; margin-bottom:32px; flex-wrap:wrap; }
+.footer__logo { font-family:var(--font-head); font-size:1.8rem; font-weight:800; line-height:1; margin-bottom:8px; }
+.footer__logo span { color:var(--gold); }
+.footer__brand p { font-size:.85rem; color:var(--text-2); line-height:1.6; }
+.footer__links { display:flex; gap:24px; flex-wrap:wrap; }
+.footer__links a { font-size:.88rem; color:var(--text-2); transition:color 0.15s; }
+.footer__links a:hover { color:var(--gold); }
+.footer__bottom { display:flex; justify-content:space-between; align-items:center; gap:16px; padding-top:24px; border-top:1px solid var(--border); flex-wrap:wrap; }
+.footer__bottom p { font-size:.8rem; color:var(--text-3); }
+.footer__gh { display:inline-flex; align-items:center; gap:6px; font-size:.8rem; color:var(--text-3); transition:color 0.15s; }
+.footer__gh:hover { color:var(--text); }
 
-  <script src="script.js"></script>
-</body>
-</html>
+/* spin for submit loading */
+@keyframes spin { to { transform:rotate(360deg); } }
+
+/* ===========================
+   RESPONSIVE — TABLET
+=========================== */
+@media (max-width:960px) {
+  .hero { flex-direction:column; text-align:center; padding:110px 24px 60px; min-height:auto; }
+  .hero__content { max-width:100%; }
+  .hero__actions { justify-content:center; }
+  .hero__trust   { justify-content:center; }
+  .hero__visual  { order:-1; }
+  .mockup { width:280px; }
+  .mockup__tag--1 { right:-60px; }
+  .mockup__tag--2 { right:-50px; }
+  .mockup__tag--3 { left:-50px; }
+  .about-strip__inner { grid-template-columns:1fr; gap:40px; }
+  .services__grid  { grid-template-columns:1fr; }
+  .packages__grid  { grid-template-columns:1fr; }
+  .portfolio__grid { grid-template-columns:repeat(2,1fr); }
+  .contact__inner  { grid-template-columns:1fr; gap:40px; }
+  .form-row        { grid-template-columns:1fr; }
+}
+
+/* ===========================
+   RESPONSIVE — MOBILE
+=========================== */
+@media (max-width:640px) {
+  .nav__links {
+    position:fixed; top:0; right:0;
+    width:80%; max-width:320px; height:100vh;
+    background:rgba(10,10,15,.98); backdrop-filter:blur(20px);
+    flex-direction:column; align-items:flex-start; justify-content:center;
+    gap:28px; padding:40px 32px;
+    border-left:1px solid var(--border);
+    transform:translateX(100%); transition:transform 0.35s var(--ease);
+    z-index:99;
+  }
+  .nav__links.open { transform:translateX(0); }
+  .nav__links a { font-size:1.1rem; color:var(--text); }
+  .nav__menu-btn { display:flex; }
+  .nav__overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.6); z-index:98; }
+  .nav__overlay.show { display:block; }
+  .lang-toggle {
+    position:fixed; bottom:20px; right:20px; z-index:200;
+    background:var(--bg-2); box-shadow:0 4px 20px rgba(0,0,0,.4);
+    padding:8px 16px;
+  }
+  .lang-toggle__option { font-size:.85rem; }
+  .hero { padding:100px 20px 60px; }
+  .hero__headline { font-size:2.4rem; }
+  .hero__visual { display:none; }
+  .about-strip, .services, .packages, .contact, .process { padding:72px 0; }
+  .cta-banner { padding:60px 0; }
+  .about-strip__cards { grid-template-columns:1fr; }
+  .portfolio__grid { grid-template-columns:1fr; }
+  .contact__form { padding:24px; }
+  .extras { flex-direction:column; align-items:flex-start; gap:12px; }
+  .footer__inner { flex-direction:column; }
+  .footer__bottom { flex-direction:column; text-align:center; }
+  .mockup__tag { display:none; }
+  .btn { font-size:.85rem; padding:13px 22px; }
+  h2 { font-size:1.9rem; }
+  .pj-card__preview { height:180px; }
+  .pj-card--cta { min-height:260px; }
+}
+@media (max-width:380px) {
+  .hero__headline { font-size:2rem; }
+  .hero__actions { flex-direction:column; width:100%; }
+  .hero__actions .btn { width:100%; justify-content:center; }
+}
