@@ -4,7 +4,7 @@ Landing page diseñada para promocionar un proyecto en etapa de preventa, enfoca
 
 🚀 Demo en vivo
 
-👉 https://damian7777777777.github.io/preventa/
+👉 https://damian-aguilera.github.io/preventa/
 
 📸 Vista previa
 
